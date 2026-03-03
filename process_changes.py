@@ -134,6 +134,43 @@ DATA_PATH = SUMMARY_ROOT / "data.json"
 SUMMARY_README_PATH = SUMMARY_ROOT / "README.md"
 ALL_GUIDE_PATH = SUMMARY_ROOT / "all_guide.md"
 
+
+def normalize_tags(tags: Iterable[str], max_count: int = 5) -> List[str]:
+    cleaned: List[str] = []
+    seen: set[str] = set()
+    for tag in tags:
+        if not isinstance(tag, str):
+            continue
+        value = tag.strip()
+        if not value:
+            continue
+        if value in seen:
+            continue
+        seen.add(value)
+        cleaned.append(value)
+        if len(cleaned) >= max_count:
+            break
+    return cleaned
+
+
+def normalize_platforms(platforms: Iterable[str]) -> List[str]:
+    """Normalize platform list, explicitly excluding Cross-platform."""
+    cleaned: List[str] = []
+    seen: set[str] = set()
+    for platform in platforms:
+        if not isinstance(platform, str):
+            continue
+        value = platform.strip()
+        if not value:
+            continue
+        if value.lower() == "cross-platform":
+            continue
+        if value in seen:
+            continue
+        seen.add(value)
+        cleaned.append(value)
+    return cleaned
+
 def get_default_collection_readme_path() -> Path:
     candidates = [
         SCRIPT_DIR / TOOL_REPO_NAME / "README.md",
@@ -272,12 +309,23 @@ def load_entries() -> List[ToolGuideEntry]:
 
     entries: List[ToolGuideEntry] = []
     for payload in raw_entries:
-        entries.append(ToolGuideEntry.from_dict(payload))
+        entry = ToolGuideEntry.from_dict(payload)
+        entry.name = canonicalize_tool_name(entry.name)
+        entry.tags = normalize_tags(entry.tags, max_count=5)
+        entry.platform = normalize_platforms(entry.platform)
+        entries.append(entry)
     return entries
 
 
 def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> None:
-    payload = [entry.to_dict() for entry in entries]
+    normalized_entries: List[ToolGuideEntry] = []
+    for entry in entries:
+        entry.name = canonicalize_tool_name(entry.name)
+        entry.tags = normalize_tags(entry.tags, max_count=5)
+        entry.platform = normalize_platforms(entry.platform)
+        normalized_entries.append(entry)
+
+    payload = [entry.to_dict() for entry in normalized_entries]
     if dry_run:
         logging.info("Dry-run: would write %s with %d entries.", DATA_PATH, len(payload))
         return
@@ -447,6 +495,39 @@ def enforce_guide_title_and_tldr_prefix(path: Path, tool_name: str, dry_run: boo
     return True
 
 
+def enforce_guide_platform_line(path: Path, platforms: List[str], dry_run: bool = False) -> bool:
+    platforms = normalize_platforms(platforms)
+    try:
+        content = path.read_text(encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        return False
+    if not content:
+        return False
+
+    original = content
+    lines = content.splitlines()
+    updated = False
+    for index, line in enumerate(lines[:40]):
+        if line.startswith("- Platform:"):
+            new_line = "- Platform: " + ", ".join(platforms) if platforms else "- Platform:"
+            if line != new_line:
+                lines[index] = new_line
+                updated = True
+            break
+
+    if not updated:
+        return False
+
+    content = "\n".join(lines) + ("\n" if original.endswith("\n") else "")
+    if content == original:
+        return False
+    if dry_run:
+        logging.info("Dry-run: would enforce platform line in %s", path)
+        return True
+    path.write_text(content, encoding="utf-8")
+    return True
+
+
 def migrate_entry_name_and_file(entry: ToolGuideEntry, dry_run: bool = False) -> bool:
     """Return True if any migration was performed for the entry."""
     canonical = canonicalize_tool_name(entry.name)
@@ -583,6 +664,17 @@ def build_monthly_index_markdown(
     return "\n".join(lines).strip() + "\n"
 
 
+def _strip_name_prefix_from_tldr(tldr: str, name: str) -> str:
+    text = (tldr or "").strip()
+    if not text:
+        return ""
+    for sep in ("：", ":"):
+        prefix = f"{name}{sep}"
+        if text.startswith(prefix):
+            return text[len(prefix) :].strip()
+    return text
+
+
 def build_root_readme(
     entries: List[ToolGuideEntry],
     grouped: Dict[str, List[ToolGuideEntry]],
@@ -590,28 +682,35 @@ def build_root_readme(
 ) -> str:
     prefix = (
         "# Tool Guide\n"
-        "自动读取 kohstool 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助大模型生成工具中文 guide。\n"
+        "自动读取 kohstool 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成工具总结。\n"
     )
 
-    lines: List[str] = [prefix.rstrip(), "", "## Latest 10 Entries", ""]
+    lines: List[str] = [prefix.rstrip(), ""]
 
-    latest_entries = sorted(entries, key=lambda e: e.timestamp, reverse=True)[:10]
-    if latest_entries:
-        for entry in latest_entries:
+    sorted_entries = sorted(entries, key=lambda e: e.timestamp, reverse=True)
+    if sorted_entries:
+        for entry in sorted_entries:
             link = get_guide_file_path(
                 name=entry.name,
                 timestamp=entry.timestamp,
                 month=entry.month,
                 in_readme_md=True,
             ).as_posix()
-            lines.extend(render_entry_lines(entry, link, tldr_lookup.get(entry.identity(), "")))
-            lines.append("")
+            tldr = _strip_name_prefix_from_tldr(
+                tldr_lookup.get(entry.identity(), ""),
+                entry.name,
+            )
+            if tldr:
+                lines.append(f"- [{entry.name}]({link}) - {tldr}")
+            else:
+                lines.append(f"- [{entry.name}]({link})")
     else:
         lines.append("- _No guides available yet._")
-        lines.append("")
 
+    lines.append("")
     lines.append("## Monthly Archive")
     lines.append("")
+
     sorted_months = sorted(grouped.keys(), reverse=True)
     if sorted_months:
         for month in sorted_months:
@@ -896,12 +995,8 @@ def _detect_platforms(text: str) -> List[str]:
         platforms.append("Web")
     if not platforms:
         platforms.append("Web")
-    # Prefer Cross-platform when multiple desktop platforms detected.
-    desktop = {"Mac", "Windows", "Linux"}
-    if len(desktop.intersection(platforms)) >= 2 and "Cross-platform" not in platforms:
-        platforms.append("Cross-platform")
     # Stable ordering
-    order = ["Web", "Browser Extension", "Windows", "Mac", "Linux", "iOS", "Android", "Cross-platform"]
+    order = ["Web", "Browser Extension", "Windows", "Mac", "Linux", "iOS", "Android"]
     return [p for p in order if p in platforms]
 
 
@@ -920,7 +1015,7 @@ def _heuristic_tags_and_category(name: str, url: str, page_text: str) -> Tuple[L
 
 def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent:
     tags, category = _heuristic_tags_and_category(name, url, page_text)
-    platforms = _detect_platforms(f"{name}\n{url}\n{page_text}")
+    platforms = normalize_platforms(_detect_platforms(f"{name}\n{url}\n{page_text}"))
 
     if category == "rss":
         scenarios = [
@@ -976,8 +1071,8 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
         tldr=tldr,
         scenarios=_uniq(scenarios, 7),
         similar_tools=_uniq(similar_tools, 7),
-        tags=_uniq(tags, 6),
-        platform=_uniq(platforms, 8),
+        tags=_uniq(tags, 5),
+        platform=_uniq(platforms, 7),
     )
 
 
@@ -1030,8 +1125,8 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
         tldr=tldr,
         scenarios=_clean_list(scenarios),
         similar_tools=_clean_list(similar_tools),
-        tags=_clean_list(tags),
-        platform=_clean_list(platform),
+        tags=normalize_tags(_clean_list(tags), max_count=5),
+        platform=normalize_platforms(_clean_list(platform)),
     )
 
 
@@ -1126,8 +1221,8 @@ def ingest_tool(
         name=name,
         url=url,
         timestamp=timestamp,
-        tags=guide.tags,
-        platform=guide.platform,
+        tags=normalize_tags(guide.tags, max_count=5),
+        platform=normalize_platforms(guide.platform),
     )
     guide_path = get_guide_file_path(name=name, timestamp=timestamp, month=month)
     markdown = build_guide_markdown(
@@ -1136,8 +1231,8 @@ def ingest_tool(
         tldr=guide.tldr,
         scenarios=guide.scenarios,
         similar_tools=guide.similar_tools,
-        tags=guide.tags,
-        platform=guide.platform,
+        tags=normalize_tags(guide.tags, max_count=5),
+        platform=normalize_platforms(guide.platform),
     )
     return IngestionResult(entry=entry, guide_markdown=markdown, guide_path=guide_path, tldr=guide.tldr)
 
@@ -1181,12 +1276,22 @@ def process_tools(options: RunOptions) -> None:
             month=entry.month,
             in_readme_md=False,
         )
-        if guide_path.exists() and enforce_guide_title_and_tldr_prefix(
-            guide_path,
-            tool_name=entry.name,
-            dry_run=dry_run,
-        ):
-            repaired_any = True
+        if guide_path.exists():
+            changed = False
+            if enforce_guide_title_and_tldr_prefix(
+                guide_path,
+                tool_name=entry.name,
+                dry_run=dry_run,
+            ):
+                changed = True
+            if enforce_guide_platform_line(
+                guide_path,
+                platforms=entry.platform,
+                dry_run=dry_run,
+            ):
+                changed = True
+            if changed:
+                repaired_any = True
 
     processed_urls = [entry.url for entry in entries]
 
@@ -1255,8 +1360,15 @@ def process_tools(options: RunOptions) -> None:
     readme_content = build_root_readme(entries, grouped, tldr_lookup)
     write_text_file(SUMMARY_README_PATH, readme_content, dry_run=dry_run)
 
-    all_guide_content = build_all_guide_md(entries, tldr_lookup)
-    write_text_file(ALL_GUIDE_PATH, all_guide_content, dry_run=dry_run)
+    # all_guide.md has been removed; delete legacy file if present.
+    if ALL_GUIDE_PATH.exists():
+        if dry_run:
+            logging.info("Dry-run: would delete legacy %s", ALL_GUIDE_PATH)
+        else:
+            try:
+                ALL_GUIDE_PATH.unlink()
+            except Exception as error:  # noqa: BLE001
+                logging.warning("Failed to delete legacy %s: %s", ALL_GUIDE_PATH, error)
 
     if (migrated_any or repaired_any) and not dry_run:
         logging.info("Guide name repair completed; indexes regenerated.")
