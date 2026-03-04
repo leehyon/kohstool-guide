@@ -67,6 +67,7 @@ class ToolGuideEntry:
     url: str
     timestamp: int  # unix timestamp
     tags: List[str] = field(default_factory=list)
+    categories: List[str] = field(default_factory=list)
     platform: List[str] = field(default_factory=list)
 
     def identity(self) -> Tuple[str, str, int]:
@@ -79,6 +80,7 @@ class ToolGuideEntry:
             "url": self.url,
             "timestamp": self.timestamp,
             "tags": list(self.tags),
+            "categories": list(self.categories),
             "Platform": list(self.platform),
         }
 
@@ -90,6 +92,7 @@ class ToolGuideEntry:
             url=payload["url"],
             timestamp=payload["timestamp"],
             tags=payload.get("tags") or [],
+            categories=payload.get("categories") or payload.get("Categories") or [],
             platform=payload.get("Platform") or payload.get("platform") or [],
         )
 
@@ -100,6 +103,7 @@ class ToolGuideContent:
     scenarios: List[str]
     pain_points: List[str]
     design_principles: List[str]
+    categories: List[str]
     similar_tools: List[str]
     tags: List[str]
     platform: List[str]
@@ -135,6 +139,73 @@ if not SUMMARY_ROOT.exists():
 DATA_PATH = SUMMARY_ROOT / "data.json"
 SUMMARY_README_PATH = SUMMARY_ROOT / "README.md"
 ALL_GUIDE_PATH = SUMMARY_ROOT / "all_guide.md"
+
+
+CATEGORY_CHOICES: List[str] = [
+    "Knowledge Management",
+    "Reading & Information",
+    "Text Input & Writing",
+    "Developer Tools",
+    "File Management",
+    "System & Automation",
+    "Communication",
+    "Media & Creativity",
+    "Security & Privacy",
+    "Data & Analytics",
+]
+
+
+def normalize_categories(categories: Iterable[str], max_count: int = 3) -> List[str]:
+    cleaned: List[str] = []
+    seen: set[str] = set()
+    canonical_by_lower = {choice.lower(): choice for choice in CATEGORY_CHOICES}
+    aliases = {
+        "knowledge": "Knowledge Management",
+        "knowledge base": "Knowledge Management",
+        "note-taking": "Knowledge Management",
+        "notes": "Knowledge Management",
+        "rss": "Reading & Information",
+        "reader": "Reading & Information",
+        "reading": "Reading & Information",
+        "text expansion": "Text Input & Writing",
+        "text expander": "Text Input & Writing",
+        "writing": "Text Input & Writing",
+        "terminal": "Developer Tools",
+        "cli": "Developer Tools",
+        "dev": "Developer Tools",
+        "developer": "Developer Tools",
+        "file manager": "File Management",
+        "files": "File Management",
+        "system": "System & Automation",
+        "automation": "System & Automation",
+        "chat": "Communication",
+        "messaging": "Communication",
+        "media": "Media & Creativity",
+        "design": "Media & Creativity",
+        "security": "Security & Privacy",
+        "privacy": "Security & Privacy",
+        "data": "Data & Analytics",
+        "analytics": "Data & Analytics",
+    }
+
+    for item in categories:
+        if not isinstance(item, str):
+            continue
+        value = item.strip()
+        if not value:
+            continue
+        key = value.lower()
+        canonical = canonical_by_lower.get(key) or canonical_by_lower.get(aliases.get(key, "").lower())
+        if not canonical:
+            continue
+        if canonical in seen:
+            continue
+        seen.add(canonical)
+        cleaned.append(canonical)
+
+    # Stable ordering, capped.
+    ordered = [choice for choice in CATEGORY_CHOICES if choice in seen]
+    return ordered[:max_count]
 
 
 def normalize_tags(tags: Iterable[str], max_count: int = 5) -> List[str]:
@@ -314,6 +385,7 @@ def load_entries() -> List[ToolGuideEntry]:
         entry = ToolGuideEntry.from_dict(payload)
         entry.name = canonicalize_tool_name(entry.name)
         entry.tags = normalize_tags(entry.tags, max_count=5)
+        entry.categories = normalize_categories(entry.categories, max_count=3)
         entry.platform = normalize_platforms(entry.platform)
         entries.append(entry)
     return entries
@@ -324,6 +396,7 @@ def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> No
     for entry in entries:
         entry.name = canonicalize_tool_name(entry.name)
         entry.tags = normalize_tags(entry.tags, max_count=5)
+        entry.categories = normalize_categories(entry.categories, max_count=3)
         entry.platform = normalize_platforms(entry.platform)
         normalized_entries.append(entry)
 
@@ -530,6 +603,63 @@ def enforce_guide_platform_line(path: Path, platforms: List[str], dry_run: bool 
     return True
 
 
+def enforce_guide_categories_line(path: Path, categories: List[str], dry_run: bool = False) -> bool:
+    categories = normalize_categories(categories, max_count=3)
+    try:
+        content = path.read_text(encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        return False
+    if not content:
+        return False
+
+    original = content
+    lines = content.splitlines()
+
+    # Update existing line if present.
+    for index, line in enumerate(lines[:40]):
+        if line.startswith("- Categories:"):
+            new_line = "- Categories: " + ", ".join(categories) if categories else "- Categories:"
+            if line != new_line:
+                lines[index] = new_line
+                content = "\n".join(lines) + ("\n" if original.endswith("\n") else "")
+                if dry_run:
+                    logging.info("Dry-run: would enforce categories line in %s", path)
+                    return True
+                path.write_text(content, encoding="utf-8")
+                return True
+            return False
+
+    # If there's nothing to write, don't insert a new header line.
+    if not categories:
+        return False
+
+    insert_at = None
+    for index, line in enumerate(lines[:40]):
+        if line.startswith("- Tags:"):
+            insert_at = index + 1
+            break
+    if insert_at is None:
+        for index, line in enumerate(lines[:40]):
+            if line.startswith("- Added:"):
+                insert_at = index + 1
+                break
+    if insert_at is None:
+        for index, line in enumerate(lines[:40]):
+            if line.startswith("- URL:"):
+                insert_at = index + 1
+                break
+    if insert_at is None:
+        return False
+
+    lines.insert(insert_at, "- Categories: " + ", ".join(categories))
+    content = "\n".join(lines) + ("\n" if original.endswith("\n") else "")
+    if dry_run:
+        logging.info("Dry-run: would insert categories line in %s", path)
+        return True
+    path.write_text(content, encoding="utf-8")
+    return True
+
+
 def migrate_entry_name_and_file(entry: ToolGuideEntry, dry_run: bool = False) -> bool:
     """Return True if any migration was performed for the entry."""
     canonical = canonicalize_tool_name(entry.name)
@@ -643,6 +773,8 @@ def render_entry_lines(entry: ToolGuideEntry, link: str, tldr: str) -> List[str]
         lines.append(f"- {tldr}")
     if entry.tags:
         lines.append(f"- Tags: {', '.join(entry.tags)}")
+    if entry.categories:
+        lines.append(f"- Categories: {', '.join(entry.categories)}")
     if entry.platform:
         lines.append(f"- Platform: {', '.join(entry.platform)}")
     return lines
@@ -1034,6 +1166,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "以订阅源为中心的聚合阅读",
             "离线优先与阅读队列",
         ]
+        categories = ["Reading & Information"]
         similar_tools = ["NetNewsWire", "Reeder", "Fluent Reader", "Inoreader", "Feedly"]
     elif category == "text-expander":
         scenarios = [
@@ -1050,6 +1183,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "缩写触发 → 模板展开的工作流",
             "可配置的变量/占位符与表单化输入",
         ]
+        categories = ["Text Input & Writing", "System & Automation"]
         similar_tools = ["TextExpander", "aText", "AutoHotkey", "PhraseExpress", "Alfred Snippets"]
     elif category == "terminal-file":
         scenarios = [
@@ -1066,6 +1200,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "键盘优先的交互与快捷键体系",
             "与终端生态（grep/fzf/git）可组合",
         ]
+        categories = ["Developer Tools", "File Management"]
         similar_tools = ["ranger", "nnn", "lf", "fzf", "broot"]
     elif category == "notes":
         scenarios = [
@@ -1082,6 +1217,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "双向链接与知识图谱",
             "以块/页面为单位的可重组内容",
         ]
+        categories = ["Knowledge Management"]
         similar_tools = ["Obsidian", "Notion", "Logseq", "Roam Research", "Joplin"]
     else:
         scenarios = ["记录与管理工作/学习中的常见需求", "提升信息获取与整理效率", "作为某类任务的辅助工具"]
@@ -1093,6 +1229,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "围绕核心任务的最小闭环",
             "可组合/可扩展的工作流",
         ]
+        categories = ["System & Automation"]
         similar_tools = ["Notion", "Obsidian", "Raycast", "Alfred", "PowerToys"]
 
     # Keep TL;DR <= 100 chars (roughly). We keep it short.
@@ -1118,6 +1255,7 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
         scenarios=_uniq(scenarios, 7),
         pain_points=_uniq(pain_points, 7),
         design_principles=_uniq(design_principles, 7),
+        categories=normalize_categories(categories, max_count=3),
         similar_tools=_uniq(similar_tools, 7),
         tags=_uniq(tags, 5),
         platform=_uniq(platforms, 7),
@@ -1134,11 +1272,12 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 
 输出要求：
 - 只输出一个 JSON 对象（不要 Markdown/不要解释/不要代码块）。
-- JSON 字段必须严格为：tldr, scenarios, pain_points, design_principles, similar_tools, tags, platform。
+- JSON 字段必须严格为：tldr, scenarios, pain_points, design_principles, categories, similar_tools, tags, platform。
 - tldr：简体中文，不超过 100 个字；中英字符间保留空格。
 - scenarios：数组，3-7 条，每条为简体中文的“应用场景/用途”短句。
 - pain_points：数组，2-6 条，每条为简体中文的“用户痛点/问题”短句，描述用户在没有该工具时的困难。
 - design_principles：数组，1-4 条，每条为简体中文短语/短句，概括该工具的核心设计理念（例如“双向链接”“块编辑”“离线优先”“键盘优先”等）。
+- categories：数组，从以下集合中选择（可多选，建议 1-3 个）：Knowledge Management, Reading & Information, Text Input & Writing, Developer Tools, File Management, System & Automation, Communication, Media & Creativity, Security & Privacy, Data & Analytics。
 - similar_tools：数组，3-7 个同类软件名称（可中英文混排）。
 - tags：数组，2-6 个标签，使用英文 Title Case 短语（例如 Note-taking, Free, Knowledge Base）。
 - platform：数组，从以下集合中选择：Mac, Windows, Linux, iOS, Android, Web, Browser Extension, Cross-platform。
@@ -1158,6 +1297,7 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
     scenarios = payload.get("scenarios") or []
     pain_points = payload.get("pain_points") or []
     design_principles = payload.get("design_principles") or []
+    categories = payload.get("categories") or []
     similar_tools = payload.get("similar_tools") or []
     tags = payload.get("tags") or []
     platform = payload.get("platform") or []
@@ -1178,6 +1318,7 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
         scenarios=_clean_list(scenarios),
         pain_points=_clean_list(pain_points),
         design_principles=_clean_list(design_principles),
+        categories=normalize_categories(_clean_list(categories), max_count=3),
         similar_tools=_clean_list(similar_tools),
         tags=normalize_tags(_clean_list(tags), max_count=5),
         platform=normalize_platforms(_clean_list(platform)),
@@ -1208,11 +1349,14 @@ def build_guide_markdown(
     scenarios: List[str],
     pain_points: List[str],
     design_principles: List[str],
+    categories: List[str],
     similar_tools: List[str],
     tags: List[str],
     platform: List[str],
 ) -> str:
     tag_line = f"- Tags: {', '.join(tags)}\n" if tags else ""
+    normalized_categories = normalize_categories(categories, max_count=3)
+    categories_line = f"- Categories: {', '.join(normalized_categories)}\n" if normalized_categories else ""
     platform_line = f"- Platform: {', '.join(platform)}\n" if platform else ""
 
     scenario_lines = "\n".join(f"- {item}" for item in scenarios) if scenarios else "- _暂无_"
@@ -1225,6 +1369,7 @@ def build_guide_markdown(
         f"- URL: {normalize_http_url(url)}\n"
         f"- Added: {CURRENT_DATE_AND_TIME}\n"
         f"{tag_line}"
+        f"{categories_line}"
         f"{platform_line}"
         "\n"
         "## TL;DR\n"
@@ -1284,6 +1429,7 @@ def ingest_tool(
         url=url,
         timestamp=timestamp,
         tags=normalize_tags(guide.tags, max_count=5),
+        categories=normalize_categories(guide.categories, max_count=3),
         platform=normalize_platforms(guide.platform),
     )
     guide_path = get_guide_file_path(name=name, timestamp=timestamp, month=month)
@@ -1294,6 +1440,7 @@ def ingest_tool(
         scenarios=guide.scenarios,
         pain_points=guide.pain_points,
         design_principles=guide.design_principles,
+        categories=guide.categories,
         similar_tools=guide.similar_tools,
         tags=normalize_tags(guide.tags, max_count=5),
         platform=normalize_platforms(guide.platform),
@@ -1345,6 +1492,12 @@ def process_tools(options: RunOptions) -> None:
             if enforce_guide_title_and_tldr_prefix(
                 guide_path,
                 tool_name=entry.name,
+                dry_run=dry_run,
+            ):
+                changed = True
+            if enforce_guide_categories_line(
+                guide_path,
+                categories=entry.categories,
                 dry_run=dry_run,
             ):
                 changed = True
