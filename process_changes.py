@@ -35,6 +35,11 @@ MAX_CONTENT_LENGTH: int = 32 * 1024  # 32KB
 MIN_CONTENT_LENGTH: int = 200
 MAX_RETRIES: int = 3
 
+# data.json caches guide_markdown as a full GitHub blob URL (not the markdown content).
+# You may override repo/ref detection via:
+# - GUIDE_GITHUB_REPO=owner/repo
+# - GUIDE_GITHUB_REF=main
+
 HTTP_CONNECT_TIMEOUT_SECONDS: int = 5
 HTTP_READ_TIMEOUT_SECONDS: int = 30
 # -- configurations end --
@@ -69,6 +74,10 @@ class ToolGuideEntry:
     tags: List[str] = field(default_factory=list)
     categories: List[str] = field(default_factory=list)
     platform: List[str] = field(default_factory=list)
+    # Cached fields for downstream processing convenience.
+    tldr: str = ""
+    # NOTE: Despite the name, this stores a full GitHub blob URL to the guide markdown file.
+    guide_markdown: str = ""
 
     def identity(self) -> Tuple[str, str, int]:
         return (self.month, self.name, self.timestamp)
@@ -82,10 +91,13 @@ class ToolGuideEntry:
             "tags": list(self.tags),
             "categories": list(self.categories),
             "Platform": list(self.platform),
+            "tldr": self.tldr,
+            "guide_markdown": self.guide_markdown,
         }
 
     @staticmethod
     def from_dict(payload: dict) -> "ToolGuideEntry":
+        guide_markdown = normalize_guide_markdown_url(payload.get("guide_markdown") or payload.get("guideMarkdown") or "")
         return ToolGuideEntry(
             month=payload["month"],
             name=payload["name"],
@@ -94,6 +106,8 @@ class ToolGuideEntry:
             tags=payload.get("tags") or [],
             categories=payload.get("categories") or payload.get("Categories") or [],
             platform=payload.get("Platform") or payload.get("platform") or [],
+            tldr=(payload.get("tldr") or "").strip(),
+            guide_markdown=guide_markdown,
         )
 
 
@@ -243,6 +257,149 @@ def normalize_platforms(platforms: Iterable[str]) -> List[str]:
         seen.add(value)
         cleaned.append(value)
     return cleaned
+
+def _read_git_remote_origin_url(repo_root: Path) -> Optional[str]:
+    config_path = repo_root / ".git" / "config"
+    if not config_path.exists():
+        return None
+
+    try:
+        content = config_path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:  # noqa: BLE001
+        return None
+
+    in_origin = False
+    for raw_line in content.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or line.startswith(";"):
+            continue
+        if line.startswith("[") and line.endswith("]"):
+            in_origin = line.lower() == '[remote "origin"]'
+            continue
+        if in_origin and line.lower().startswith("url") and "=" in line:
+            return line.split("=", 1)[1].strip()
+    return None
+
+
+def _parse_github_owner_repo(remote_url: str) -> Optional[str]:
+    if not remote_url:
+        return None
+    url = remote_url.strip()
+
+    # git@github.com:owner/repo.git
+    if url.startswith("git@github.com:"):
+        slug = url.split(":", 1)[1].strip()
+        if slug.endswith(".git"):
+            slug = slug[:-4]
+        return slug if "/" in slug else None
+
+    # https://github.com/owner/repo(.git)
+    if re.match(r"^https?://github\.com/", url, flags=re.IGNORECASE):
+        slug = re.sub(r"^https?://github\.com/", "", url, flags=re.IGNORECASE).strip("/")
+        if slug.endswith(".git"):
+            slug = slug[:-4]
+        parts = slug.split("/")
+        if len(parts) >= 2:
+            return "/".join(parts[:2])
+        return None
+
+    return None
+
+
+def _get_guide_repo_slug() -> Optional[str]:
+    env_slug = os.getenv("GUIDE_GITHUB_REPO", "").strip()
+    if env_slug:
+        parsed = _parse_github_owner_repo(env_slug)
+        return parsed or env_slug
+
+    origin = _read_git_remote_origin_url(SCRIPT_DIR)
+    return _parse_github_owner_repo(origin or "")
+
+
+def _get_guide_repo_ref() -> str:
+    return os.getenv("GUIDE_GITHUB_REF", "main").strip() or "main"
+
+
+def build_guide_markdown_blob_url(entry: ToolGuideEntry) -> str:
+    """Build a full GitHub blob URL for the guide markdown file.
+
+    Uses the same path logic as README links (in_readme_md=True).
+    """
+    rel_path = get_guide_file_path(
+        name=entry.name,
+        timestamp=entry.timestamp,
+        month=entry.month,
+        in_readme_md=True,
+    ).as_posix()
+
+    repo_slug = _get_guide_repo_slug()
+    if not repo_slug:
+        logging.warning("Could not detect GitHub repo slug for guide; set GUIDE_GITHUB_REPO=owner/repo.")
+        return rel_path
+    ref = _get_guide_repo_ref()
+    return f"https://github.com/{repo_slug}/blob/{ref}/{rel_path}"
+
+
+def normalize_guide_markdown_url(value: str) -> str:
+    """Normalize cached guide_markdown.
+
+    - Drops older cached full markdown content.
+    - Keeps full blob URLs.
+    - Upgrades repo-relative paths to full blob URLs when possible.
+    """
+    if not isinstance(value, str):
+        return ""
+    text = value.strip()
+    if not text:
+        return ""
+
+    # Legacy: stored markdown content.
+    if "\n" in text or text.lstrip().startswith("# "):
+        return ""
+
+    if re.match(r"^https?://github\.com/[^/]+/[^/]+/blob/[^/]+/.+", text):
+        return text
+
+    # Treat it as a repo-relative path.
+    repo_slug = _get_guide_repo_slug()
+    if not repo_slug:
+        return text
+    ref = _get_guide_repo_ref()
+    rel_path = text.lstrip("/")
+    return f"https://github.com/{repo_slug}/blob/{ref}/{rel_path}"
+
+
+def _hydrate_entry_cached_fields_from_file(entry: ToolGuideEntry, dry_run: bool = False) -> bool:
+    """Populate/refresh entry.tldr and entry.guide_markdown (blob URL) from the guide .md file.
+
+    Returns True if entry fields were changed in memory.
+    """
+    guide_path = get_guide_file_path(
+        name=entry.name,
+        timestamp=entry.timestamp,
+        month=entry.month,
+        in_readme_md=False,
+    )
+    if not guide_path.exists():
+        return False
+
+    changed = False
+
+    link = build_guide_markdown_blob_url(entry)
+    if link and link != (entry.guide_markdown or ""):
+        entry.guide_markdown = link
+        changed = True
+
+    extracted_tldr = extract_tldr_from_markdown(str(guide_path))
+    extracted_tldr = (extracted_tldr or "").strip()
+    if extracted_tldr and extracted_tldr != (entry.tldr or ""):
+        entry.tldr = extracted_tldr
+        changed = True
+
+    if changed and dry_run:
+        logging.info("Dry-run: would update cached tldr/guide_markdown for %s", entry.name)
+
+    return changed
 
 def get_default_collection_readme_path() -> Path:
     candidates = [
@@ -398,6 +555,8 @@ def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> No
         entry.tags = normalize_tags(entry.tags, max_count=5)
         entry.categories = normalize_categories(entry.categories, max_count=3)
         entry.platform = normalize_platforms(entry.platform)
+        entry.tldr = (entry.tldr or "").strip()
+        entry.guide_markdown = normalize_guide_markdown_url(entry.guide_markdown or "")
         normalized_entries.append(entry)
 
     payload = [entry.to_dict() for entry in normalized_entries]
@@ -900,6 +1059,9 @@ def collect_tldrs(
         key = entry.identity()
         if key in overrides:
             lookup[key] = overrides[key]
+            continue
+        if (entry.tldr or "").strip():
+            lookup[key] = entry.tldr.strip()
             continue
         guide_path = get_guide_file_path(
             name=entry.name,
@@ -1431,6 +1593,7 @@ def ingest_tool(
         tags=normalize_tags(guide.tags, max_count=5),
         categories=normalize_categories(guide.categories, max_count=3),
         platform=normalize_platforms(guide.platform),
+        tldr=(guide.tldr or "").strip(),
     )
     guide_path = get_guide_file_path(name=name, timestamp=timestamp, month=month)
     markdown = build_guide_markdown(
@@ -1445,6 +1608,8 @@ def ingest_tool(
         tags=normalize_tags(guide.tags, max_count=5),
         platform=normalize_platforms(guide.platform),
     )
+
+    entry.guide_markdown = build_guide_markdown_blob_url(entry)
     return IngestionResult(entry=entry, guide_markdown=markdown, guide_path=guide_path, tldr=guide.tldr)
 
 
@@ -1510,6 +1675,13 @@ def process_tools(options: RunOptions) -> None:
             if changed:
                 repaired_any = True
 
+    # Hydrate cached fields (tldr/guide_markdown) from disk so data.json can be
+    # used for downstream processing without re-reading guide files.
+    hydrated_any = False
+    for entry in entries:
+        if _hydrate_entry_cached_fields_from_file(entry, dry_run=dry_run):
+            hydrated_any = True
+
     processed_urls = [entry.url for entry in entries]
 
     overrides: Dict[Tuple[str, str, int], str] = {}
@@ -1560,12 +1732,19 @@ def process_tools(options: RunOptions) -> None:
             else:
                 write_text_file(ingestion_result.guide_path, ingestion_result.guide_markdown, dry_run=False)
 
+            # Ensure cached fields reflect what was written.
+            ingestion_result.entry.guide_markdown = build_guide_markdown_blob_url(ingestion_result.entry)
+            ingestion_result.entry.tldr = (ingestion_result.tldr or "").strip()
+
             overrides[ingestion_result.entry.identity()] = ingestion_result.tldr
 
         if processed_count == 0:
             logging.info("No new tools to process.")
         else:
             logging.info("Processed %d new tool(s).", processed_count)
+
+    if hydrated_any and not dry_run:
+        logging.info("Cached TL;DR/guide markdown hydrated into entries.")
 
     save_entries(entries, dry_run=dry_run)
 
