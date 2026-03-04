@@ -98,6 +98,8 @@ class ToolGuideEntry:
 class ToolGuideContent:
     tldr: str
     scenarios: List[str]
+    pain_points: List[str]
+    design_principles: List[str]
     similar_tools: List[str]
     tags: List[str]
     platform: List[str]
@@ -682,7 +684,7 @@ def build_root_readme(
 ) -> str:
     prefix = (
         "# Tool Guide\n"
-        "自动读取 kohstool 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成工具总结。\n"
+        "自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。\n"
     )
 
     lines: List[str] = [prefix.rstrip(), ""]
@@ -1023,12 +1025,30 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "集中管理资讯来源，减少信息噪音",
             "离线阅读与稍后读",
         ]
+        pain_points = [
+            "信息源分散，难以统一订阅与跟踪",
+            "社交/算法推荐造成信息噪音与注意力消耗",
+            "想离线或稍后读但缺少合适工具",
+        ]
+        design_principles = [
+            "以订阅源为中心的聚合阅读",
+            "离线优先与阅读队列",
+        ]
         similar_tools = ["NetNewsWire", "Reeder", "Fluent Reader", "Inoreader", "Feedly"]
     elif category == "text-expander":
         scenarios = [
             "用短缩写快速展开常用文本",
             "统一管理模板、签名与代码片段",
             "提升重复输入场景的效率",
+        ]
+        pain_points = [
+            "重复输入耗时且容易出错",
+            "常用片段散落在各处，难维护与复用",
+            "跨应用复用内容不顺畅",
+        ]
+        design_principles = [
+            "缩写触发 → 模板展开的工作流",
+            "可配置的变量/占位符与表单化输入",
         ]
         similar_tools = ["TextExpander", "aText", "AutoHotkey", "PhraseExpress", "Alfred Snippets"]
     elif category == "terminal-file":
@@ -1037,6 +1057,15 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "键盘驱动的文件管理与跳转",
             "配合 git/grep/fzf 提升开发效率",
         ]
+        pain_points = [
+            "文件查找与跳转成本高，鼠标操作打断思路",
+            "在远程/无 GUI 环境下管理文件不便",
+            "需要更快的键盘驱动工作流",
+        ]
+        design_principles = [
+            "键盘优先的交互与快捷键体系",
+            "与终端生态（grep/fzf/git）可组合",
+        ]
         similar_tools = ["ranger", "nnn", "lf", "fzf", "broot"]
     elif category == "notes":
         scenarios = [
@@ -1044,9 +1073,26 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "将资料按主题链接与组织",
             "写作与研究的长期积累",
         ]
+        pain_points = [
+            "笔记零散难检索，知识无法沉淀与复用",
+            "主题之间缺少连接，难形成知识网络",
+            "写作/研究需要长期、可演进的结构",
+        ]
+        design_principles = [
+            "双向链接与知识图谱",
+            "以块/页面为单位的可重组内容",
+        ]
         similar_tools = ["Obsidian", "Notion", "Logseq", "Roam Research", "Joplin"]
     else:
         scenarios = ["记录与管理工作/学习中的常见需求", "提升信息获取与整理效率", "作为某类任务的辅助工具"]
+        pain_points = [
+            "缺少趁手工具导致流程低效",
+            "信息/任务分散，难以统一管理",
+        ]
+        design_principles = [
+            "围绕核心任务的最小闭环",
+            "可组合/可扩展的工作流",
+        ]
         similar_tools = ["Notion", "Obsidian", "Raycast", "Alfred", "PowerToys"]
 
     # Keep TL;DR <= 100 chars (roughly). We keep it short.
@@ -1070,6 +1116,8 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
     return ToolGuideContent(
         tldr=tldr,
         scenarios=_uniq(scenarios, 7),
+        pain_points=_uniq(pain_points, 7),
+        design_principles=_uniq(design_principles, 7),
         similar_tools=_uniq(similar_tools, 7),
         tags=_uniq(tags, 5),
         platform=_uniq(platforms, 7),
@@ -1082,13 +1130,15 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 你是一个中文软件工具指南编写助手。
 你将得到：工具名称、工具官网 URL、以及网页正文文本（可能不完整）。
 
-任务：生成一份结构化的工具 guide 信息，并从内容中推断分类标签与支持平台。
+任务：生成一份结构化的工具 guide 信息，并从内容中推断分类标签与支持平台；同时补充该工具解决的用户痛点与其设计理念（产品思路）。
 
 输出要求：
 - 只输出一个 JSON 对象（不要 Markdown/不要解释/不要代码块）。
-- JSON 字段必须严格为：tldr, scenarios, similar_tools, tags, platform。
+- JSON 字段必须严格为：tldr, scenarios, pain_points, design_principles, similar_tools, tags, platform。
 - tldr：简体中文，不超过 100 个字；中英字符间保留空格。
 - scenarios：数组，3-7 条，每条为简体中文的“应用场景/用途”短句。
+- pain_points：数组，2-6 条，每条为简体中文的“用户痛点/问题”短句，描述用户在没有该工具时的困难。
+- design_principles：数组，1-4 条，每条为简体中文短语/短句，概括该工具的核心设计理念（例如“双向链接”“块编辑”“离线优先”“键盘优先”等）。
 - similar_tools：数组，3-7 个同类软件名称（可中英文混排）。
 - tags：数组，2-6 个标签，使用英文 Title Case 短语（例如 Note-taking, Free, Knowledge Base）。
 - platform：数组，从以下集合中选择：Mac, Windows, Linux, iOS, Android, Web, Browser Extension, Cross-platform。
@@ -1106,6 +1156,8 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 
     tldr = (payload.get("tldr") or "").strip()
     scenarios = payload.get("scenarios") or []
+    pain_points = payload.get("pain_points") or []
+    design_principles = payload.get("design_principles") or []
     similar_tools = payload.get("similar_tools") or []
     tags = payload.get("tags") or []
     platform = payload.get("platform") or []
@@ -1124,6 +1176,8 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
     return ToolGuideContent(
         tldr=tldr,
         scenarios=_clean_list(scenarios),
+        pain_points=_clean_list(pain_points),
+        design_principles=_clean_list(design_principles),
         similar_tools=_clean_list(similar_tools),
         tags=normalize_tags(_clean_list(tags), max_count=5),
         platform=normalize_platforms(_clean_list(platform)),
@@ -1152,6 +1206,8 @@ def build_guide_markdown(
     url: str,
     tldr: str,
     scenarios: List[str],
+    pain_points: List[str],
+    design_principles: List[str],
     similar_tools: List[str],
     tags: List[str],
     platform: List[str],
@@ -1160,6 +1216,8 @@ def build_guide_markdown(
     platform_line = f"- Platform: {', '.join(platform)}\n" if platform else ""
 
     scenario_lines = "\n".join(f"- {item}" for item in scenarios) if scenarios else "- _暂无_"
+    pain_lines = "\n".join(f"- {item}" for item in pain_points) if pain_points else "- _暂无_"
+    principle_lines = "\n".join(f"- {item}" for item in design_principles) if design_principles else "- _暂无_"
     similar_lines = "\n".join(f"- {item}" for item in similar_tools) if similar_tools else "- _暂无_"
 
     return (
@@ -1173,7 +1231,11 @@ def build_guide_markdown(
         f"{tldr}\n\n"
         "## 应用场景\n"
         f"{scenario_lines}\n\n"
-        "## 其他类似软件\n"
+        "## 用户痛点\n"
+        f"{pain_lines}\n\n"
+        "## 设计理念\n"
+        f"{principle_lines}\n\n"
+        "## 类似软件\n"
         f"{similar_lines}\n"
     )
 
@@ -1230,6 +1292,8 @@ def ingest_tool(
         url=url,
         tldr=guide.tldr,
         scenarios=guide.scenarios,
+        pain_points=guide.pain_points,
+        design_principles=guide.design_principles,
         similar_tools=guide.similar_tools,
         tags=normalize_tags(guide.tags, max_count=5),
         platform=normalize_platforms(guide.platform),
