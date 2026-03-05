@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-05) [Helix](2026-03-05-helix.md)
+- 一个用 Rust 编写的现代化终端文本编辑器，支持多光标操作和语法感知功能
+- Tags: Terminal Editor, Multi-Cursor, Syntax-Aware, Rust, Modal Editor
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Linux, Mac, Windows
+
 (2026-03-05) [Logseq](2026-03-05-logseq.md)
 - 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
 - Tags: Knowledge Base, Note-taking, Open Source, Privacy-focused, Graph-based
