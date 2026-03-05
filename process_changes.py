@@ -1602,7 +1602,7 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 输出要求：
 - 只输出一个 JSON 对象（不要 Markdown/不要解释/不要代码块）。
 - JSON 字段必须严格为：tldr, scenarios, pain_points, design_principles, categories, similar_tools, tags, platform。
-- tldr：简体中文，不超过 100 个字；中英字符间保留空格；不要包含工具名称；尽量以“一款/一个…”开头。
+- tldr：简体中文，不超过 100 个字；中英字符间保留空格；开头不要包含工具名称；结尾不要加标点。
 - scenarios：数组，3-7 条，每条为简体中文的“应用场景/用途”短句。
 - pain_points：数组，2-6 条，每条为简体中文的“用户痛点/问题”短句，描述用户在没有该工具时的困难。
 - design_principles：数组，1-4 条，每条为简体中文短语/短句，概括该工具的核心设计理念（例如“双向链接”“块编辑”“离线优先”“键盘优先”等）。
