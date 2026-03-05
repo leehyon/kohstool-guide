@@ -4,9 +4,10 @@ import logging
 import os
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from functools import wraps
+from functools import lru_cache, wraps
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 from urllib.parse import quote
@@ -50,6 +51,17 @@ logging.basicConfig(
     format="%(asctime)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+
+
+@lru_cache(maxsize=1)
+def _get_requests_session():
+    """Return a shared requests.Session for connection pooling."""
+    if requests is None:
+        return None
+    try:
+        return requests.Session()
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def log_execution_time(func):
@@ -306,6 +318,7 @@ def _parse_github_owner_repo(remote_url: str) -> Optional[str]:
     return None
 
 
+@lru_cache(maxsize=1)
 def _get_guide_repo_slug() -> Optional[str]:
     env_slug = os.getenv("GUIDE_GITHUB_REPO", "").strip()
     if env_slug:
@@ -316,6 +329,7 @@ def _get_guide_repo_slug() -> Optional[str]:
     return _parse_github_owner_repo(origin or "")
 
 
+@lru_cache(maxsize=1)
 def _get_guide_repo_ref() -> str:
     return os.getenv("GUIDE_GITHUB_REF", "main").strip() or "main"
 
@@ -390,16 +404,130 @@ def _hydrate_entry_cached_fields_from_file(entry: ToolGuideEntry, dry_run: bool 
         entry.guide_markdown = link
         changed = True
 
-    extracted_tldr = extract_tldr_from_markdown(str(guide_path))
-    extracted_tldr = (extracted_tldr or "").strip()
-    if extracted_tldr and extracted_tldr != (entry.tldr or ""):
-        entry.tldr = extracted_tldr
-        changed = True
+    # TL;DR extraction is relatively expensive (file read + parsing). Only
+    # hydrate from disk when it's missing in the cached entry.
+    if not (entry.tldr or "").strip():
+        extracted_tldr = extract_tldr_from_markdown(str(guide_path))
+        extracted_tldr = (extracted_tldr or "").strip()
+        if extracted_tldr and extracted_tldr != (entry.tldr or ""):
+            entry.tldr = extracted_tldr
+            changed = True
 
     if changed and dry_run:
         logging.info("Dry-run: would update cached tldr/guide_markdown for %s", entry.name)
 
     return changed
+
+
+def repair_guide_markdown_file(
+    path: Path,
+    tool_name: str,
+    categories: List[str],
+    platforms: List[str],
+    dry_run: bool = False,
+) -> bool:
+    """Repair guide metadata in a single read/write pass.
+
+    This consolidates:
+    - enforce_guide_title_and_tldr_style
+    - enforce_guide_categories_line
+    - enforce_guide_platform_line
+    """
+    normalized_categories = normalize_categories(categories, max_count=3)
+    normalized_platforms = normalize_platforms(platforms)
+    try:
+        content = path.read_text(encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        return False
+    if not content:
+        return False
+
+    original = content
+    lines = content.splitlines()
+
+    # Title
+    if lines and lines[0].startswith("# "):
+        if lines[0] != f"# {tool_name}":
+            lines[0] = f"# {tool_name}"
+
+    # TL;DR prefix stripping (first non-empty line under TL;DR)
+    new_lines: List[str] = []
+    in_tldr = False
+    tldr_fixed = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.lower() == "## tl;dr":
+            in_tldr = True
+            new_lines.append(line)
+            continue
+        if in_tldr:
+            if stripped.startswith("## ") and stripped.lower() != "## tl;dr":
+                in_tldr = False
+                new_lines.append(line)
+                continue
+            if not tldr_fixed and stripped:
+                for sep in ("：", ":"):
+                    prefix = f"{tool_name}{sep}"
+                    if stripped.startswith(prefix):
+                        leading_ws_match = re.match(r"^(\s*)", line)
+                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        rest = stripped[len(prefix) :].lstrip()
+                        line = f"{leading_ws}{rest}" if rest else leading_ws
+                        break
+                tldr_fixed = True
+                new_lines.append(line)
+                continue
+
+        new_lines.append(line)
+
+    lines = new_lines
+
+    # Categories: update if present, else insert (only if we have categories)
+    categories_line_index: Optional[int] = None
+    for index, line in enumerate(lines[:40]):
+        if line.startswith("- Categories:"):
+            categories_line_index = index
+            break
+
+    if categories_line_index is not None:
+        new_line = "- Categories: " + ", ".join(normalized_categories) if normalized_categories else "- Categories:"
+        if lines[categories_line_index] != new_line:
+            lines[categories_line_index] = new_line
+    elif normalized_categories:
+        insert_at: Optional[int] = None
+        for index, line in enumerate(lines[:40]):
+            if line.startswith("- Tags:"):
+                insert_at = index + 1
+                break
+        if insert_at is None:
+            for index, line in enumerate(lines[:40]):
+                if line.startswith("- Added:"):
+                    insert_at = index + 1
+                    break
+        if insert_at is None:
+            for index, line in enumerate(lines[:40]):
+                if line.startswith("- URL:"):
+                    insert_at = index + 1
+                    break
+        if insert_at is not None:
+            lines.insert(insert_at, "- Categories: " + ", ".join(normalized_categories))
+
+    # Platform: update existing line only (keep behavior consistent)
+    for index, line in enumerate(lines[:40]):
+        if line.startswith("- Platform:"):
+            new_line = "- Platform: " + ", ".join(normalized_platforms) if normalized_platforms else "- Platform:"
+            if line != new_line:
+                lines[index] = new_line
+            break
+
+    updated = "\n".join(lines) + ("\n" if original.endswith("\n") else "")
+    if updated == original:
+        return False
+    if dry_run:
+        logging.info("Dry-run: would repair guide metadata in %s", path)
+        return True
+    path.write_text(updated, encoding="utf-8")
+    return True
 
 def get_default_collection_readme_path() -> Path:
     candidates = [
@@ -881,6 +1009,15 @@ def extract_tldr_from_markdown(file_path: str) -> str:
         extracted = match.group(1).strip()
         return re.sub(r"\s+", " ", extracted)
 
+    @lru_cache(maxsize=1)
+    def _get_mistune_markdown_parser():
+        if mistune is None:
+            return None
+        try:
+            return mistune.create_markdown(renderer=None)
+        except Exception:  # noqa: BLE001
+            return None
+
     try:
         with open(file_path, "r", encoding="utf-8") as handle:
             content = handle.read()
@@ -891,11 +1028,19 @@ def extract_tldr_from_markdown(file_path: str) -> str:
     if not content:
         return ""
 
+    # Fast path: most guides follow a predictable structure and regex extraction
+    # is much cheaper than building a full AST.
+    fast = extract_tldr_with_regex(content)
+    if fast:
+        return fast
+
     if mistune is None:
-        return extract_tldr_with_regex(content)
+        return ""
 
     try:
-        markdown = mistune.create_markdown(renderer=None)
+        markdown = _get_mistune_markdown_parser()
+        if markdown is None:
+            return ""
         ast = markdown(content)
     except Exception as error:  # noqa: BLE001
         logging.warning(
@@ -1118,6 +1263,10 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
     if requests is None:
         return None, "requests package not available"
 
+    session = _get_requests_session()
+    if session is None:
+        return None, "requests session not available"
+
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -1126,10 +1275,10 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
     }
     timeout = (HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS)
     try:
-        response: requests.Response = requests.head(url, allow_redirects=True, headers=headers, timeout=timeout)
+        response: requests.Response = session.head(url, allow_redirects=True, headers=headers, timeout=timeout)
         status = response.status_code
         if status in (403, 405):
-            response = requests.get(url, allow_redirects=True, headers=headers, timeout=timeout, stream=True)
+            response = session.get(url, allow_redirects=True, headers=headers, timeout=timeout, stream=True)
             status = response.status_code
             response.close()
         return status, None
@@ -1141,6 +1290,10 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
 def get_text_content(url: str) -> str:
     if requests is None:
         raise RuntimeError("requests package not available; cannot fetch content.")
+
+    session = _get_requests_session()
+    if session is None:
+        raise RuntimeError("requests session not available; cannot fetch content.")
 
     url = normalize_http_url(url)
     status_code, preflight_error = preflight_check_url(url)
@@ -1160,7 +1313,7 @@ def get_text_content(url: str) -> str:
 
     for attempt in range(MAX_RETRIES):
         try:
-            response: requests.Response = requests.get(jina_url, headers=headers, timeout=timeout)
+            response: requests.Response = session.get(jina_url, headers=headers, timeout=timeout)
             if response.status_code >= 400:
                 status = response.status_code
                 error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{MAX_RETRIES}"
@@ -1209,6 +1362,10 @@ def call_openai_api(prompt: str, content: str) -> str:
     if requests is None:
         raise RuntimeError("requests package not available; cannot call OpenAI API.")
 
+    session = _get_requests_session()
+    if session is None:
+        raise RuntimeError("requests session not available; cannot call OpenAI API.")
+
     api_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError(
@@ -1233,7 +1390,7 @@ def call_openai_api(prompt: str, content: str) -> str:
     logging.info("Calling OpenAI API with model: %s", model)
     logging.info("API endpoint: %s", api_endpoint)
 
-    response: requests.Response = requests.post(api_endpoint, headers=headers, data=json.dumps(data))
+    response: requests.Response = session.post(api_endpoint, headers=headers, data=json.dumps(data))
     logging.info("Response status code: %d", response.status_code)
     response_json = response.json()
 
@@ -1579,18 +1736,29 @@ def ingest_tool(
     name = canonicalize_tool_name(name)
     url = normalize_http_url(url)
 
-    if archive:
-        submit_to_wayback_machine(url)
+    # Wayback submission is network-bound and independent of guide generation.
+    # Overlap it with Jina/OpenAI calls to reduce overall wall-clock time.
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        wayback_future = executor.submit(submit_to_wayback_machine, url) if archive else None
 
-    page_text = ""
-    if fetch:
-        try:
-            page_text = get_text_content(url)
-        except Exception as error:  # noqa: BLE001
-            logging.warning("Failed to fetch page content for %s; continuing with empty text.", url)
-            logging.exception(error)
+        page_text = ""
+        if fetch:
+            try:
+                page_text = get_text_content(url)
+            except Exception as error:  # noqa: BLE001
+                logging.warning("Failed to fetch page content for %s; continuing with empty text.", url)
+                logging.exception(error)
 
-    guide = generate_tool_guide_with_options(name, url, page_text, heuristic=heuristic)
+        guide = generate_tool_guide_with_options(name, url, page_text, heuristic=heuristic)
+
+        if wayback_future is not None:
+            try:
+                wayback_future.result()
+            except Exception as error:  # noqa: BLE001
+                # submit_to_wayback_machine already logs; keep this guard to
+                # avoid bubbling unexpected thread exceptions.
+                logging.warning("Wayback submission failed (async), skipping, url=%s", url)
+                logging.exception(error)
 
     timestamp = int(datetime.now(timezone.utc).timestamp())
     month = datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime("%Y%m")
@@ -1663,26 +1831,13 @@ def process_tools(options: RunOptions) -> None:
             in_readme_md=False,
         )
         if guide_path.exists():
-            changed = False
-            if enforce_guide_title_and_tldr_style(
+            if repair_guide_markdown_file(
                 guide_path,
                 tool_name=entry.name,
-                dry_run=dry_run,
-            ):
-                changed = True
-            if enforce_guide_categories_line(
-                guide_path,
                 categories=entry.categories,
-                dry_run=dry_run,
-            ):
-                changed = True
-            if enforce_guide_platform_line(
-                guide_path,
                 platforms=entry.platform,
                 dry_run=dry_run,
             ):
-                changed = True
-            if changed:
                 repaired_any = True
 
     # Hydrate cached fields (tldr/guide_markdown) from disk so data.json can be
