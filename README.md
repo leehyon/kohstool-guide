@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [markdown2png](202603/2026-03-05-markdown2png.md) - 将 Markdown 代码直接转换为 PNG 图片，方便分享和展示
 - [Helix](202603/2026-03-05-helix.md) - 一个用 Rust 编写的现代化终端文本编辑器，支持多光标操作和语法感知功能
 - [Logseq](202603/2026-03-05-logseq.md) - 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
 - [Yazi](202603/2026-03-05-yazi.md) - 一个异步文件管理器，支持图像预览和代码高亮，充分利用多核 CPU 资源
@@ -10,4 +11,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (6 entries)
+- [2026-03](202603/monthly-index.md) (7 entries)

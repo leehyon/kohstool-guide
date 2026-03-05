@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-05) [markdown2png](2026-03-05-markdown2png.md)
+- 将 Markdown 代码直接转换为 PNG 图片，方便分享和展示
+- Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-Platform
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web, Browser Extension
+
 (2026-03-05) [Helix](2026-03-05-helix.md)
 - 一个用 Rust 编写的现代化终端文本编辑器，支持多光标操作和语法感知功能
 - Tags: Terminal Editor, Multi-Cursor, Syntax-Aware, Rust, Modal Editor
