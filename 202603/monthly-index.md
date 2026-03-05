@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-05) [Logseq](2026-03-05-logseq.md)
+- 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
+- Tags: Knowledge Base, Note-taking, Open Source, Privacy-focused, Graph-based
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Mac, Windows, Linux, iOS, Android, Web
+
 (2026-03-05) [Yazi](2026-03-05-yazi.md)
 - 一个异步文件管理器，支持图像预览和代码高亮，充分利用多核 CPU 资源
 - Tags: File Manager, Terminal, Async, Image Preview, Code Highlighting

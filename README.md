@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Logseq](202603/2026-03-05-logseq.md) - 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
 - [Yazi](202603/2026-03-05-yazi.md) - 一个异步文件管理器，支持图像预览和代码高亮，充分利用多核 CPU 资源
 - [tere](202603/2026-03-05-tere.md) - A terminal file manager that works like ranger but with vim like keybindings
 - [PicGo](202603/2026-03-05-picgo.md) - 一款图片上传工具 支持一键上传 自动复制分享链接 提升创作效率
@@ -8,4 +9,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (4 entries)
+- [2026-03](202603/monthly-index.md) (5 entries)
