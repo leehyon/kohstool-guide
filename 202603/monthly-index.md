@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-05) [tere](2026-03-05-tere.md)
+- A terminal file manager that works like ranger but with vim like keybindings
+- Tags: Terminal File Manager, Vim-like, Keyboard Navigation, Lightweight, Developer Tool
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Linux, Mac, Windows
+
 (2026-03-05) [PicGo](2026-03-05-picgo.md)
 - 一款图片上传工具 支持一键上传 自动复制分享链接 提升创作效率
 - Tags: Image Uploader, Cross-Platform, Plugin System, Auto-Copy Links, Developer Tool
