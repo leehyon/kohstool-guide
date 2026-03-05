@@ -617,7 +617,7 @@ def find_existing_guide_by_url(month: str, url: str, timestamp: int) -> Optional
 
 
 def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry_run: bool = False) -> bool:
-    """Rewrite guide markdown so the H1 title and (heuristic) TL;DR prefix match new_name."""
+    """Rewrite guide markdown so the H1 title matches new_name."""
     try:
         content = path.read_text(encoding="utf-8")
     except Exception:  # noqa: BLE001
@@ -631,11 +631,16 @@ def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry
     if lines and lines[0].startswith("# "):
         lines[0] = f"# {new_name}"
 
-    # Replace TL;DR first line prefix if it starts with the old name.
-    # Typical heuristic output: "OldName：一个用于 ..."
+    # Strip legacy TL;DR prefixes like "OldName：" or "NewName:".
     new_lines: List[str] = []
     in_tldr = False
-    tldr_rewritten = False
+    tldr_stripped = False
+    prefixes = []
+    for sep in ("：", ":"):
+        if old_name:
+            prefixes.append(f"{old_name}{sep}")
+        if new_name:
+            prefixes.append(f"{new_name}{sep}")
 
     for line in lines:
         stripped = line.strip()
@@ -644,20 +649,20 @@ def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry
             new_lines.append(line)
             continue
         if in_tldr:
-            # Stop TL;DR on next heading.
             if stripped.startswith("## ") and stripped.lower() != "## tl;dr":
                 in_tldr = False
                 new_lines.append(line)
                 continue
-            if not tldr_rewritten and stripped:
-                replaced = line
-                if replaced.lstrip().startswith(old_name):
-                    replaced = replaced.replace(old_name, new_name, 1)
-                # Also handle cases where old name appears with extra spaces.
-                elif old_name in replaced and replaced.strip().startswith(old_name):
-                    replaced = replaced.replace(old_name, new_name, 1)
-                new_lines.append(replaced)
-                tldr_rewritten = True
+            if not tldr_stripped and stripped:
+                for prefix in prefixes:
+                    if stripped.startswith(prefix):
+                        leading_ws_match = re.match(r"^(\s*)", line)
+                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        rest = stripped[len(prefix) :].lstrip()
+                        line = f"{leading_ws}{rest}" if rest else leading_ws
+                        break
+                new_lines.append(line)
+                tldr_stripped = True
                 continue
 
         new_lines.append(line)
@@ -673,8 +678,11 @@ def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry
     return True
 
 
-def enforce_guide_title_and_tldr_prefix(path: Path, tool_name: str, dry_run: bool = False) -> bool:
-    """Ensure the guide's H1 and TL;DR prefix use the canonical tool name."""
+def enforce_guide_title_and_tldr_style(path: Path, tool_name: str, dry_run: bool = False) -> bool:
+    """Ensure the guide's H1 uses the canonical tool name.
+
+    For TL;DR, strip legacy "{tool_name}：" / "{tool_name}:" prefixes if present.
+    """
     try:
         content = path.read_text(encoding="utf-8")
     except Exception:  # noqa: BLE001
@@ -704,15 +712,16 @@ def enforce_guide_title_and_tldr_prefix(path: Path, tool_name: str, dry_run: boo
                 new_lines.append(line)
                 continue
             if not tldr_fixed and stripped:
-                # Replace anything before the first colon with tool_name.
-                # Prefer Chinese colon '：' when present; otherwise normalize ':' -> '：'.
-                leading_ws = re.match(r"^(\s*)", line).group(1)  # type: ignore[union-attr]
-                if "：" in line:
-                    rest = line.split("：", 1)[1]
-                    line = f"{leading_ws}{tool_name}：{rest}"
-                elif ":" in line:
-                    rest = line.split(":", 1)[1].lstrip()
-                    line = f"{leading_ws}{tool_name}：{rest}"
+                # Strip legacy name prefix if present.
+                for sep in ("：", ":"):
+                    prefix = f"{tool_name}{sep}"
+                    if stripped.startswith(prefix):
+                        # Preserve original indentation.
+                        leading_ws_match = re.match(r"^(\s*)", line)
+                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        rest = stripped[len(prefix) :].lstrip()
+                        line = f"{leading_ws}{rest}" if rest else leading_ws
+                        break
                 new_lines.append(line)
                 tldr_fixed = True
                 continue
@@ -1395,7 +1404,8 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
         similar_tools = ["Notion", "Obsidian", "Raycast", "Alfred", "PowerToys"]
 
     # Keep TL;DR <= 100 chars (roughly). We keep it short.
-    tldr = f"{name}：一个用于 {tags[0]} 的工具，适合提升日常效率。"
+    # Do NOT include tool name in TL;DR.
+    tldr = f"一款用于 {tags[0]} 的工具，适合提升日常效率。"
     if len(tldr) > 100:
         tldr = tldr[:100]
 
@@ -1435,7 +1445,7 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 输出要求：
 - 只输出一个 JSON 对象（不要 Markdown/不要解释/不要代码块）。
 - JSON 字段必须严格为：tldr, scenarios, pain_points, design_principles, categories, similar_tools, tags, platform。
-- tldr：简体中文，不超过 100 个字；中英字符间保留空格。
+- tldr：简体中文，不超过 100 个字；中英字符间保留空格；不要包含工具名称；尽量以“一款/一个…”开头。
 - scenarios：数组，3-7 条，每条为简体中文的“应用场景/用途”短句。
 - pain_points：数组，2-6 条，每条为简体中文的“用户痛点/问题”短句，描述用户在没有该工具时的困难。
 - design_principles：数组，1-4 条，每条为简体中文短语/短句，概括该工具的核心设计理念（例如“双向链接”“块编辑”“离线优先”“键盘优先”等）。
@@ -1654,7 +1664,7 @@ def process_tools(options: RunOptions) -> None:
         )
         if guide_path.exists():
             changed = False
-            if enforce_guide_title_and_tldr_prefix(
+            if enforce_guide_title_and_tldr_style(
                 guide_path,
                 tool_name=entry.name,
                 dry_run=dry_run,
