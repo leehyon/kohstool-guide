@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-05) [Yazi](2026-03-05-yazi.md)
+- 一个异步文件管理器，支持图像预览和代码高亮，充分利用多核 CPU 资源
+- Tags: File Manager, Terminal, Async, Image Preview, Code Highlighting
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Mac, Linux, Windows
+
 (2026-03-05) [tere](2026-03-05-tere.md)
 - A terminal file manager that works like ranger but with vim like keybindings
 - Tags: Terminal File Manager, Vim-like, Keyboard Navigation, Lightweight, Developer Tool
