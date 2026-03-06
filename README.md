@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Excalidraw](202603/2026-03-06-excalidraw.md) - 一个开源的在线协作白板工具，支持手绘风格和实时协作
 - [TinyPNG](202603/2026-03-06-tinypng.md) - 智能压缩 PNG、JPEG、WebP 和 AVIF 图像，减少文件大小高达 80%，同时保持视觉质量
 - [magic-resume](202603/2026-03-06-magic-resume.md) - 一款免费的在线 AI 简历编辑器，提供专业简历创建与实时预览功能
 - [r2-web](202603/2026-03-06-r2-web.md) - 一款基于 Web 的 Cloudflare R2 桶文件管理器，无需安装，在浏览器中直接操作文件
@@ -14,4 +15,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (10 entries)
+- [2026-03](202603/monthly-index.md) (11 entries)

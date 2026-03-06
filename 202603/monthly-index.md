@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-06) [Excalidraw](2026-03-06-excalidraw.md)
+- 一个开源的在线协作白板工具，支持手绘风格和实时协作
+- Tags: Collaboration, Whiteboard, Open Source, Hand-drawn, Real-time Collaboration
+- Categories: Text Input & Writing, Communication, Media & Creativity
+- Platform: Web, Browser Extension
+
 (2026-03-06) [TinyPNG](2026-03-06-tinypng.md)
 - 智能压缩 PNG、JPEG、WebP 和 AVIF 图像，减少文件大小高达 80%，同时保持视觉质量
 - Tags: Image Compression, Web Optimization, Developer Tools, Free, Performance
