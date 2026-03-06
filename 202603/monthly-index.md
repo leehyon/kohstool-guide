@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-06) [TinyPNG](2026-03-06-tinypng.md)
+- 智能压缩 PNG、JPEG、WebP 和 AVIF 图像，减少文件大小高达 80%，同时保持视觉质量
+- Tags: Image Compression, Web Optimization, Developer Tools, Free, Performance
+- Categories: Developer Tools, File Management, Media & Creativity
+- Platform: Web, Browser Extension
+
 (2026-03-06) [magic-resume](2026-03-06-magic-resume.md)
 - 一款免费的在线 AI 简历编辑器，提供专业简历创建与实时预览功能
 - Tags: AI-Powered, Resume Builder, Free, Real-time Preview, Web-based
