@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [r2-web](202603/2026-03-06-r2-web.md) - 一款基于 Web 的 Cloudflare R2 桶文件管理器，无需安装，在浏览器中直接操作文件
 - [markdown2png](202603/2026-03-05-markdown2png.md) - 将 Markdown 代码直接转换为 PNG 图片，方便分享和展示
 - [Helix](202603/2026-03-05-helix.md) - 一个用 Rust 编写的现代化终端文本编辑器，支持多光标操作和语法感知功能
 - [Logseq](202603/2026-03-05-logseq.md) - 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
@@ -11,4 +12,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (7 entries)
+- [2026-03](202603/monthly-index.md) (8 entries)

@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-06) [r2-web](2026-03-06-r2-web.md)
+- 一款基于 Web 的 Cloudflare R2 桶文件管理器，无需安装，在浏览器中直接操作文件
+- Tags: File Management, Cloud Storage, PWA, Web Application, Cloudflare R2
+- Categories: Developer Tools, File Management
+- Platform: Web, Browser Extension
+
 (2026-03-05) [markdown2png](2026-03-05-markdown2png.md)
 - 将 Markdown 代码直接转换为 PNG 图片，方便分享和展示
 - Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-Platform
