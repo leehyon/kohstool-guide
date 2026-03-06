@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-06) [magic-resume](2026-03-06-magic-resume.md)
+- 一款免费的在线 AI 简历编辑器，提供专业简历创建与实时预览功能
+- Tags: AI-Powered, Resume Builder, Free, Real-time Preview, Web-based
+- Categories: Text Input & Writing, Media & Creativity
+- Platform: Web
+
 (2026-03-06) [r2-web](2026-03-06-r2-web.md)
 - 一款基于 Web 的 Cloudflare R2 桶文件管理器，无需安装，在浏览器中直接操作文件
 - Tags: File Management, Cloud Storage, PWA, Web Application, Cloudflare R2
