@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [pdoc](202603/2026-03-09-pdoc.md) - 自动生成 Python 项目的 API 文档，无需配置，支持类型注解和交叉链接
 - [git-who](202603/2026-03-09-git-who.md) - 一个命令行工具用于分析代码库中各组件或子系统的贡献者信息
 - [AI PDF Translator](202603/2026-03-09-ai-pdf-translator.md) - 一款免费的 AI 驱动 PDF 翻译工具，支持 100 多种语言，保留原格式，无需注册
 - [GateShift](202603/2026-03-09-gateshift.md) - 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作
@@ -28,4 +29,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (24 entries)
+- [2026-03](202603/monthly-index.md) (25 entries)

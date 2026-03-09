@@ -1,5 +1,10 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [pdoc](2026-03-09-pdoc.md)
+- 自动生成 Python 项目的 API 文档，无需配置，支持类型注解和交叉链接
+- Tags: API Documentation, Python, Auto-generated, Zero Configuration, Type Annotations
+- Categories: Developer Tools
+
 (2026-03-09) [git-who](2026-03-09-git-who.md)
 - 一个命令行工具用于分析代码库中各组件或子系统的贡献者信息
 - Tags: Code Analysis, Git Tool, Developer Productivity, Code Attribution, Command Line
