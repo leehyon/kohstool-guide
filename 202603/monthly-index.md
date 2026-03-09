@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [git-who](2026-03-09-git-who.md)
+- 一个命令行工具用于分析代码库中各组件或子系统的贡献者信息
+- Tags: Code Analysis, Git Tool, Developer Productivity, Code Attribution, Command Line
+- Categories: Developer Tools, File Management
+- Platform: Mac, Windows, Linux
+
 (2026-03-09) [AI PDF Translator](2026-03-09-ai-pdf-translator.md)
 - 一款免费的 AI 驱动 PDF 翻译工具，支持 100 多种语言，保留原格式，无需注册
 - Tags: PDF Translation, AI-Powered, Free, Bilingual View, No Signup Required
