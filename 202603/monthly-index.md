@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Screenshot Editor Tool](2026-03-09-screenshot-editor-tool.md)
+- 一款功能强大的截图编辑工具，可添加背景、注释、效果和浏览器框架，让截图更加专业美观
+- Tags: Screenshot Editor, Mockup Generator, Design Tool, Marketing Asset, Web App
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web, Browser Extension
+
 (2026-03-09) [markitdown](2026-03-09-markitdown.md)
 - Python 工具可将各种文件转换为 Markdown 格式，支持 PDF、Word、Excel、图片等多种文件类型
 - Tags: File Conversion, Markdown, Python, Document Processing, Multi-format Support
