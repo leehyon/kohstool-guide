@@ -3,7 +3,7 @@
 - Added: 2026-03-09 09:06:17
 - Tags: Gateway Switcher, OpenWrt, Proxy Management, Cross-platform
 - Categories: Developer Tools, System & Automation, Security & Privacy
-- Platform: Windows, Mac, Linux
+- Platform: Mac, Windows, Linux
 
 ## TL;DR
 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作

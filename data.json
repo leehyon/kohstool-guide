@@ -529,5 +529,27 @@
     ],
     "tldr": "为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作",
     "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202603/2026-03-09-gateshift.md"
+  },
+  {
+    "month": "202603",
+    "name": "AI PDF Translator",
+    "url": "https://deeppdf.ai/pdf-translator",
+    "timestamp": 1773048151,
+    "tags": [
+      "PDF Translation",
+      "AI-Powered",
+      "Free",
+      "Bilingual View",
+      "No Signup Required"
+    ],
+    "categories": [
+      "Text Input & Writing",
+      "Developer Tools"
+    ],
+    "Platform": [
+      "Web"
+    ],
+    "tldr": "一款免费的 AI 驱动 PDF 翻译工具，支持 100 多种语言，保留原格式，无需注册",
+    "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202603/2026-03-09-ai-pdf-translator.md"
   }
 ]

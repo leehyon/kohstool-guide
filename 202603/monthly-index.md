@@ -1,10 +1,16 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [AI PDF Translator](2026-03-09-ai-pdf-translator.md)
+- 一款免费的 AI 驱动 PDF 翻译工具，支持 100 多种语言，保留原格式，无需注册
+- Tags: PDF Translation, AI-Powered, Free, Bilingual View, No Signup Required
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-03-09) [GateShift](2026-03-09-gateshift.md)
 - 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作
-- Tags: Gateway Switcher, OpenWrt, Proxy Management, Cross-platform
+- Tags: Gateway Switcher, OpenWrt, Cross-platform, Proxy Management
 - Categories: Developer Tools, System & Automation, Security & Privacy
-- Platform: Windows, Mac, Linux
+- Platform: Mac, Windows, Linux
 
 (2026-03-09) [drawnix](2026-03-09-drawnix.md)
 - 开源一体化白板工具，支持思维导图、流程图和自由绘画，提供无限画布和自动保存功能
