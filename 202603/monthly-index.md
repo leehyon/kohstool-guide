@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [markmap](2026-03-09-markmap.md)
+- 一款将 Markdown 文档转换为交互式思维导图的工具，支持实时预览和自定义样式
+- Tags: Mind Mapping, Markdown, Visualization, Knowledge Management, Open Source
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Web, Browser Extension
+
 (2026-03-06) [Excalidraw](2026-03-06-excalidraw.md)
 - 一个开源的在线协作白板工具，支持手绘风格和实时协作
 - Tags: Collaboration, Whiteboard, Open Source, Hand-drawn, Real-time Collaboration
