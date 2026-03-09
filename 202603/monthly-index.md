@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Just](2026-03-09-just.md)
+- Just 是一个命令行工具，用于简化重复性任务的执行和管理
+- Tags: Command-Line, Automation, Build-Tool, Developer-Utility, Cross-Platform
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-03-09) [pdoc](2026-03-09-pdoc.md)
 - 自动生成 Python 项目的 API 文档，无需配置，支持类型注解和交叉链接
 - Tags: API Documentation, Python, Auto-generated, Zero Configuration, Type Annotations
