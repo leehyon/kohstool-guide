@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [drawnix](2026-03-09-drawnix.md)
+- 开源一体化白板工具，支持思维导图、流程图和自由绘画，提供无限画布和自动保存功能
+- Tags: Open Source, Whiteboard, Mind Mapping, Flowchart, Free Drawing
+- Categories: Knowledge Management, Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-03-09) [Readest](2026-03-09-readest.md)
 - 一款免费开源的 EPUB 与 PDF 阅读器，支持多平台，提供平行阅读、高亮笔记、云同步等功能
 - Tags: Ebook Reader, PDF Reader, Open Source, Cross Platform, Annotation
