@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Alertivity](2026-03-09-alertivity.md)
+- 一个 macOS 菜单栏应用，实时监控 CPU、内存、磁盘和网络性能，提供智能通知和快速操作功能
+- Tags: System Monitoring, Performance, Menu Bar App, Real-time, MacOS
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-03-09) [Snipaste](2026-03-09-snipaste.md)
 - 一款免费的截图工具 可将截图固定在屏幕上 并支持丰富的标注和编辑功能
 - Tags: Screenshot, Annotation, Floating Window, Productivity, Cross-platform
