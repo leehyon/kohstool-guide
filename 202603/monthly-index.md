@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Fresh](2026-03-09-fresh.md)
+- 一款终端文本编辑器 开源易学 快速响应 支持 IDE 功能
+- Tags: Terminal Editor, Open Source, Fast, IDE Features, Cross-platform
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-03-09) [Alertivity](2026-03-09-alertivity.md)
 - 一个 macOS 菜单栏应用，实时监控 CPU、内存、磁盘和网络性能，提供智能通知和快速操作功能
 - Tags: System Monitoring, Performance, Menu Bar App, Real-time, MacOS

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Fresh](202603/2026-03-09-fresh.md) - 一款终端文本编辑器 开源易学 快速响应 支持 IDE 功能
 - [Alertivity](202603/2026-03-09-alertivity.md) - 一个 macOS 菜单栏应用，实时监控 CPU、内存、磁盘和网络性能，提供智能通知和快速操作功能
 - [Snipaste](202603/2026-03-09-snipaste.md) - 一款免费的截图工具 可将截图固定在屏幕上 并支持丰富的标注和编辑功能
 - [markmap](202603/2026-03-09-markmap.md) - 一款将 Markdown 文档转换为交互式思维导图的工具，支持实时预览和自定义样式
@@ -18,4 +19,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (14 entries)
+- [2026-03](202603/monthly-index.md) (15 entries)
