@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [markitdown](2026-03-09-markitdown.md)
+- Python 工具可将各种文件转换为 Markdown 格式，支持 PDF、Word、Excel、图片等多种文件类型
+- Tags: File Conversion, Markdown, Python, Document Processing, Multi-format Support
+- Categories: Text Input & Writing, Developer Tools, File Management
+- Platform: Web
+
 (2026-03-09) [code996](2026-03-09-code996.md)
 - 分析 Git 项目提交时间分布，推导团队工作强度与加班文化
 - Tags: Git Analysis, Work-Life Balance, Data Visualization, Privacy First, Developer Tool
