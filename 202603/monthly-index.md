@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [code996](2026-03-09-code996.md)
+- 分析 Git 项目提交时间分布，推导团队工作强度与加班文化
+- Tags: Git Analysis, Work-Life Balance, Data Visualization, Privacy First, Developer Tool
+- Categories: Developer Tools, Data & Analytics
+- Platform: Web
+
 (2026-03-09) [Fresh](2026-03-09-fresh.md)
 - 一款终端文本编辑器 开源易学 快速响应 支持 IDE 功能
 - Tags: Terminal Editor, Open Source, Fast, IDE Features, Cross-platform
