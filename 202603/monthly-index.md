@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [GateShift](2026-03-09-gateshift.md)
+- 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作
+- Tags: Gateway Switcher, OpenWrt, Proxy Management, Cross-platform
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Windows, Mac, Linux
+
 (2026-03-09) [drawnix](2026-03-09-drawnix.md)
 - 开源一体化白板工具，支持思维导图、流程图和自由绘画，提供无限画布和自动保存功能
 - Tags: Open Source, Whiteboard, Mind Mapping, Flowchart, Free Drawing

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [GateShift](202603/2026-03-09-gateshift.md) - 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作
 - [drawnix](202603/2026-03-09-drawnix.md) - 开源一体化白板工具，支持思维导图、流程图和自由绘画，提供无限画布和自动保存功能
 - [Readest](202603/2026-03-09-readest.md) - 一款免费开源的 EPUB 与 PDF 阅读器，支持多平台，提供平行阅读、高亮笔记、云同步等功能
 - [GCOP](202603/2026-03-09-gcop.md) - An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
@@ -25,4 +26,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (21 entries)
+- [2026-03](202603/monthly-index.md) (22 entries)
