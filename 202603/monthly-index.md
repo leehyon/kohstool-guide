@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [GCOP](2026-03-09-gcop.md)
+- An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
+- Tags: Git, AI Assistant, Version Control, Commit Messages, Developer Productivity
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux, Web
+
 (2026-03-09) [Screenshot Editor Tool](2026-03-09-screenshot-editor-tool.md)
 - 一款功能强大的截图编辑工具，可添加背景、注释、效果和浏览器框架，让截图更加专业美观
 - Tags: Screenshot Editor, Mockup Generator, Design Tool, Marketing Asset, Web App

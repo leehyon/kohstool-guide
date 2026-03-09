@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [GCOP](202603/2026-03-09-gcop.md) - An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
 - [Screenshot Editor Tool](202603/2026-03-09-screenshot-editor-tool.md) - 一款功能强大的截图编辑工具，可添加背景、注释、效果和浏览器框架，让截图更加专业美观
 - [markitdown](202603/2026-03-09-markitdown.md) - Python 工具可将各种文件转换为 Markdown 格式，支持 PDF、Word、Excel、图片等多种文件类型
 - [code996](202603/2026-03-09-code996.md) - 分析 Git 项目提交时间分布，推导团队工作强度与加班文化
@@ -22,4 +23,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (18 entries)
+- [2026-03](202603/monthly-index.md) (19 entries)
