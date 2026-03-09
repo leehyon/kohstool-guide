@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Snipaste](202603/2026-03-09-snipaste.md) - 一款免费的截图工具 可将截图固定在屏幕上 并支持丰富的标注和编辑功能
 - [markmap](202603/2026-03-09-markmap.md) - 一款将 Markdown 文档转换为交互式思维导图的工具，支持实时预览和自定义样式
 - [Excalidraw](202603/2026-03-06-excalidraw.md) - 一个开源的在线协作白板工具，支持手绘风格和实时协作
 - [TinyPNG](202603/2026-03-06-tinypng.md) - 智能压缩 PNG、JPEG、WebP 和 AVIF 图像，减少文件大小高达 80%，同时保持视觉质量
@@ -16,4 +17,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (12 entries)
+- [2026-03](202603/monthly-index.md) (13 entries)

@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Snipaste](2026-03-09-snipaste.md)
+- 一款免费的截图工具 可将截图固定在屏幕上 并支持丰富的标注和编辑功能
+- Tags: Screenshot, Annotation, Floating Window, Productivity, Cross-platform
+- Categories: Developer Tools, System & Automation, Media & Creativity
+- Platform: Windows, Mac, Linux
+
 (2026-03-09) [markmap](2026-03-09-markmap.md)
 - 一款将 Markdown 文档转换为交互式思维导图的工具，支持实时预览和自定义样式
 - Tags: Mind Mapping, Markdown, Visualization, Knowledge Management, Open Source
