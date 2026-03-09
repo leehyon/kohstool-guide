@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-09) [Readest](2026-03-09-readest.md)
+- 一款免费开源的 EPUB 与 PDF 阅读器，支持多平台，提供平行阅读、高亮笔记、云同步等功能
+- Tags: Ebook Reader, PDF Reader, Open Source, Cross Platform, Annotation
+- Categories: Reading & Information, Text Input & Writing
+- Platform: Mac, Windows, Linux, iOS, Android, Web
+
 (2026-03-09) [GCOP](2026-03-09-gcop.md)
 - An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
 - Tags: Git, AI Assistant, Version Control, Commit Messages, Developer Productivity
