@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-10) [Gemini CLI](2026-03-10-gemini-cli.md)
+- 一个 AI 驱动的命令行工具，用于构建、调试和部署应用程序
+- Tags: AI-Powered, Command-Line, Development, Automation, Google
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-03-09) [Just](2026-03-09-just.md)
 - Just 是一个命令行工具，用于简化重复性任务的执行和管理
 - Tags: Command-Line, Automation, Build-Tool, Developer-Utility, Cross-Platform
