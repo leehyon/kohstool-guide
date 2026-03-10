@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Zed](202603/2026-03-10-zed.md) - 一款用 Rust 编写的高性能代码编辑器，支持 AI 协作与团队实时协作
 - [Gemini CLI](202603/2026-03-10-gemini-cli.md) - 一个 AI 驱动的命令行工具，用于构建、调试和部署应用程序
 - [Just](202603/2026-03-09-just.md) - Just 是一个命令行工具，用于简化重复性任务的执行和管理
 - [pdoc](202603/2026-03-09-pdoc.md) - 自动生成 Python 项目的 API 文档，无需配置，支持类型注解和交叉链接
@@ -31,4 +32,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (27 entries)
+- [2026-03](202603/monthly-index.md) (28 entries)
