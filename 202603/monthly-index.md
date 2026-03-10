@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-10) [Espanso](2026-03-10-espanso.md)
+- 一款开源跨平台文本扩展工具 可通过关键词替换提高输入效率 支持脚本和表单功能
+- Tags: Text Expansion, Open Source, Productivity, Cross Platform, Automation
+- Categories: Text Input & Writing, Developer Tools, System & Automation
+- Platform: Windows, Linux, Mac
+
 (2026-03-10) [Zed](2026-03-10-zed.md)
 - 一款用 Rust 编写的高性能代码编辑器，支持 AI 协作与团队实时协作
 - Tags: Code Editor, AI Integration, Collaboration, Rust, Fast
