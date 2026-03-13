@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [Mole](2026-03-13-mole.md)
+- 一款全功能的 Mac 系统清理优化工具，可释放大量磁盘空间并监控系统性能
+- Tags: System Optimization, Disk Cleanup, MacOS, Command Line, Performance Monitoring
+- Categories: File Management, System & Automation
+- Platform: Mac, Windows
+
 (2026-03-13) [snippai](2026-03-13-snippai.md)
 - 一款 AI 驱动的智能截图工具，可识别公式、文本、表格等内容，并进行分析和转换
 - Tags: AI-Powered, Screen Capture, Text Recognition, Formula Recognition, Multi-Language Support
