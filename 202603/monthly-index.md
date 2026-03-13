@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [Conductor](2026-03-13-conductor.md)
+- 在 Mac 上运行多个编码代理工具，并行处理代码任务并自动管理 git 工作树
+- Tags: AI Coding, Parallel Processing, Git Management, Mac OS, Productivity
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-03-13) [Mole](2026-03-13-mole.md)
 - 一款全功能的 Mac 系统清理优化工具，可释放大量磁盘空间并监控系统性能
 - Tags: System Optimization, Disk Cleanup, MacOS, Command Line, Performance Monitoring

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Conductor](202603/2026-03-13-conductor.md) - 在 Mac 上运行多个编码代理工具，并行处理代码任务并自动管理 git 工作树
 - [Mole](202603/2026-03-13-mole.md) - 一款全功能的 Mac 系统清理优化工具，可释放大量磁盘空间并监控系统性能
 - [snippai](202603/2026-03-13-snippai.md) - 一款 AI 驱动的智能截图工具，可识别公式、文本、表格等内容，并进行分析和转换
 - [Espanso](202603/2026-03-10-espanso.md) - 一款开源跨平台文本扩展工具 可通过关键词替换提高输入效率 支持脚本和表单功能
@@ -35,4 +36,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (31 entries)
+- [2026-03](202603/monthly-index.md) (32 entries)
