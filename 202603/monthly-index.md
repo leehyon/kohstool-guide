@@ -1,5 +1,10 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [snippai](2026-03-13-snippai.md)
+- 一款 AI 驱动的智能截图工具，可识别公式、文本、表格等内容，并进行分析和转换
+- Tags: AI-Powered, Screen Capture, Text Recognition, Formula Recognition, Multi-Language Support
+- Categories: Reading & Information, Text Input & Writing, Developer Tools
+
 (2026-03-10) [Espanso](2026-03-10-espanso.md)
 - 一款开源跨平台文本扩展工具 可通过关键词替换提高输入效率 支持脚本和表单功能
 - Tags: Text Expansion, Open Source, Productivity, Cross Platform, Automation

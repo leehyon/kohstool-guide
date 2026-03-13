@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [snippai](202603/2026-03-13-snippai.md) - 一款 AI 驱动的智能截图工具，可识别公式、文本、表格等内容，并进行分析和转换
 - [Espanso](202603/2026-03-10-espanso.md) - 一款开源跨平台文本扩展工具 可通过关键词替换提高输入效率 支持脚本和表单功能
 - [Zed](202603/2026-03-10-zed.md) - 一款用 Rust 编写的高性能代码编辑器，支持 AI 协作与团队实时协作
 - [Gemini CLI](202603/2026-03-10-gemini-cli.md) - 一个 AI 驱动的命令行工具，用于构建、调试和部署应用程序
@@ -33,4 +34,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (29 entries)
+- [2026-03](202603/monthly-index.md) (30 entries)
