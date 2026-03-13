@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Obsidian](202603/2026-03-13-obsidian.md) - 一款基于 Markdown 的个人知识管理工具 支持双向链接和知识图谱构建
 - [ruler](202603/2026-03-13-ruler.md) - Ruler 是一个集中管理 AI 编程助手指令的工具，为多个 AI 编码代理提供统一的规则源
 - [clock-dashboard](202603/2026-03-13-clock-dashboard.md) - 一个简约的在线天气时钟看板，支持天气、农历、日历和智能家居控制
 - [Conductor](202603/2026-03-13-conductor.md) - 在 Mac 上运行多个编码代理工具，并行处理代码任务并自动管理 git 工作树
@@ -38,4 +39,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (34 entries)
+- [2026-03](202603/monthly-index.md) (35 entries)

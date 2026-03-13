@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [Obsidian](2026-03-13-obsidian.md)
+- 一款基于 Markdown 的个人知识管理工具 支持双向链接和知识图谱构建
+- Tags: Note-taking, Knowledge Graph, Markdown, Privacy-focused, Cross-platform
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Windows, Mac, Linux, iOS, Android, Web
+
 (2026-03-13) [ruler](2026-03-13-ruler.md)
 - Ruler 是一个集中管理 AI 编程助手指令的工具，为多个 AI 编码代理提供统一的规则源
 - Tags: AI Coding, Configuration Management, Developer Productivity, Multi-Agent Support, Centralized Rules
