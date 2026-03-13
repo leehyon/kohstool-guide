@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [clock-dashboard](2026-03-13-clock-dashboard.md)
+- 一个简约的在线天气时钟看板，支持天气、农历、日历和智能家居控制
+- Tags: Clock, Weather, Smart Home, PWA, Lunar Calendar
+- Categories: Reading & Information, System & Automation, Media & Creativity
+- Platform: Web, iOS, Android
+
 (2026-03-13) [Conductor](2026-03-13-conductor.md)
 - 在 Mac 上运行多个编码代理工具，并行处理代码任务并自动管理 git 工作树
 - Tags: AI Coding, Parallel Processing, Git Management, Mac OS, Productivity
