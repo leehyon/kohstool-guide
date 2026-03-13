@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-13) [ruler](2026-03-13-ruler.md)
+- Ruler 是一个集中管理 AI 编程助手指令的工具，为多个 AI 编码代理提供统一的规则源
+- Tags: AI Coding, Configuration Management, Developer Productivity, Multi-Agent Support, Centralized Rules
+- Categories: Developer Tools, System & Automation
+- Platform: Web, Browser Extension
+
 (2026-03-13) [clock-dashboard](2026-03-13-clock-dashboard.md)
 - 一个简约的在线天气时钟看板，支持天气、农历、日历和智能家居控制
 - Tags: Clock, Weather, Smart Home, PWA, Lunar Calendar
