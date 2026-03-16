@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-16) [LinearMouse](2026-03-16-linearmouse.md)
+- 一款 Mac 上的鼠标和触控板实用工具 可自定义滚动 指针速度和按钮操作
+- Tags: Mouse Customization, Touchpad Control, Productivity, MacOS, Input Device
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-03-16) [CotEditor](2026-03-16-coteditor.md)
 - 一款轻量级 yet 强大的 macOS 原生纯文本编辑器 支持 50+ 种语法高亮
 - Tags: Text Editor, MacOS, Open Source, Syntax Highlighting, Free
