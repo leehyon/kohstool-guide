@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-16) [CotEditor](2026-03-16-coteditor.md)
+- 一款轻量级 yet 强大的 macOS 原生纯文本编辑器 支持 50+ 种语法高亮
+- Tags: Text Editor, MacOS, Open Source, Syntax Highlighting, Free
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac
+
 (2026-03-13) [Obsidian](2026-03-13-obsidian.md)
 - 一款基于 Markdown 的个人知识管理工具 支持双向链接和知识图谱构建
 - Tags: Note-taking, Knowledge Graph, Markdown, Privacy-focused, Cross-platform
