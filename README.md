@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [PandaWiki](202603/2026-03-17-pandawiki.md) - 一款开源的 AI 驱动知识库系统，支持文档构建、智能问答和搜索功能，提供富文本编辑和第三方集成能力
 - [LinearMouse](202603/2026-03-16-linearmouse.md) - 一款 Mac 上的鼠标和触控板实用工具 可自定义滚动 指针速度和按钮操作
 - [CotEditor](202603/2026-03-16-coteditor.md) - 一款轻量级 yet 强大的 macOS 原生纯文本编辑器 支持 50+ 种语法高亮
 - [Obsidian](202603/2026-03-13-obsidian.md) - 一款基于 Markdown 的个人知识管理工具 支持双向链接和知识图谱构建
@@ -41,4 +42,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (37 entries)
+- [2026-03](202603/monthly-index.md) (38 entries)

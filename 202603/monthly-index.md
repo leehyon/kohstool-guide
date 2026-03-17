@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-17) [PandaWiki](2026-03-17-pandawiki.md)
+- 一款开源的 AI 驱动知识库系统，支持文档构建、智能问答和搜索功能，提供富文本编辑和第三方集成能力
+- Tags: AI-Powered, Open Source, Knowledge Base, Documentation, Chatbot
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Linux, Web
+
 (2026-03-16) [LinearMouse](2026-03-16-linearmouse.md)
 - 一款 Mac 上的鼠标和触控板实用工具 可自定义滚动 指针速度和按钮操作
 - Tags: Mouse Customization, Touchpad Control, Productivity, MacOS, Input Device
