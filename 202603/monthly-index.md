@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-17) [neko-master](2026-03-17-neko-master.md)
+- 一个现代优雅的网络流量可视化分析仪表板，支持实时监控与多网关管理
+- Tags: Network Monitoring, Traffic Analysis, Proxy Dashboard, Real-time Visualization, Docker Deployment
+- Categories: Developer Tools, System & Automation, Data & Analytics
+- Platform: Web, Docker
+
 (2026-03-17) [PandaWiki](2026-03-17-pandawiki.md)
 - 一款开源的 AI 驱动知识库系统，支持文档构建、智能问答和搜索功能，提供富文本编辑和第三方集成能力
 - Tags: AI-Powered, Open Source, Knowledge Base, Documentation, Chatbot
