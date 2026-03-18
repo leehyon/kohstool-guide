@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [Alacritty](2026-03-18-alacritty.md)
+- 一个跨平台高性能终端模拟器 基于 OpenGL 渲染 支持高度配置
+- Tags: Terminal Emulator, Cross-platform, High Performance, OpenGL, Vi Mode
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-03-18) [WezTerm](2026-03-18-wezterm.md)
 - 一个现代化的跨平台终端模拟器，支持高度可定制和丰富的功能集
 - Tags: Terminal Emulator, Cross-Platform, Customizable, SSH Client, Lua Scripting

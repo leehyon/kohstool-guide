@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Alacritty](202603/2026-03-18-alacritty.md) - 一个跨平台高性能终端模拟器 基于 OpenGL 渲染 支持高度配置
 - [WezTerm](202603/2026-03-18-wezterm.md) - 一个现代化的跨平台终端模拟器，支持高度可定制和丰富的功能集
 - [PDF Craft](202603/2026-03-18-pdf-craft.md) - 一款扫描 PDF 转换工具，可将 PDF 转换为 EPUB、Markdown 等格式，支持数学公式识别和表格结构保留
 - [ConvertX](202603/2026-03-18-convertx.md) - 自托管在线文件转换器 支持超过 1000 种格式
@@ -55,4 +56,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (51 entries)
+- [2026-03](202603/monthly-index.md) (52 entries)
