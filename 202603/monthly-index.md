@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [winscp](2026-03-18-winscp.md)
+- 一款免费的 Windows 文件管理器 支持 SFTP FTP FTPS SCP S3 WebDAV 等协议
+- Tags: File Transfer, FTP Client, SFTP, SSH, Free
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Windows
+
 (2026-03-18) [Alacritty](2026-03-18-alacritty.md)
 - 一个跨平台高性能终端模拟器 基于 OpenGL 渲染 支持高度配置
 - Tags: Terminal Emulator, Cross-platform, High Performance, OpenGL, Vi Mode
@@ -8,19 +14,19 @@
 
 (2026-03-18) [WezTerm](2026-03-18-wezterm.md)
 - 一个现代化的跨平台终端模拟器，支持高度可定制和丰富的功能集
-- Tags: Terminal Emulator, Cross-Platform, Customizable, SSH Client, Lua Scripting
+- Tags: Terminal Emulator, Cross-platform, Customizable, SSH Client, Lua Scripting
 - Categories: Developer Tools, System & Automation, Communication
 - Platform: Mac, Windows, Linux, FreeBSD, NetBSD
 
 (2026-03-18) [PDF Craft](2026-03-18-pdf-craft.md)
 - 一款扫描 PDF 转换工具，可将 PDF 转换为 EPUB、Markdown 等格式，支持数学公式识别和表格结构保留
-- Tags: PDF Conversion, OCR Technology, Academic Tools, Math Formula Support, Privacy-Focused
+- Tags: PDF Conversion, OCR Technology, Academic Tools, Math Formula Support, Privacy-focused
 - Categories: Reading & Information, Text Input & Writing, Developer Tools
 - Platform: Mac, Windows, iOS
 
 (2026-03-18) [ConvertX](2026-03-18-convertx.md)
 - 自托管在线文件转换器 支持超过 1000 种格式
-- Tags: File Conversion, Self-Hosted, Open Source, Privacy-Focused, Batch Processing
+- Tags: File Conversion, Self-hosted, Open Source, Privacy-focused, Batch Processing
 - Categories: Developer Tools, File Management, Media & Creativity
 - Platform: Web, Docker
 
@@ -32,13 +38,13 @@
 
 (2026-03-18) [zerobyte](2026-03-18-zerobyte.md)
 - 一款基于 restic 的自动化备份工具，专为自托管服务器设计，提供简单直观的备份管理界面
-- Tags: Backup Automation, Self-Hosted, Data Protection, Restic, Open Source
+- Tags: Backup Automation, Self-hosted, Data Protection, Restic, Open Source
 - Categories: Developer Tools, File Management, System & Automation
 - Platform: Linux, Mac, Windows, Web, Docker
 
 (2026-03-18) [NoteDiscovery](2026-03-18-notediscovery.md)
 - 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和 AI 集成功能
-- Tags: Self-Hosted, Markdown, Knowledge Base, Privacy-Focused, AI Integration
+- Tags: Self-hosted, Markdown, Knowledge Base, Privacy-focused, AI Integration
 - Categories: Knowledge Management, Text Input & Writing
 - Platform: Web
 
@@ -62,7 +68,7 @@
 
 (2026-03-18) [BentoPDF](2026-03-18-bentopdf.md)
 - 一款免费在线 PDF 工具集，无需上传文件，客户端处理，注重隐私保护
-- Tags: PDF Editor, Privacy-First, Free, Client-Side Processing, No Signup Required
+- Tags: PDF Editor, Privacy First, Free, Client-Side Processing, No Signup Required
 - Categories: Developer Tools, File Management, Security & Privacy
 - Platform: Web
 
@@ -122,7 +128,7 @@
 
 (2026-03-13) [Conductor](2026-03-13-conductor.md)
 - 在 Mac 上运行多个编码代理工具，并行处理代码任务并自动管理 git 工作树
-- Tags: AI Coding, Parallel Processing, Git Management, Mac OS, Productivity
+- Tags: AI Coding, Parallel Processing, Git Management, macOS, Productivity
 - Categories: Developer Tools, System & Automation
 - Platform: Mac
 
@@ -151,13 +157,13 @@
 
 (2026-03-10) [Gemini CLI](2026-03-10-gemini-cli.md)
 - 一个 AI 驱动的命令行工具，用于构建、调试和部署应用程序
-- Tags: AI-Powered, Command-Line, Development, Automation, Google
+- Tags: AI-Powered, Command Line, Development, Automation, Google
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux
 
 (2026-03-09) [Just](2026-03-09-just.md)
 - Just 是一个命令行工具，用于简化重复性任务的执行和管理
-- Tags: Command-Line, Automation, Build-Tool, Developer-Utility, Cross-platform
+- Tags: Command Line, Automation, Build-Tool, Developer-Utility, Cross-platform
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux
 
@@ -252,7 +258,7 @@
 
 (2026-03-06) [TinyPNG](2026-03-06-tinypng.md)
 - 智能压缩 PNG、JPEG、WebP 和 AVIF 图像，减少文件大小高达 80%，同时保持视觉质量
-- Tags: Image Compression, Web Optimization, Developer Tools, Free, Performance
+- Tags: Image Compression, Web Optimization, Developer Tool, Free, Performance
 - Categories: Developer Tools, File Management, Media & Creativity
 - Platform: Web, Browser Extension
 

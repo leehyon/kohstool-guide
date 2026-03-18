@@ -1237,5 +1237,28 @@
     ],
     "tldr": "一个跨平台高性能终端模拟器 基于 OpenGL 渲染 支持高度配置",
     "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202603/2026-03-18-alacritty.md"
+  },
+  {
+    "month": "202603",
+    "name": "winscp",
+    "url": "https://github.com/winscp/winscp",
+    "timestamp": 1773808751,
+    "tags": [
+      "File Transfer",
+      "FTP Client",
+      "SFTP",
+      "SSH",
+      "Free"
+    ],
+    "categories": [
+      "Developer Tools",
+      "File Management",
+      "System & Automation"
+    ],
+    "Platform": [
+      "Windows"
+    ],
+    "tldr": "一款免费的 Windows 文件管理器 支持 SFTP FTP FTPS SCP S3 WebDAV 等协议",
+    "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202603/2026-03-18-winscp.md"
   }
 ]
