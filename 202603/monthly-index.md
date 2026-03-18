@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [superpowers](2026-03-18-superpowers.md)
+- 一个用于构建文本处理工作流的桌面应用程序，通过管道连接各种命令行工具
+- Tags: Text Processing, Workflow Automation, Command Line Integration, Desktop Application, Open Source
+- Categories: Text Input & Writing, Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-03-18) [MrRSS](2026-03-18-mrrss.md)
 - 一款跨平台 RSS 阅读器，利用 AI 技术提供文章摘要、翻译和智能内容发现功能
 - Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-Platform
