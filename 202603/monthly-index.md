@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [PDF Craft](2026-03-18-pdf-craft.md)
+- 一款扫描 PDF 转换工具，可将 PDF 转换为 EPUB、Markdown 等格式，支持数学公式识别和表格结构保留
+- Tags: PDF Conversion, OCR Technology, Academic Tools, Math Formula Support, Privacy-Focused
+- Categories: Reading & Information, Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, iOS
+
 (2026-03-18) [ConvertX](2026-03-18-convertx.md)
 - 自托管在线文件转换器 支持超过 1000 种格式
 - Tags: File Conversion, Self-Hosted, Open Source, Privacy-Focused, Batch Processing

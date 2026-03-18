@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [PDF Craft](202603/2026-03-18-pdf-craft.md) - 一款扫描 PDF 转换工具，可将 PDF 转换为 EPUB、Markdown 等格式，支持数学公式识别和表格结构保留
 - [ConvertX](202603/2026-03-18-convertx.md) - 自托管在线文件转换器 支持超过 1000 种格式
 - [Warracker](202603/2026-03-18-warracker.md) - 一款开源自托管的产品保修追踪工具，帮助用户管理保修信息、监控到期日期并存储相关文件
 - [zerobyte](202603/2026-03-18-zerobyte.md) - 一款基于 restic 的自动化备份工具，专为自托管服务器设计，提供简单直观的备份管理界面
@@ -53,4 +54,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (49 entries)
+- [2026-03](202603/monthly-index.md) (50 entries)
