@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [VidBee](2026-03-18-vidbee.md)
+- 一款免费开源视频下载工具，支持 1000+ 网站的高清视频下载，具备自动化批量处理功能
+- Tags: Video Downloader, Open Source, Cross Platform, Batch Processing, High Quality
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux
+
 (2026-03-18) [mactop](2026-03-18-mactop.md)
 - 一款基于终端的 Apple Silicon 监控工具，实时显示 CPU、GPU、内存等系统指标
 - Tags: System Monitoring, Apple Silicon, Terminal, Performance, Real-time
