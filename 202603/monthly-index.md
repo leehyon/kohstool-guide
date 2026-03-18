@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [MrRSS](2026-03-18-mrrss.md)
+- 一款跨平台 RSS 阅读器，利用 AI 技术提供文章摘要、翻译和智能内容发现功能
+- Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-Platform
+- Categories: Reading & Information, Developer Tools
+- Platform: Windows, Mac, Linux
+
 (2026-03-18) [winscp](2026-03-18-winscp.md)
 - 一款免费的 Windows 文件管理器 支持 SFTP FTP FTPS SCP S3 WebDAV 等协议
 - Tags: File Transfer, FTP Client, SFTP, SSH, Free
