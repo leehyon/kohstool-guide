@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [ConvertX](2026-03-18-convertx.md)
+- 自托管在线文件转换器 支持超过 1000 种格式
+- Tags: File Conversion, Self-Hosted, Open Source, Privacy-Focused, Batch Processing
+- Categories: Developer Tools, File Management, Media & Creativity
+- Platform: Web, Docker
+
 (2026-03-18) [Warracker](2026-03-18-warracker.md)
 - 一款开源自托管的产品保修追踪工具，帮助用户管理保修信息、监控到期日期并存储相关文件
 - Tags: Warranty Management, Open Source, Self-hosted, Document Storage, Multi-language
