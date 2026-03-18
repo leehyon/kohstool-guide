@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [IronCalc](202603/2026-03-18-ironcalc.md) - 开源电子表格引擎，支持自托管和嵌入，提供高性能计算功能
 - [BentoPDF](202603/2026-03-18-bentopdf.md) - 一款免费在线 PDF 工具集，无需上传文件，客户端处理，注重隐私保护
 - [VidBee](202603/2026-03-18-vidbee.md) - 一款免费开源视频下载工具，支持 1000+ 网站的高清视频下载，具备自动化批量处理功能
 - [mactop](202603/2026-03-18-mactop.md) - 一款基于终端的 Apple Silicon 监控工具，实时显示 CPU、GPU、内存等系统指标
@@ -46,4 +47,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (42 entries)
+- [2026-03](202603/monthly-index.md) (43 entries)

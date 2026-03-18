@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [IronCalc](2026-03-18-ironcalc.md)
+- 开源电子表格引擎，支持自托管和嵌入，提供高性能计算功能
+- Tags: Open Source, Spreadsheet Engine, Self-hosted, Embeddable, Rust-based
+- Categories: Developer Tools, Data & Analytics
+- Platform: Web
+
 (2026-03-18) [BentoPDF](2026-03-18-bentopdf.md)
 - 一款免费在线 PDF 工具集，无需上传文件，客户端处理，注重隐私保护
 - Tags: PDF Editor, Privacy-First, Free, Client-Side Processing, No Signup Required
