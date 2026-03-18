@@ -1,7 +1,13 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [zerobyte](2026-03-18-zerobyte.md)
+- 一款基于 restic 的自动化备份工具，专为自托管服务器设计，提供简单直观的备份管理界面
+- Tags: Backup Automation, Self-Hosted, Data Protection, Restic, Open Source
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Linux, Mac, Windows, Web, Docker
+
 (2026-03-18) [NoteDiscovery](2026-03-18-notediscovery.md)
-- 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和AI集成功能
+- 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和 AI 集成功能
 - Tags: Self-Hosted, Markdown, Knowledge Base, Privacy-Focused, AI Integration
 - Categories: Knowledge Management, Text Input & Writing
 - Platform: Web
@@ -32,7 +38,7 @@
 
 (2026-03-18) [VidBee](2026-03-18-vidbee.md)
 - 一款免费开源视频下载工具，支持 1000+ 网站的高清视频下载，具备自动化批量处理功能
-- Tags: Video Downloader, Open Source, Cross Platform, Batch Processing, High Quality
+- Tags: Video Downloader, Open Source, Cross-platform, Batch Processing, High Quality
 - Categories: Developer Tools, Media & Creativity
 - Platform: Mac, Windows, Linux
 
@@ -56,13 +62,13 @@
 
 (2026-03-16) [LinearMouse](2026-03-16-linearmouse.md)
 - 一款 Mac 上的鼠标和触控板实用工具 可自定义滚动 指针速度和按钮操作
-- Tags: Mouse Customization, Touchpad Control, Productivity, MacOS, Input Device
+- Tags: Mouse Customization, Touchpad Control, Productivity, macOS, Input Device
 - Categories: Developer Tools, System & Automation
 - Platform: Mac
 
 (2026-03-16) [CotEditor](2026-03-16-coteditor.md)
 - 一款轻量级 yet 强大的 macOS 原生纯文本编辑器 支持 50+ 种语法高亮
-- Tags: Text Editor, MacOS, Open Source, Syntax Highlighting, Free
+- Tags: Text Editor, macOS, Open Source, Syntax Highlighting, Free
 - Categories: Text Input & Writing, Developer Tools
 - Platform: Mac
 
@@ -92,7 +98,7 @@
 
 (2026-03-13) [Mole](2026-03-13-mole.md)
 - 一款全功能的 Mac 系统清理优化工具，可释放大量磁盘空间并监控系统性能
-- Tags: System Optimization, Disk Cleanup, MacOS, Command Line, Performance Monitoring
+- Tags: System Optimization, Disk Cleanup, macOS, Command Line, Performance Monitoring
 - Categories: File Management, System & Automation
 - Platform: Mac, Windows
 
@@ -103,7 +109,7 @@
 
 (2026-03-10) [Espanso](2026-03-10-espanso.md)
 - 一款开源跨平台文本扩展工具 可通过关键词替换提高输入效率 支持脚本和表单功能
-- Tags: Text Expansion, Open Source, Productivity, Cross Platform, Automation
+- Tags: Text Expansion, Open Source, Productivity, Cross-platform, Automation
 - Categories: Text Input & Writing, Developer Tools, System & Automation
 - Platform: Windows, Linux, Mac
 
@@ -121,7 +127,7 @@
 
 (2026-03-09) [Just](2026-03-09-just.md)
 - Just 是一个命令行工具，用于简化重复性任务的执行和管理
-- Tags: Command-Line, Automation, Build-Tool, Developer-Utility, Cross-Platform
+- Tags: Command-Line, Automation, Build-Tool, Developer-Utility, Cross-platform
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux
 
@@ -156,12 +162,12 @@
 
 (2026-03-09) [Readest](2026-03-09-readest.md)
 - 一款免费开源的 EPUB 与 PDF 阅读器，支持多平台，提供平行阅读、高亮笔记、云同步等功能
-- Tags: Ebook Reader, PDF Reader, Open Source, Cross Platform, Annotation
+- Tags: Ebook Reader, PDF Reader, Open Source, Cross-platform, Annotation
 - Categories: Reading & Information, Text Input & Writing
 - Platform: Mac, Windows, Linux, iOS, Android, Web
 
 (2026-03-09) [GCOP](2026-03-09-gcop.md)
-- An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
+- 一款 AI 驱动的 Git 助手，可生成智能提交信息并提供直观的命令，以简化版本控制工作流程
 - Tags: Git, AI Assistant, Version Control, Commit Messages, Developer Productivity
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux, Web
@@ -192,7 +198,7 @@
 
 (2026-03-09) [Alertivity](2026-03-09-alertivity.md)
 - 一个 macOS 菜单栏应用，实时监控 CPU、内存、磁盘和网络性能，提供智能通知和快速操作功能
-- Tags: System Monitoring, Performance, Menu Bar App, Real-time, MacOS
+- Tags: System Monitoring, Performance, Menu Bar App, Real-time, macOS
 - Categories: Developer Tools, System & Automation
 - Platform: Mac
 
@@ -234,7 +240,7 @@
 
 (2026-03-05) [markdown2png](2026-03-05-markdown2png.md)
 - 将 Markdown 代码直接转换为 PNG 图片，方便分享和展示
-- Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-Platform
+- Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-platform
 - Categories: Text Input & Writing, Developer Tools
 - Platform: Web, Browser Extension
 
@@ -257,19 +263,19 @@
 - Platform: Mac, Linux, Windows
 
 (2026-03-05) [tere](2026-03-05-tere.md)
-- A terminal file manager that works like ranger but with vim like keybindings
+- 一款类似 Ranger 的终端文件管理器，但拥有类似 Vim 的快捷键
 - Tags: Terminal File Manager, Vim-like, Keyboard Navigation, Lightweight, Developer Tool
 - Categories: Developer Tools, File Management, System & Automation
 - Platform: Linux, Mac, Windows
 
 (2026-03-05) [PicGo](2026-03-05-picgo.md)
 - 一款图片上传工具 支持一键上传 自动复制分享链接 提升创作效率
-- Tags: Image Uploader, Cross-Platform, Plugin System, Auto-Copy Links, Developer Tool
+- Tags: Image Uploader, Cross-platform, Plugin System, Auto-Copy Links, Developer Tool
 - Categories: Developer Tools, File Management, Media & Creativity
 - Platform: Windows, Mac, Linux, Browser Extension
 
 (2026-03-05) [Starship](2026-03-05-starship.md)
-- 一个跨 shell 的提示符工具，提供快速、可高度定制化的终端体验
-- Tags: Terminal, Prompt, Customization, Cross-Platform, Developer Tool
+- 一个跨 Shell 的提示符工具，提供快速、可高度定制化的终端体验
+- Tags: Terminal, Prompt, Customization, Cross-platform, Developer Tool
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux, Web

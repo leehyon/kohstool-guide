@@ -1,7 +1,8 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
-- [NoteDiscovery](202603/2026-03-18-notediscovery.md) - 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和AI集成功能
+- [zerobyte](202603/2026-03-18-zerobyte.md) - 一款基于 restic 的自动化备份工具，专为自托管服务器设计，提供简单直观的备份管理界面
+- [NoteDiscovery](202603/2026-03-18-notediscovery.md) - 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和 AI 集成功能
 - [Poznote](202603/2026-03-18-poznote.md) - 一款注重简洁易用的开源个人笔记与文档平台 支持多平台部署和丰富的功能扩展
 - [MediaManager](202603/2026-03-18-mediamanager.md) - 一个现代自托管媒体管理系统，用于统一管理电视和电影收藏
 - [IronCalc](202603/2026-03-18-ironcalc.md) - 开源电子表格引擎，支持自托管和嵌入，提供高性能计算功能
@@ -28,7 +29,7 @@
 - [GateShift](202603/2026-03-09-gateshift.md) - 为 OpenWrt 旁路由设计的网关切换工具，一键切换默认与代理网关，内置 DNS 防泄漏，跨平台命令行操作
 - [drawnix](202603/2026-03-09-drawnix.md) - 开源一体化白板工具，支持思维导图、流程图和自由绘画，提供无限画布和自动保存功能
 - [Readest](202603/2026-03-09-readest.md) - 一款免费开源的 EPUB 与 PDF 阅读器，支持多平台，提供平行阅读、高亮笔记、云同步等功能
-- [GCOP](202603/2026-03-09-gcop.md) - An AI-powered Git assistant that generates smart commit messages and provides intuitive commands to streamline version control workflows
+- [GCOP](202603/2026-03-09-gcop.md) - 一款 AI 驱动的 Git 助手，可生成智能提交信息并提供直观的命令，以简化版本控制工作流程
 - [Screenshot Editor Tool](202603/2026-03-09-screenshot-editor-tool.md) - 一款功能强大的截图编辑工具，可添加背景、注释、效果和浏览器框架，让截图更加专业美观
 - [markitdown](202603/2026-03-09-markitdown.md) - Python 工具可将各种文件转换为 Markdown 格式，支持 PDF、Word、Excel、图片等多种文件类型
 - [code996](202603/2026-03-09-code996.md) - 分析 Git 项目提交时间分布，推导团队工作强度与加班文化
@@ -44,10 +45,10 @@
 - [Helix](202603/2026-03-05-helix.md) - 一个用 Rust 编写的现代化终端文本编辑器，支持多光标操作和语法感知功能
 - [Logseq](202603/2026-03-05-logseq.md) - 一款隐私优先的开源知识管理工具，通过双向链接连接笔记，提升理解能力
 - [Yazi](202603/2026-03-05-yazi.md) - 一个异步文件管理器，支持图像预览和代码高亮，充分利用多核 CPU 资源
-- [tere](202603/2026-03-05-tere.md) - A terminal file manager that works like ranger but with vim like keybindings
+- [tere](202603/2026-03-05-tere.md) - 一款类似 Ranger 的终端文件管理器，但拥有类似 Vim 的快捷键
 - [PicGo](202603/2026-03-05-picgo.md) - 一款图片上传工具 支持一键上传 自动复制分享链接 提升创作效率
-- [Starship](202603/2026-03-05-starship.md) - 一个跨 shell 的提示符工具，提供快速、可高度定制化的终端体验
+- [Starship](202603/2026-03-05-starship.md) - 一个跨 Shell 的提示符工具，提供快速、可高度定制化的终端体验
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (46 entries)
+- [2026-03](202603/monthly-index.md) (47 entries)
