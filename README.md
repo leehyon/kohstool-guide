@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [mactop](202603/2026-03-18-mactop.md) - 一款基于终端的 Apple Silicon 监控工具，实时显示 CPU、GPU、内存等系统指标
 - [neko-master](202603/2026-03-17-neko-master.md) - 一个现代优雅的网络流量可视化分析仪表板，支持实时监控与多网关管理
 - [PandaWiki](202603/2026-03-17-pandawiki.md) - 一款开源的 AI 驱动知识库系统，支持文档构建、智能问答和搜索功能，提供富文本编辑和第三方集成能力
 - [LinearMouse](202603/2026-03-16-linearmouse.md) - 一款 Mac 上的鼠标和触控板实用工具 可自定义滚动 指针速度和按钮操作
@@ -43,4 +44,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (39 entries)
+- [2026-03](202603/monthly-index.md) (40 entries)

@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [mactop](2026-03-18-mactop.md)
+- 一款基于终端的 Apple Silicon 监控工具，实时显示 CPU、GPU、内存等系统指标
+- Tags: System Monitoring, Apple Silicon, Terminal, Performance, Real-time
+- Categories: Developer Tools, System & Automation
+- Platform: macOS
+
 (2026-03-17) [neko-master](2026-03-17-neko-master.md)
 - 一个现代优雅的网络流量可视化分析仪表板，支持实时监控与多网关管理
 - Tags: Network Monitoring, Traffic Analysis, Proxy Dashboard, Real-time Visualization, Docker Deployment
