@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [Warracker](2026-03-18-warracker.md)
+- 一款开源自托管的产品保修追踪工具，帮助用户管理保修信息、监控到期日期并存储相关文件
+- Tags: Warranty Management, Open Source, Self-hosted, Document Storage, Multi-language
+- Categories: Knowledge Management, File Management, System & Automation
+- Platform: Web
+
 (2026-03-18) [zerobyte](2026-03-18-zerobyte.md)
 - 一款基于 restic 的自动化备份工具，专为自托管服务器设计，提供简单直观的备份管理界面
 - Tags: Backup Automation, Self-Hosted, Data Protection, Restic, Open Source
