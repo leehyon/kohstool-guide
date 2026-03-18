@@ -71,7 +71,9 @@ def log_execution_time(func):
         start_time = time.time()
         result = func(*args, **kwargs)
         elapsed_time = time.time() - start_time
-        logging.info("Exiting %s - Elapsed time: %.4f seconds", func.__name__, elapsed_time)
+        logging.info(
+            "Exiting %s - Elapsed time: %.4f seconds", func.__name__, elapsed_time
+        )
         return result
 
     return wrapper
@@ -109,7 +111,9 @@ class ToolGuideEntry:
 
     @staticmethod
     def from_dict(payload: dict) -> "ToolGuideEntry":
-        guide_markdown = normalize_guide_markdown_url(payload.get("guide_markdown") or payload.get("guideMarkdown") or "")
+        guide_markdown = normalize_guide_markdown_url(
+            payload.get("guide_markdown") or payload.get("guideMarkdown") or ""
+        )
         return ToolGuideEntry(
             month=payload["month"],
             name=payload["name"],
@@ -221,7 +225,9 @@ def normalize_categories(categories: Iterable[str], max_count: int = 3) -> List[
         if not value:
             continue
         key = value.lower()
-        canonical = canonical_by_lower.get(key) or canonical_by_lower.get(aliases.get(key, "").lower())
+        canonical = canonical_by_lower.get(key) or canonical_by_lower.get(
+            aliases.get(key, "").lower()
+        )
         if not canonical:
             continue
         if canonical in seen:
@@ -234,18 +240,40 @@ def normalize_categories(categories: Iterable[str], max_count: int = 3) -> List[
     return ordered[:max_count]
 
 
+def _canonicalize_tag(tag: str) -> str:
+    return "".join(ch.lower() for ch in tag if ch.isalnum())
+
+
+def _is_similar(a: str, b: str, threshold: float = 0.8) -> bool:
+    if not a or not b:
+        return False
+    len_a, len_b = len(a), len(b)
+    if abs(len_a - len_b) > 2:
+        return False
+    a, b = (a, b) if len_a <= len_b else (b, a)
+    len_b = len(a)
+    matches = sum(1 for i in range(len(a)) if a[i] == b[i])
+    return matches / len_b >= threshold
+
+
 def normalize_tags(tags: Iterable[str], max_count: int = 5) -> List[str]:
     cleaned: List[str] = []
-    seen: set[str] = set()
+    seen_normalized: List[str] = []
     for tag in tags:
         if not isinstance(tag, str):
             continue
         value = tag.strip()
         if not value:
             continue
-        if value in seen:
+        normalized = _canonicalize_tag(value)
+        is_duplicate = False
+        for seen in seen_normalized:
+            if _is_similar(normalized, seen):
+                is_duplicate = True
+                break
+        if is_duplicate:
             continue
-        seen.add(value)
+        seen_normalized.append(normalized)
         cleaned.append(value)
         if len(cleaned) >= max_count:
             break
@@ -269,6 +297,7 @@ def normalize_platforms(platforms: Iterable[str]) -> List[str]:
         seen.add(value)
         cleaned.append(value)
     return cleaned
+
 
 def _read_git_remote_origin_url(repo_root: Path) -> Optional[str]:
     config_path = repo_root / ".git" / "config"
@@ -307,7 +336,9 @@ def _parse_github_owner_repo(remote_url: str) -> Optional[str]:
 
     # https://github.com/owner/repo(.git)
     if re.match(r"^https?://github\.com/", url, flags=re.IGNORECASE):
-        slug = re.sub(r"^https?://github\.com/", "", url, flags=re.IGNORECASE).strip("/")
+        slug = re.sub(r"^https?://github\.com/", "", url, flags=re.IGNORECASE).strip(
+            "/"
+        )
         if slug.endswith(".git"):
             slug = slug[:-4]
         parts = slug.split("/")
@@ -348,7 +379,9 @@ def build_guide_markdown_blob_url(entry: ToolGuideEntry) -> str:
 
     repo_slug = _get_guide_repo_slug()
     if not repo_slug:
-        logging.warning("Could not detect GitHub repo slug for guide; set GUIDE_GITHUB_REPO=owner/repo.")
+        logging.warning(
+            "Could not detect GitHub repo slug for guide; set GUIDE_GITHUB_REPO=owner/repo."
+        )
         return rel_path
     ref = _get_guide_repo_ref()
     return f"https://github.com/{repo_slug}/blob/{ref}/{rel_path}"
@@ -383,7 +416,9 @@ def normalize_guide_markdown_url(value: str) -> str:
     return f"https://github.com/{repo_slug}/blob/{ref}/{rel_path}"
 
 
-def _hydrate_entry_cached_fields_from_file(entry: ToolGuideEntry, dry_run: bool = False) -> bool:
+def _hydrate_entry_cached_fields_from_file(
+    entry: ToolGuideEntry, dry_run: bool = False
+) -> bool:
     """Populate/refresh entry.tldr and entry.guide_markdown (blob URL) from the guide .md file.
 
     Returns True if entry fields were changed in memory.
@@ -414,7 +449,9 @@ def _hydrate_entry_cached_fields_from_file(entry: ToolGuideEntry, dry_run: bool 
             changed = True
 
     if changed and dry_run:
-        logging.info("Dry-run: would update cached tldr/guide_markdown for %s", entry.name)
+        logging.info(
+            "Dry-run: would update cached tldr/guide_markdown for %s", entry.name
+        )
 
     return changed
 
@@ -470,7 +507,9 @@ def repair_guide_markdown_file(
                     prefix = f"{tool_name}{sep}"
                     if stripped.startswith(prefix):
                         leading_ws_match = re.match(r"^(\s*)", line)
-                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        leading_ws = (
+                            leading_ws_match.group(1) if leading_ws_match else ""
+                        )
                         rest = stripped[len(prefix) :].lstrip()
                         line = f"{leading_ws}{rest}" if rest else leading_ws
                         break
@@ -490,7 +529,11 @@ def repair_guide_markdown_file(
             break
 
     if categories_line_index is not None:
-        new_line = "- Categories: " + ", ".join(normalized_categories) if normalized_categories else "- Categories:"
+        new_line = (
+            "- Categories: " + ", ".join(normalized_categories)
+            if normalized_categories
+            else "- Categories:"
+        )
         if lines[categories_line_index] != new_line:
             lines[categories_line_index] = new_line
     elif normalized_categories:
@@ -515,7 +558,11 @@ def repair_guide_markdown_file(
     # Platform: update existing line only (keep behavior consistent)
     for index, line in enumerate(lines[:40]):
         if line.startswith("- Platform:"):
-            new_line = "- Platform: " + ", ".join(normalized_platforms) if normalized_platforms else "- Platform:"
+            new_line = (
+                "- Platform: " + ", ".join(normalized_platforms)
+                if normalized_platforms
+                else "- Platform:"
+            )
             if line != new_line:
                 lines[index] = new_line
             break
@@ -528,6 +575,7 @@ def repair_guide_markdown_file(
         return True
     path.write_text(updated, encoding="utf-8")
     return True
+
 
 def get_default_collection_readme_path() -> Path:
     candidates = [
@@ -552,7 +600,9 @@ def ensure_directory(path: Path, dry_run: bool = False) -> None:
 
 def write_text_file(path: Path, content: str, dry_run: bool = False) -> None:
     if dry_run:
-        logging.info("Dry-run: would write %s (%d bytes)", path, len(content.encode("utf-8")))
+        logging.info(
+            "Dry-run: would write %s (%d bytes)", path, len(content.encode("utf-8"))
+        )
         return
     ensure_directory(path.parent, dry_run=False)
     with path.open("w", encoding="utf-8") as handle:
@@ -568,7 +618,9 @@ def format_month(month: str) -> str:
 
 def slugify(text: str) -> str:
     invalid_fs_chars: str = '/\\:*?"<>|'
-    return re.sub(r"[" + re.escape(invalid_fs_chars) + r"\s]+", "-", text.lower()).strip("-")
+    return re.sub(
+        r"[" + re.escape(invalid_fs_chars) + r"\s]+", "-", text.lower()
+    ).strip("-")
 
 
 def canonicalize_tool_name(raw_name: str) -> str:
@@ -659,7 +711,9 @@ def extract_tool_links(lines: Iterable[str]) -> List[Tuple[str, str]]:
 
 def load_entries() -> List[ToolGuideEntry]:
     if not DATA_PATH.exists():
-        logging.info("No data.json found at %s, starting with empty dataset.", DATA_PATH)
+        logging.info(
+            "No data.json found at %s, starting with empty dataset.", DATA_PATH
+        )
         return []
 
     with DATA_PATH.open("r", encoding="utf-8") as handle:
@@ -689,7 +743,9 @@ def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> No
 
     payload = [entry.to_dict() for entry in normalized_entries]
     if dry_run:
-        logging.info("Dry-run: would write %s with %d entries.", DATA_PATH, len(payload))
+        logging.info(
+            "Dry-run: would write %s with %d entries.", DATA_PATH, len(payload)
+        )
         return
     ensure_directory(DATA_PATH.parent, dry_run=False)
     with DATA_PATH.open("w", encoding="utf-8") as handle:
@@ -744,7 +800,9 @@ def find_existing_guide_by_url(month: str, url: str, timestamp: int) -> Optional
     return None
 
 
-def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry_run: bool = False) -> bool:
+def rewrite_guide_name_in_markdown(
+    path: Path, old_name: str, new_name: str, dry_run: bool = False
+) -> bool:
     """Rewrite guide markdown so the H1 title matches new_name."""
     try:
         content = path.read_text(encoding="utf-8")
@@ -785,7 +843,9 @@ def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry
                 for prefix in prefixes:
                     if stripped.startswith(prefix):
                         leading_ws_match = re.match(r"^(\s*)", line)
-                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        leading_ws = (
+                            leading_ws_match.group(1) if leading_ws_match else ""
+                        )
                         rest = stripped[len(prefix) :].lstrip()
                         line = f"{leading_ws}{rest}" if rest else leading_ws
                         break
@@ -806,7 +866,9 @@ def rewrite_guide_name_in_markdown(path: Path, old_name: str, new_name: str, dry
     return True
 
 
-def enforce_guide_title_and_tldr_style(path: Path, tool_name: str, dry_run: bool = False) -> bool:
+def enforce_guide_title_and_tldr_style(
+    path: Path, tool_name: str, dry_run: bool = False
+) -> bool:
     """Ensure the guide's H1 uses the canonical tool name.
 
     For TL;DR, strip legacy "{tool_name}：" / "{tool_name}:" prefixes if present.
@@ -846,7 +908,9 @@ def enforce_guide_title_and_tldr_style(path: Path, tool_name: str, dry_run: bool
                     if stripped.startswith(prefix):
                         # Preserve original indentation.
                         leading_ws_match = re.match(r"^(\s*)", line)
-                        leading_ws = leading_ws_match.group(1) if leading_ws_match else ""
+                        leading_ws = (
+                            leading_ws_match.group(1) if leading_ws_match else ""
+                        )
                         rest = stripped[len(prefix) :].lstrip()
                         line = f"{leading_ws}{rest}" if rest else leading_ws
                         break
@@ -866,7 +930,9 @@ def enforce_guide_title_and_tldr_style(path: Path, tool_name: str, dry_run: bool
     return True
 
 
-def enforce_guide_platform_line(path: Path, platforms: List[str], dry_run: bool = False) -> bool:
+def enforce_guide_platform_line(
+    path: Path, platforms: List[str], dry_run: bool = False
+) -> bool:
     platforms = normalize_platforms(platforms)
     try:
         content = path.read_text(encoding="utf-8")
@@ -880,7 +946,9 @@ def enforce_guide_platform_line(path: Path, platforms: List[str], dry_run: bool 
     updated = False
     for index, line in enumerate(lines[:40]):
         if line.startswith("- Platform:"):
-            new_line = "- Platform: " + ", ".join(platforms) if platforms else "- Platform:"
+            new_line = (
+                "- Platform: " + ", ".join(platforms) if platforms else "- Platform:"
+            )
             if line != new_line:
                 lines[index] = new_line
                 updated = True
@@ -899,7 +967,9 @@ def enforce_guide_platform_line(path: Path, platforms: List[str], dry_run: bool 
     return True
 
 
-def enforce_guide_categories_line(path: Path, categories: List[str], dry_run: bool = False) -> bool:
+def enforce_guide_categories_line(
+    path: Path, categories: List[str], dry_run: bool = False
+) -> bool:
     categories = normalize_categories(categories, max_count=3)
     try:
         content = path.read_text(encoding="utf-8")
@@ -914,7 +984,11 @@ def enforce_guide_categories_line(path: Path, categories: List[str], dry_run: bo
     # Update existing line if present.
     for index, line in enumerate(lines[:40]):
         if line.startswith("- Categories:"):
-            new_line = "- Categories: " + ", ".join(categories) if categories else "- Categories:"
+            new_line = (
+                "- Categories: " + ", ".join(categories)
+                if categories
+                else "- Categories:"
+            )
             if line != new_line:
                 lines[index] = new_line
                 content = "\n".join(lines) + ("\n" if original.endswith("\n") else "")
@@ -974,8 +1048,12 @@ def migrate_entry_name_and_file(entry: ToolGuideEntry, dry_run: bool = False) ->
 
     # If the file already exists under the new name, no need to rename.
     if new_path.exists():
-        rewrite_guide_name_in_markdown(new_path, old_name=old_name, new_name=entry.name, dry_run=dry_run)
-        logging.info("Migrated name '%s' -> '%s' (file already in place)", old_name, entry.name)
+        rewrite_guide_name_in_markdown(
+            new_path, old_name=old_name, new_name=entry.name, dry_run=dry_run
+        )
+        logging.info(
+            "Migrated name '%s' -> '%s' (file already in place)", old_name, entry.name
+        )
         return True
 
     existing = find_existing_guide_by_url(entry.month, entry.url, entry.timestamp)
@@ -995,7 +1073,9 @@ def migrate_entry_name_and_file(entry: ToolGuideEntry, dry_run: bool = False) ->
     ensure_directory(new_path.parent, dry_run=False)
     existing.rename(new_path)
     logging.info("Renamed guide file %s -> %s", existing.name, new_path.name)
-    rewrite_guide_name_in_markdown(new_path, old_name=old_name, new_name=entry.name, dry_run=False)
+    rewrite_guide_name_in_markdown(
+        new_path, old_name=old_name, new_name=entry.name, dry_run=False
+    )
     return True
 
 
@@ -1061,6 +1141,7 @@ def extract_tldr_from_markdown(file_path: str) -> str:
             if found_tldr:
                 break
         elif found_tldr and token["type"] == "paragraph":
+
             def extract_text(children):
                 parts: List[str] = []
                 for child in children:
@@ -1080,7 +1161,9 @@ def extract_tldr_from_markdown(file_path: str) -> str:
 
 
 def render_entry_lines(entry: ToolGuideEntry, link: str, tldr: str) -> List[str]:
-    date_str = datetime.fromtimestamp(entry.timestamp, tz=timezone.utc).strftime("%Y-%m-%d")
+    date_str = datetime.fromtimestamp(entry.timestamp, tz=timezone.utc).strftime(
+        "%Y-%m-%d"
+    )
     lines = [f"({date_str}) [{entry.name}]({link})"]
     if tldr:
         lines.append(f"- {tldr}")
@@ -1106,7 +1189,9 @@ def build_monthly_index_markdown(
             month=entry.month,
             in_readme_md=True,
         ).name
-        lines.extend(render_entry_lines(entry, link, tldr_lookup.get(entry.identity(), "")))
+        lines.extend(
+            render_entry_lines(entry, link, tldr_lookup.get(entry.identity(), ""))
+        )
         lines.append("")
     return "\n".join(lines).strip() + "\n"
 
@@ -1162,7 +1247,9 @@ def build_root_readme(
     if sorted_months:
         for month in sorted_months:
             link = Path(month, "monthly-index.md").as_posix()
-            lines.append(f"- [{format_month(month)}]({link}) ({len(grouped[month])} entries)")
+            lines.append(
+                f"- [{format_month(month)}]({link}) ({len(grouped[month])} entries)"
+            )
     else:
         lines.append("- _Archive will appear after the first guide._")
 
@@ -1175,7 +1262,9 @@ def build_all_guide_md(
 ) -> str:
     lines: List[str] = ["# All Guides", ""]
     for entry in sorted(entries, key=lambda e: e.timestamp, reverse=True):
-        date_str = datetime.fromtimestamp(entry.timestamp, tz=timezone.utc).strftime("%Y-%m-%d")
+        date_str = datetime.fromtimestamp(entry.timestamp, tz=timezone.utc).strftime(
+            "%Y-%m-%d"
+        )
         guide_path = get_guide_file_path(
             name=entry.name,
             timestamp=entry.timestamp,
@@ -1194,7 +1283,9 @@ def build_all_guide_md(
     return "\n".join(lines).strip() + "\n"
 
 
-def group_entries_by_month(entries: Iterable[ToolGuideEntry]) -> Dict[str, List[ToolGuideEntry]]:
+def group_entries_by_month(
+    entries: Iterable[ToolGuideEntry],
+) -> Dict[str, List[ToolGuideEntry]]:
     grouped: Dict[str, List[ToolGuideEntry]] = {}
     for entry in entries:
         grouped.setdefault(entry.month, []).append(entry)
@@ -1243,7 +1334,9 @@ def write_monthly_indexes(
 @log_execution_time
 def submit_to_wayback_machine(url: str) -> None:
     if WaybackMachineSaveAPI is None:
-        logging.info("WaybackMachineSaveAPI not available; skipping submission for %s.", url)
+        logging.info(
+            "WaybackMachineSaveAPI not available; skipping submission for %s.", url
+        )
         return
 
     user_agent = (
@@ -1275,10 +1368,14 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
     }
     timeout = (HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS)
     try:
-        response: requests.Response = session.head(url, allow_redirects=True, headers=headers, timeout=timeout)
+        response: requests.Response = session.head(
+            url, allow_redirects=True, headers=headers, timeout=timeout
+        )
         status = response.status_code
         if status in (403, 405):
-            response = session.get(url, allow_redirects=True, headers=headers, timeout=timeout, stream=True)
+            response = session.get(
+                url, allow_redirects=True, headers=headers, timeout=timeout, stream=True
+            )
             status = response.status_code
             response.close()
         return status, None
@@ -1299,8 +1396,16 @@ def get_text_content(url: str) -> str:
     status_code, preflight_error = preflight_check_url(url)
     if preflight_error:
         logging.warning("Preflight check failed for %s: %s", url, preflight_error)
-    elif status_code is not None and status_code >= 400 and status_code not in (401, 403, 429):
-        logging.warning("Origin URL returned HTTP %d for %s; content fetch may fail.", status_code, url)
+    elif (
+        status_code is not None
+        and status_code >= 400
+        and status_code not in (401, 403, 429)
+    ):
+        logging.warning(
+            "Origin URL returned HTTP %d for %s; content fetch may fail.",
+            status_code,
+            url,
+        )
 
     jina_url = f"https://r.jina.ai/{url}"
     headers = {
@@ -1313,7 +1418,9 @@ def get_text_content(url: str) -> str:
 
     for attempt in range(MAX_RETRIES):
         try:
-            response: requests.Response = session.get(jina_url, headers=headers, timeout=timeout)
+            response: requests.Response = session.get(
+                jina_url, headers=headers, timeout=timeout
+            )
             if response.status_code >= 400:
                 status = response.status_code
                 error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{MAX_RETRIES}"
@@ -1324,7 +1431,9 @@ def get_text_content(url: str) -> str:
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
                     continue
-                raise Exception(f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}")
+                raise Exception(
+                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}"
+                )
 
             content = response.text.strip()
             if len(content) < MIN_CONTENT_LENGTH:
@@ -1335,7 +1444,9 @@ def get_text_content(url: str) -> str:
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
                     continue
-                raise Exception(f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}")
+                raise Exception(
+                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}"
+                )
 
             if len(content) > MAX_CONTENT_LENGTH:
                 logging.warning(
@@ -1345,16 +1456,22 @@ def get_text_content(url: str) -> str:
                 )
                 content = content[:MAX_CONTENT_LENGTH]
 
-            logging.info("Successfully fetched content with %d characters", len(content))
+            logging.info(
+                "Successfully fetched content with %d characters", len(content)
+            )
             return content
         except requests.RequestException as error:
-            logging.warning("Request failed (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, error)
+            logging.warning(
+                "Request failed (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, error
+            )
             if attempt < MAX_RETRIES - 1:
                 wait_time = 2**attempt
                 logging.info("Retrying in %d seconds...", wait_time)
                 time.sleep(wait_time)
             else:
-                raise Exception(f"All {MAX_RETRIES} retry attempts failed. Last error: {error}") from error
+                raise Exception(
+                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error}"
+                ) from error
 
 
 @log_execution_time
@@ -1385,12 +1502,16 @@ def call_openai_api(prompt: str, content: str) -> str:
             {"role": "user", "content": content},
         ],
     }
-    api_endpoint: str = os.environ.get("OPENAI_API_ENDPOINT", "https://api.openai.com/v1/chat/completions")
+    api_endpoint: str = os.environ.get(
+        "OPENAI_API_ENDPOINT", "https://api.openai.com/v1/chat/completions"
+    )
 
     logging.info("Calling OpenAI API with model: %s", model)
     logging.info("API endpoint: %s", api_endpoint)
 
-    response: requests.Response = session.post(api_endpoint, headers=headers, data=json.dumps(data))
+    response: requests.Response = session.post(
+        api_endpoint, headers=headers, data=json.dumps(data)
+    )
     logging.info("Response status code: %d", response.status_code)
     response_json = response.json()
 
@@ -1451,9 +1572,20 @@ def _detect_platforms(text: str) -> List[str]:
         platforms.append("iOS")
     if "android" in lowered:
         platforms.append("Android")
-    if any(token in lowered for token in ("browser extension", "chrome extension", "firefox addon", "firefox add-on")):
+    if any(
+        token in lowered
+        for token in (
+            "browser extension",
+            "chrome extension",
+            "firefox addon",
+            "firefox add-on",
+        )
+    ):
         platforms.append("Browser Extension")
-    if any(token in lowered for token in ("web", "saas", "in your browser", "browser-based")):
+    if any(
+        token in lowered
+        for token in ("web", "saas", "in your browser", "browser-based")
+    ):
         platforms.append("Web")
     if not platforms:
         platforms.append("Web")
@@ -1462,15 +1594,38 @@ def _detect_platforms(text: str) -> List[str]:
     return [p for p in order if p in platforms]
 
 
-def _heuristic_tags_and_category(name: str, url: str, page_text: str) -> Tuple[List[str], str]:
+def _heuristic_tags_and_category(
+    name: str, url: str, page_text: str
+) -> Tuple[List[str], str]:
     haystack = f"{name}\n{url}\n{page_text}".lower()
     if "rss" in haystack:
         return ["RSS Reader", "Cross-platform"], "rss"
-    if any(token in haystack for token in ("text expander", "snippet", "autocomplete", "autohotkey", "expanso")):
+    if any(
+        token in haystack
+        for token in (
+            "text expander",
+            "snippet",
+            "autocomplete",
+            "autohotkey",
+            "expanso",
+        )
+    ):
         return ["Productivity", "Text Expansion"], "text-expander"
-    if any(token in haystack for token in ("terminal file explorer", "tui", "terminal", "file manager", "cli")):
+    if any(
+        token in haystack
+        for token in (
+            "terminal file explorer",
+            "tui",
+            "terminal",
+            "file manager",
+            "cli",
+        )
+    ):
         return ["Terminal", "File Manager"], "terminal-file"
-    if any(token in haystack for token in ("note", "note-taking", "knowledge base", "zettelkasten")):
+    if any(
+        token in haystack
+        for token in ("note", "note-taking", "knowledge base", "zettelkasten")
+    ):
         return ["Note-taking", "Knowledge Base"], "notes"
     return ["Software", "Tool"], "generic"
 
@@ -1495,7 +1650,13 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "离线优先与阅读队列",
         ]
         categories = ["Reading & Information"]
-        similar_tools = ["NetNewsWire", "Reeder", "Fluent Reader", "Inoreader", "Feedly"]
+        similar_tools = [
+            "NetNewsWire",
+            "Reeder",
+            "Fluent Reader",
+            "Inoreader",
+            "Feedly",
+        ]
     elif category == "text-expander":
         scenarios = [
             "用短缩写快速展开常用文本",
@@ -1512,7 +1673,13 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
             "可配置的变量/占位符与表单化输入",
         ]
         categories = ["Text Input & Writing", "System & Automation"]
-        similar_tools = ["TextExpander", "aText", "AutoHotkey", "PhraseExpress", "Alfred Snippets"]
+        similar_tools = [
+            "TextExpander",
+            "aText",
+            "AutoHotkey",
+            "PhraseExpress",
+            "Alfred Snippets",
+        ]
     elif category == "terminal-file":
         scenarios = [
             "在终端中快速浏览与定位文件",
@@ -1548,7 +1715,11 @@ def heuristic_tool_guide(name: str, url: str, page_text: str) -> ToolGuideConten
         categories = ["Knowledge Management"]
         similar_tools = ["Obsidian", "Notion", "Logseq", "Roam Research", "Joplin"]
     else:
-        scenarios = ["记录与管理工作/学习中的常见需求", "提升信息获取与整理效率", "作为某类任务的辅助工具"]
+        scenarios = [
+            "记录与管理工作/学习中的常见需求",
+            "提升信息获取与整理效率",
+            "作为某类任务的辅助工具",
+        ]
         pain_points = [
             "缺少趁手工具导致流程低效",
             "信息/任务分散，难以统一管理",
@@ -1614,9 +1785,7 @@ def generate_tool_guide(name: str, url: str, page_text: str) -> ToolGuideContent
 """.strip()
 
     user_content = (
-        f"Tool Name: {name}\n"
-        f"URL: {normalize_http_url(url)}\n\n"
-        f"Page Text:\n{page_text}"
+        f"Tool Name: {name}\nURL: {normalize_http_url(url)}\n\nPage Text:\n{page_text}"
     )
     raw = call_openai_api(prompt, user_content)
     extracted = _extract_first_json_object(raw)
@@ -1665,7 +1834,9 @@ def generate_tool_guide_with_options(
 
     api_key = os.environ.get("OPENAI_API_KEY", "").strip()
     if not api_key:
-        logging.warning("OPENAI_API_KEY not set; falling back to heuristic guide generation.")
+        logging.warning(
+            "OPENAI_API_KEY not set; falling back to heuristic guide generation."
+        )
         return heuristic_tool_guide(name, url, page_text)
 
     return generate_tool_guide(name, url, page_text)
@@ -1685,13 +1856,29 @@ def build_guide_markdown(
 ) -> str:
     tag_line = f"- Tags: {', '.join(tags)}\n" if tags else ""
     normalized_categories = normalize_categories(categories, max_count=3)
-    categories_line = f"- Categories: {', '.join(normalized_categories)}\n" if normalized_categories else ""
+    categories_line = (
+        f"- Categories: {', '.join(normalized_categories)}\n"
+        if normalized_categories
+        else ""
+    )
     platform_line = f"- Platform: {', '.join(platform)}\n" if platform else ""
 
-    scenario_lines = "\n".join(f"- {item}" for item in scenarios) if scenarios else "- _暂无_"
-    pain_lines = "\n".join(f"- {item}" for item in pain_points) if pain_points else "- _暂无_"
-    principle_lines = "\n".join(f"- {item}" for item in design_principles) if design_principles else "- _暂无_"
-    similar_lines = "\n".join(f"- {item}" for item in similar_tools) if similar_tools else "- _暂无_"
+    scenario_lines = (
+        "\n".join(f"- {item}" for item in scenarios) if scenarios else "- _暂无_"
+    )
+    pain_lines = (
+        "\n".join(f"- {item}" for item in pain_points) if pain_points else "- _暂无_"
+    )
+    principle_lines = (
+        "\n".join(f"- {item}" for item in design_principles)
+        if design_principles
+        else "- _暂无_"
+    )
+    similar_lines = (
+        "\n".join(f"- {item}" for item in similar_tools)
+        if similar_tools
+        else "- _暂无_"
+    )
 
     return (
         f"# {name}\n"
@@ -1739,17 +1926,24 @@ def ingest_tool(
     # Wayback submission is network-bound and independent of guide generation.
     # Overlap it with Jina/OpenAI calls to reduce overall wall-clock time.
     with ThreadPoolExecutor(max_workers=1) as executor:
-        wayback_future = executor.submit(submit_to_wayback_machine, url) if archive else None
+        wayback_future = (
+            executor.submit(submit_to_wayback_machine, url) if archive else None
+        )
 
         page_text = ""
         if fetch:
             try:
                 page_text = get_text_content(url)
             except Exception as error:  # noqa: BLE001
-                logging.warning("Failed to fetch page content for %s; continuing with empty text.", url)
+                logging.warning(
+                    "Failed to fetch page content for %s; continuing with empty text.",
+                    url,
+                )
                 logging.exception(error)
 
-        guide = generate_tool_guide_with_options(name, url, page_text, heuristic=heuristic)
+        guide = generate_tool_guide_with_options(
+            name, url, page_text, heuristic=heuristic
+        )
 
         if wayback_future is not None:
             try:
@@ -1757,7 +1951,9 @@ def ingest_tool(
             except Exception as error:  # noqa: BLE001
                 # submit_to_wayback_machine already logs; keep this guard to
                 # avoid bubbling unexpected thread exceptions.
-                logging.warning("Wayback submission failed (async), skipping, url=%s", url)
+                logging.warning(
+                    "Wayback submission failed (async), skipping, url=%s", url
+                )
                 logging.exception(error)
 
     timestamp = int(datetime.now(timezone.utc).timestamp())
@@ -1788,7 +1984,9 @@ def ingest_tool(
     )
 
     entry.guide_markdown = build_guide_markdown_blob_url(entry)
-    return IngestionResult(entry=entry, guide_markdown=markdown, guide_path=guide_path, tldr=guide.tldr)
+    return IngestionResult(
+        entry=entry, guide_markdown=markdown, guide_path=guide_path, tldr=guide.tldr
+    )
 
 
 def process_tools(options: RunOptions) -> None:
@@ -1856,7 +2054,9 @@ def process_tools(options: RunOptions) -> None:
 
     ingestion_result: Optional[IngestionResult] = None
     if backfill:
-        logging.info("Backfill mode enabled; rebuilding indexes from existing data only.")
+        logging.info(
+            "Backfill mode enabled; rebuilding indexes from existing data only."
+        )
     elif dry_run:
         logging.info(
             "Dry-run mode enabled; will detect next tool but skip network calls and writes."
@@ -1865,7 +2065,11 @@ def process_tools(options: RunOptions) -> None:
         next_tool = find_next_tool_to_process(tool_pairs, processed_urls)
         if next_tool:
             name, url = next_tool
-            logging.info("Dry-run: next tool to process would be: %s (%s)", name, normalize_http_url(url))
+            logging.info(
+                "Dry-run: next tool to process would be: %s (%s)",
+                name,
+                normalize_http_url(url),
+            )
         else:
             logging.info("Dry-run: no new tools to process.")
     elif requests is None:
@@ -1893,12 +2097,20 @@ def process_tools(options: RunOptions) -> None:
             processed_count += 1
 
             if dry_run:
-                logging.info("Dry-run: skipping writes for %s", ingestion_result.guide_path)
+                logging.info(
+                    "Dry-run: skipping writes for %s", ingestion_result.guide_path
+                )
             else:
-                write_text_file(ingestion_result.guide_path, ingestion_result.guide_markdown, dry_run=False)
+                write_text_file(
+                    ingestion_result.guide_path,
+                    ingestion_result.guide_markdown,
+                    dry_run=False,
+                )
 
             # Ensure cached fields reflect what was written.
-            ingestion_result.entry.guide_markdown = build_guide_markdown_blob_url(ingestion_result.entry)
+            ingestion_result.entry.guide_markdown = build_guide_markdown_blob_url(
+                ingestion_result.entry
+            )
             ingestion_result.entry.tldr = (ingestion_result.tldr or "").strip()
 
             overrides[ingestion_result.entry.identity()] = ingestion_result.tldr
@@ -1939,7 +2151,9 @@ def process_tools(options: RunOptions) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Extract tool links and generate tool guides.")
+    parser = argparse.ArgumentParser(
+        description="Extract tool links and generate tool guides."
+    )
     parser.add_argument(
         "--backfill",
         action="store_true",
