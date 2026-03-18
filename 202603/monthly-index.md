@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [NoteDiscovery](2026-03-18-notediscovery.md)
+- 一款轻量级自托管笔记应用，提供隐私保护、快速搜索和AI集成功能
+- Tags: Self-Hosted, Markdown, Knowledge Base, Privacy-Focused, AI Integration
+- Categories: Knowledge Management, Text Input & Writing
+- Platform: Web
+
 (2026-03-18) [Poznote](2026-03-18-poznote.md)
 - 一款注重简洁易用的开源个人笔记与文档平台 支持多平台部署和丰富的功能扩展
 - Tags: Note-taking, Open Source, Self-hosted, Knowledge Management, Markdown
