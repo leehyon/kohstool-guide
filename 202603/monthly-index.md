@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [MediaManager](2026-03-18-mediamanager.md)
+- 一个现代自托管媒体管理系统，用于统一管理电视和电影收藏
+- Tags: Media Management, Self-hosted, TV Shows, Movies, Docker
+- Categories: File Management, Media & Creativity
+- Platform: Web
+
 (2026-03-18) [IronCalc](2026-03-18-ironcalc.md)
 - 开源电子表格引擎，支持自托管和嵌入，提供高性能计算功能
 - Tags: Open Source, Spreadsheet Engine, Self-hosted, Embeddable, Rust-based
