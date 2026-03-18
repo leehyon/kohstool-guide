@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [BentoPDF](2026-03-18-bentopdf.md)
+- 一款免费在线 PDF 工具集，无需上传文件，客户端处理，注重隐私保护
+- Tags: PDF Editor, Privacy-First, Free, Client-Side Processing, No Signup Required
+- Categories: Developer Tools, File Management, Security & Privacy
+- Platform: Web
+
 (2026-03-18) [VidBee](2026-03-18-vidbee.md)
 - 一款免费开源视频下载工具，支持 1000+ 网站的高清视频下载，具备自动化批量处理功能
 - Tags: Video Downloader, Open Source, Cross Platform, Batch Processing, High Quality
