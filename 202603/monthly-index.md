@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [Poznote](2026-03-18-poznote.md)
+- 一款注重简洁易用的开源个人笔记与文档平台 支持多平台部署和丰富的功能扩展
+- Tags: Note-taking, Open Source, Self-hosted, Knowledge Management, Markdown
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Windows, Linux, Mac, Web
+
 (2026-03-18) [MediaManager](2026-03-18-mediamanager.md)
 - 一个现代自托管媒体管理系统，用于统一管理电视和电影收藏
 - Tags: Media Management, Self-hosted, TV Shows, Movies, Docker

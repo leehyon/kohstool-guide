@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Poznote](202603/2026-03-18-poznote.md) - 一款注重简洁易用的开源个人笔记与文档平台 支持多平台部署和丰富的功能扩展
 - [MediaManager](202603/2026-03-18-mediamanager.md) - 一个现代自托管媒体管理系统，用于统一管理电视和电影收藏
 - [IronCalc](202603/2026-03-18-ironcalc.md) - 开源电子表格引擎，支持自托管和嵌入，提供高性能计算功能
 - [BentoPDF](202603/2026-03-18-bentopdf.md) - 一款免费在线 PDF 工具集，无需上传文件，客户端处理，注重隐私保护
@@ -48,4 +49,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (44 entries)
+- [2026-03](202603/monthly-index.md) (45 entries)
