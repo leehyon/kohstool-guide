@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-18) [WezTerm](2026-03-18-wezterm.md)
+- 一个现代化的跨平台终端模拟器，支持高度可定制和丰富的功能集
+- Tags: Terminal Emulator, Cross-Platform, Customizable, SSH Client, Lua Scripting
+- Categories: Developer Tools, System & Automation, Communication
+- Platform: Mac, Windows, Linux, FreeBSD, NetBSD
+
 (2026-03-18) [PDF Craft](2026-03-18-pdf-craft.md)
 - 一款扫描 PDF 转换工具，可将 PDF 转换为 EPUB、Markdown 等格式，支持数学公式识别和表格结构保留
 - Tags: PDF Conversion, OCR Technology, Academic Tools, Math Formula Support, Privacy-Focused
