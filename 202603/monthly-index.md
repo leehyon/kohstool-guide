@@ -1,5 +1,10 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [git-cz](2026-03-19-git-cz.md)
+- 一个轻量级的 Git 提交信息生成工具，支持语义化提交和自定义配置
+- Tags: Git, Version Control, Commit Message, Developer Tool, Semantic Commit
+- Categories: Developer Tools
+
 (2026-03-19) [commitizen](2026-03-19-commitizen.md)
 - 一个帮助团队保持一致的提交消息并自动管理版本的工具
 - Tags: Version Control, Git, CI/CD, Release Management, Python
