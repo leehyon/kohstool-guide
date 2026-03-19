@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [ghostty](2026-03-19-ghostty.md)
+- 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
+- Tags: Terminal Emulator, Cross-Platform, GPU Acceleration, Developer Tool, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-03-19) [fish shell](2026-03-19-fish-shell.md)
 - 一个智能且用户友好的命令行 shell，适用于 Linux 和 macOS，提供友好的语法和自动建议功能
 - Tags: Command Line, Shell, Scripting, Terminal, Cross-platform
