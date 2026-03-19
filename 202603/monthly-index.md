@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [fish shell](2026-03-19-fish-shell.md)
+- 一个智能且用户友好的命令行 shell，适用于 Linux 和 macOS，提供友好的语法和自动建议功能
+- Tags: Command Line, Shell, Scripting, Terminal, Cross-platform
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Linux, Windows, BSD
+
 (2026-03-19) [ActivityWatch](2026-03-19-activitywatch.md)
 - 一款免费开源的时间追踪工具，自动记录你在设备上花费的时间，保护隐私且跨平台支持
 - Tags: Time Tracking, Open Source, Privacy First, Cross Platform, Productivity
