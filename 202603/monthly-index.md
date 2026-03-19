@@ -1,5 +1,10 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [fresh](2026-03-19-fresh.md)
+- 一个现代化的 Web 框架，专注于速度、可靠性和简单性，支持零运行时开销和岛屿式客户端水合
+- Tags: Web Framework, TypeScript, Deno, Preact, Zero Runtime
+- Categories: Developer Tools
+
 (2026-03-19) [fiftyone](2026-03-19-fiftyone.md)
 - 一个用于精炼高质量数据集和可视化 AI 模型的开源平台
 - Tags: Computer Vision, Data Annotation, Model Evaluation, Open Source, Dataset Management
