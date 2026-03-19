@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [moffee](202603/2026-03-19-moffee.md) - 一款将 Markdown 文档转换为专业演示幻灯片的工具，支持实时预览和多种主题
 - [superpowers](202603/2026-03-18-superpowers.md) - 一个用于构建文本处理工作流的桌面应用程序，通过管道连接各种命令行工具
 - [MrRSS](202603/2026-03-18-mrrss.md) - 一款跨平台 RSS 阅读器，利用 AI 技术提供文章摘要、翻译和智能内容发现功能
 - [winscp](202603/2026-03-18-winscp.md) - 一款免费的 Windows 文件管理器 支持 SFTP FTP FTPS SCP S3 WebDAV 等协议
@@ -59,4 +60,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (55 entries)
+- [2026-03](202603/monthly-index.md) (56 entries)

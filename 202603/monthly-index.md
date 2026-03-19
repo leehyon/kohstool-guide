@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [moffee](2026-03-19-moffee.md)
+- 一款将 Markdown 文档转换为专业演示幻灯片的工具，支持实时预览和多种主题
+- Tags: Markdown, Presentation, Slide Maker, Open Source, Python
+- Categories: Text Input & Writing, Media & Creativity
+- Platform: Web
+
 (2026-03-18) [superpowers](2026-03-18-superpowers.md)
 - 一个用于构建文本处理工作流的桌面应用程序，通过管道连接各种命令行工具
 - Tags: Text Processing, Workflow Automation, Command Line Integration, Desktop Application, Open Source
