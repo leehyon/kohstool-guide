@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [Fabric](2026-03-19-fabric.md)
+- 一个开源框架，通过模块化 AI 提示词增强人类能力，可在各种工具中使用
+- Tags: AI Augmentation, Prompt Management, Open Source, Command Line, Multi-Provider
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux, Web
+
 (2026-03-19) [moffee](2026-03-19-moffee.md)
 - 一款将 Markdown 文档转换为专业演示幻灯片的工具，支持实时预览和多种主题
 - Tags: Markdown, Presentation, Slide Maker, Open Source, Python
