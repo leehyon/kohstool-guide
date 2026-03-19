@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [OpenClaw](2026-03-19-openclaw.md)
+- 一个能实际执行任务的 AI 助手，通过聊天应用管理邮件、日历和任务
+- Tags: AI Assistant, Open Source, Automation, Personal Productivity, Chat-based Interface
+- Categories: Developer Tools, System & Automation, Communication
+- Platform: Mac, Windows, Linux, iOS, Android, Web
+
 (2026-03-19) [ghostty](2026-03-19-ghostty.md)
 - 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
 - Tags: Terminal Emulator, Cross-Platform, GPU Acceleration, Developer Tool, Open Source

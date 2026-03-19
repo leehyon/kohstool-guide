@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [OpenClaw](202603/2026-03-19-openclaw.md) - 一个能实际执行任务的 AI 助手，通过聊天应用管理邮件、日历和任务
 - [ghostty](202603/2026-03-19-ghostty.md) - 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
 - [fish shell](202603/2026-03-19-fish-shell.md) - 一个智能且用户友好的命令行 shell，适用于 Linux 和 macOS，提供友好的语法和自动建议功能
 - [ActivityWatch](202603/2026-03-19-activitywatch.md) - 一款免费开源的时间追踪工具，自动记录你在设备上花费的时间，保护隐私且跨平台支持
@@ -68,4 +69,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (64 entries)
+- [2026-03](202603/monthly-index.md) (65 entries)
