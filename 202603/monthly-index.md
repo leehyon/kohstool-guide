@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [fiftyone](2026-03-19-fiftyone.md)
+- 一个用于精炼高质量数据集和可视化 AI 模型的开源平台
+- Tags: Computer Vision, Data Annotation, Model Evaluation, Open Source, Dataset Management
+- Categories: Developer Tools, Media & Creativity, Data & Analytics
+- Platform: Windows, Linux, Mac, Web
+
 (2026-03-19) [git-cz](2026-03-19-git-cz.md)
 - 一个轻量级的 Git 提交信息生成工具，支持语义化提交和自定义配置
 - Tags: Git, Version Control, Commit Message, Developer Tool, Semantic Commit

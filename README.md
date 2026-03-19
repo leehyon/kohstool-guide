@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [fiftyone](202603/2026-03-19-fiftyone.md) - 一个用于精炼高质量数据集和可视化 AI 模型的开源平台
 - [git-cz](202603/2026-03-19-git-cz.md) - 一个轻量级的 Git 提交信息生成工具，支持语义化提交和自定义配置
 - [commitizen](202603/2026-03-19-commitizen.md) - 一个帮助团队保持一致的提交消息并自动管理版本的工具
 - [Fabric](202603/2026-03-19-fabric.md) - 一个开源框架，通过模块化 AI 提示词增强人类能力，可在各种工具中使用
@@ -63,4 +64,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (59 entries)
+- [2026-03](202603/monthly-index.md) (60 entries)
