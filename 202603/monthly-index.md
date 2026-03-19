@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-19) [ActivityWatch](2026-03-19-activitywatch.md)
+- 一款免费开源的时间追踪工具，自动记录你在设备上花费的时间，保护隐私且跨平台支持
+- Tags: Time Tracking, Open Source, Privacy First, Cross Platform, Productivity
+- Categories: Developer Tools, Data & Analytics
+- Platform: Windows, Mac, Linux, Android, Web, Browser Extension
+
 (2026-03-19) [fresh](2026-03-19-fresh.md)
 - 一个现代化的 Web 框架，专注于速度、可靠性和简单性，支持零运行时开销和岛屿式客户端水合
 - Tags: Web Framework, TypeScript, Deno, Preact, Zero Runtime

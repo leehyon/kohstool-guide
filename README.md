@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [ActivityWatch](202603/2026-03-19-activitywatch.md) - 一款免费开源的时间追踪工具，自动记录你在设备上花费的时间，保护隐私且跨平台支持
 - [fresh](202603/2026-03-19-fresh.md) - 一个现代化的 Web 框架，专注于速度、可靠性和简单性，支持零运行时开销和岛屿式客户端水合
 - [fiftyone](202603/2026-03-19-fiftyone.md) - 一个用于精炼高质量数据集和可视化 AI 模型的开源平台
 - [git-cz](202603/2026-03-19-git-cz.md) - 一个轻量级的 Git 提交信息生成工具，支持语义化提交和自定义配置
@@ -65,4 +66,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (61 entries)
+- [2026-03](202603/monthly-index.md) (62 entries)
