@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-20) [grobpaint](2026-03-20-grobpaint.md)
+- 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
+- Tags: Image Editor, Cross-Platform, Lightweight, Layer Support, Pixel Art
+- Categories: Media & Creativity
+- Platform: Mac, Windows, Linux, Web
+
 (2026-03-19) [OpenClaw](2026-03-19-openclaw.md)
 - 一个能实际执行任务的 AI 助手，通过聊天应用管理邮件、日历和任务
 - Tags: AI Assistant, Open Source, Automation, Personal Productivity, Chat-based Interface
