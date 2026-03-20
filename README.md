@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [VibeGo](202603/2026-03-20-vibego.md) - 一个专为移动设备设计的 Web IDE，支持多种 AI 编码工具，提供文件管理、Git 集成和终端功能
 - [grobpaint](202603/2026-03-20-grobpaint.md) - 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
 - [OpenClaw](202603/2026-03-19-openclaw.md) - 一个能实际执行任务的 AI 助手，通过聊天应用管理邮件、日历和任务
 - [ghostty](202603/2026-03-19-ghostty.md) - 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
@@ -70,4 +71,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (66 entries)
+- [2026-03](202603/monthly-index.md) (67 entries)

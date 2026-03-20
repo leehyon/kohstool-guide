@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-20) [VibeGo](2026-03-20-vibego.md)
+- 一个专为移动设备设计的 Web IDE，支持多种 AI 编码工具，提供文件管理、Git 集成和终端功能
+- Tags: Web IDE, Mobile-First, AI Coding, Git Integration, Minimalist Design
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-03-20) [grobpaint](2026-03-20-grobpaint.md)
 - 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
 - Tags: Image Editor, Cross-Platform, Lightweight, Layer Support, Pixel Art
