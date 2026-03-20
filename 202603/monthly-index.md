@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-20) [FreshRSS](2026-03-20-freshrss.md)
+- 一个免费可自托管的 RSS 和 Atom 源聚合器，轻量高效且高度可定制
+- Tags: RSS Reader, Self-hosted, Feed Aggregator, Open Source, Customizable
+- Categories: Reading & Information, Developer Tools, File Management
+- Platform: Web
+
 (2026-03-20) [VibeGo](2026-03-20-vibego.md)
 - 一个专为移动设备设计的 Web IDE，支持多种 AI 编码工具，提供文件管理、Git 集成和终端功能
 - Tags: Web IDE, Mobile-First, AI Coding, Git Integration, Minimalist Design
