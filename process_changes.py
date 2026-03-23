@@ -627,7 +627,7 @@ def canonicalize_tool_name(raw_name: str) -> str:
     """Normalize a tool display name to a short tool name.
 
     Examples:
-    - "MrRSS - Modern Cross-Platform RSS Reader" -> "MrRSS"
+    - "MrRSS - Modern Cross-platform RSS Reader" -> "MrRSS"
     - "mgunyho/tere: Terminal file explorer" -> "tere"
     - "owner/repo" -> "repo"
     """

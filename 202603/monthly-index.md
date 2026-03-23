@@ -14,7 +14,7 @@
 
 (2026-03-20) [grobpaint](2026-03-20-grobpaint.md)
 - 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
-- Tags: Image Editor, Cross-Platform, Lightweight, Layer Support, Pixel Art
+- Tags: Image Editor, Cross-platform, Lightweight, Layer Support, Pixel Art
 - Categories: Media & Creativity
 - Platform: Mac, Windows, Linux, Web
 
@@ -26,7 +26,7 @@
 
 (2026-03-19) [ghostty](2026-03-19-ghostty.md)
 - 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
-- Tags: Terminal Emulator, Cross-Platform, GPU Acceleration, Developer Tool, Open Source
+- Tags: Terminal Emulator, Cross-platform, GPU Acceleration, Developer Tool, Open Source
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux
 
@@ -84,7 +84,7 @@
 
 (2026-03-18) [MrRSS](2026-03-18-mrrss.md)
 - 一款跨平台 RSS 阅读器，利用 AI 技术提供文章摘要、翻译和智能内容发现功能
-- Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-Platform
+- Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-platform
 - Categories: Reading & Information, Developer Tools
 - Platform: Windows, Mac, Linux
 

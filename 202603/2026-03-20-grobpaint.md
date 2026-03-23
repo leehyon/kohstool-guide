@@ -1,7 +1,7 @@
 # grobpaint
 - URL: https://github.com/groverburger/grobpaint
 - Added: 2026-03-20 02:09:43
-- Tags: Image Editor, Cross-Platform, Lightweight, Layer Support, Pixel Art
+- Tags: Image Editor, Cross-platform, Lightweight, Layer Support, Pixel Art
 - Categories: Media & Creativity
 - Platform: Mac, Windows, Linux, Web
 

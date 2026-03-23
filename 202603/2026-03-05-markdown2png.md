@@ -1,7 +1,7 @@
 # markdown2png
 - URL: https://github.com/nicejade/markdown2png
 - Added: 2026-03-05 10:15:00
-- Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-Platform
+- Tags: Code Conversion, Markdown, Image Generation, Developer Tool, Cross-platform
 - Categories: Text Input & Writing, Developer Tools
 - Platform: Web, Browser Extension
 
