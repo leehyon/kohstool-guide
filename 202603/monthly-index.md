@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-24) [Roo Code](2026-03-24-roo-code.md)
+- AI 编程助手，支持多种模型，提供 VS Code 扩展和云端代理，帮助开发者高效编写和优化代码
+- Tags: AI Coding Assistant, VS Code Extension, Open Source, Multi-Model Support, Team Collaboration
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux, Web, Browser Extension
+
 (2026-03-24) [Kilo](2026-03-24-kilo.md)
 - 一个开源的 AI 编程助手，支持 VS Code、JetBrains 和 CLI，帮助开发者构建、部署和迭代代码
 - Tags: AI Coding Assistant, Open Source, IDE Integration, Code Review, Multi-Model Support
