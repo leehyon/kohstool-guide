@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Cline](202603/2026-03-24-cline.md) - 一款开源的 AI 编程助手，支持多种 IDE 和命令行工具，可与企业安全集成
 - [Roo Code](202603/2026-03-24-roo-code.md) - AI 编程助手，支持多种模型，提供 VS Code 扩展和云端代理，帮助开发者高效编写和优化代码
 - [Kilo](202603/2026-03-24-kilo.md) - 一个开源的 AI 编程助手，支持 VS Code、JetBrains 和 CLI，帮助开发者构建、部署和迭代代码
 - [FreshRSS](202603/2026-03-20-freshrss.md) - 一个免费可自托管的 RSS 和 Atom 源聚合器，轻量高效且高度可定制
@@ -74,4 +75,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (70 entries)
+- [2026-03](202603/monthly-index.md) (71 entries)
