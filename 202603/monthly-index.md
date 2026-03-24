@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-24) [Kilo](2026-03-24-kilo.md)
+- 一个开源的 AI 编程助手，支持 VS Code、JetBrains 和 CLI，帮助开发者构建、部署和迭代代码
+- Tags: AI Coding Assistant, Open Source, IDE Integration, Code Review, Multi-Model Support
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux, Web, Browser Extension
+
 (2026-03-20) [FreshRSS](2026-03-20-freshrss.md)
 - 一个免费可自托管的 RSS 和 Atom 源聚合器，轻量高效且高度可定制
 - Tags: RSS Reader, Self-hosted, Feed Aggregator, Open Source, Customizable
@@ -14,7 +20,7 @@
 
 (2026-03-20) [grobpaint](2026-03-20-grobpaint.md)
 - 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
-- Tags: Image Editor, Cross-platform, Lightweight, Layer Support, Pixel Art
+- Tags: Image Editor, Cross-Platform, Lightweight, Layer Support, Pixel Art
 - Categories: Media & Creativity
 - Platform: Mac, Windows, Linux, Web
 
@@ -26,7 +32,7 @@
 
 (2026-03-19) [ghostty](2026-03-19-ghostty.md)
 - 一个快速、功能丰富且跨平台的终端模拟器，使用平台原生 UI 和 GPU 加速
-- Tags: Terminal Emulator, Cross-platform, GPU Acceleration, Developer Tool, Open Source
+- Tags: Terminal Emulator, Cross-Platform, GPU Acceleration, Developer Tool, Open Source
 - Categories: Developer Tools, System & Automation
 - Platform: Mac, Windows, Linux
 
@@ -84,7 +90,7 @@
 
 (2026-03-18) [MrRSS](2026-03-18-mrrss.md)
 - 一款跨平台 RSS 阅读器，利用 AI 技术提供文章摘要、翻译和智能内容发现功能
-- Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-platform
+- Tags: RSS Reader, AI-Powered, Privacy-Focused, Open Source, Cross-Platform
 - Categories: Reading & Information, Developer Tools
 - Platform: Windows, Mac, Linux
 

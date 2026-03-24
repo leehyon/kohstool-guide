@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Kilo](202603/2026-03-24-kilo.md) - 一个开源的 AI 编程助手，支持 VS Code、JetBrains 和 CLI，帮助开发者构建、部署和迭代代码
 - [FreshRSS](202603/2026-03-20-freshrss.md) - 一个免费可自托管的 RSS 和 Atom 源聚合器，轻量高效且高度可定制
 - [VibeGo](202603/2026-03-20-vibego.md) - 一个专为移动设备设计的 Web IDE，支持多种 AI 编码工具，提供文件管理、Git 集成和终端功能
 - [grobpaint](202603/2026-03-20-grobpaint.md) - 一款轻量级跨平台图像编辑器，具有图层功能，介于 MS Paint 和 Paint.NET 之间
@@ -72,4 +73,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (68 entries)
+- [2026-03](202603/monthly-index.md) (69 entries)
