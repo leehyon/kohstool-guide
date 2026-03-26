@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-26) [nanobrew](2026-03-26-nanobrew.md)
+- 一款专为 macOS 设计的极速软件包管理器，使用 Zig 语言编写，比 Homebrew 快达 7000 倍
+- Tags: Package Manager, High Performance, Zig, macOS, Fast Installation
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-03-24) [Cline](2026-03-24-cline.md)
 - 一款开源的 AI 编程助手，支持多种 IDE 和命令行工具，可与企业安全集成
 - Tags: AI Coding, Open Source, IDE Integration, Enterprise Security, Multi-Platform
