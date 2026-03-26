@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-26) [ai-goofish-monitor](2026-03-26-ai-goofish-monitor.md)
+- 基于 Playwright 和 AI 的闲鱼多任务实时监控工具，帮助用户从海量商品中找到心仪产品
+- Tags: E-commerce Monitoring, AI-Powered, Web Scraping, Real-Time Monitoring, Task Automation
+- Categories: Developer Tools, System & Automation, Data & Analytics
+- Platform: Web, Docker, Browser Extension
+
 (2026-03-26) [nanobrew](2026-03-26-nanobrew.md)
 - 一款专为 macOS 设计的极速软件包管理器，使用 Zig 语言编写，比 Homebrew 快达 7000 倍
 - Tags: Package Manager, High Performance, Zig, macOS, Fast Installation
