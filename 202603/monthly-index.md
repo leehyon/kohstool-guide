@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [toolhive](2026-03-27-toolhive.md)
+- 企业级平台用于运行和管理 Model Context Protocol 服务器
+- Tags: AI Tools, Enterprise Platform, MCP Server, Kubernetes, Workflow Automation
+- Categories: Developer Tools, System & Automation
+- Platform: Linux, Web
+
 (2026-03-27) [Flowise](2026-03-27-flowise.md)
 - 一个可视化构建 AI 代理的开源平台，让用户无需编程即可创建复杂的 AI 工作流程
 - Tags: AI Agent Builder, Visual Programming, Open Source, Workflow Automation, No-Code
