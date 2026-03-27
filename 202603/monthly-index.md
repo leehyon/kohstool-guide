@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [BetterCapture](2026-03-27-bettercapture.md)
+- 一款免费开源的 macOS 屏幕录制工具，具有原生外观和专业编码功能
+- Tags: Screen Recording, Free, Open Source, Privacy, macOS
+- Categories: Media & Creativity
+- Platform: Mac
+
 (2026-03-27) [docmd](2026-03-27-docmd.md)
 - 一个极简快速的文档生成工具，从 Markdown 创建美观文档，无 React 冗余，专为开发者设计
 - Tags: Documentation Generator, Markdown, Static Site, Zero-Config, Developer Tool
