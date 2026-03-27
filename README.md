@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [project-nomad](202603/2026-03-27-project-nomad.md) - 一个自包含的离线生存电脑，集成关键工具、知识和 AI，让您随时随地保持知情和赋能
 - [BetterCapture](202603/2026-03-27-bettercapture.md) - 一款免费开源的 macOS 屏幕录制工具，具有原生外观和专业编码功能
 - [docmd](202603/2026-03-27-docmd.md) - 一个极简快速的文档生成工具，从 Markdown 创建美观文档，无 React 冗余，专为开发者设计
 - [toolhive](202603/2026-03-27-toolhive.md) - 企业级平台用于运行和管理 Model Context Protocol 服务器
@@ -82,4 +83,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (78 entries)
+- [2026-03](202603/monthly-index.md) (79 entries)

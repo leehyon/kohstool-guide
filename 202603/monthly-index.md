@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [project-nomad](2026-03-27-project-nomad.md)
+- 一个自包含的离线生存电脑，集成关键工具、知识和 AI，让您随时随地保持知情和赋能
+- Tags: Offline-First, Knowledge Base, Self-Hosted, AI Integration, Educational Platform
+- Categories: Knowledge Management, Reading & Information, Developer Tools
+- Platform: Linux, Web
+
 (2026-03-27) [BetterCapture](2026-03-27-bettercapture.md)
 - 一款免费开源的 macOS 屏幕录制工具，具有原生外观和专业编码功能
 - Tags: Screen Recording, Free, Open Source, Privacy, macOS
