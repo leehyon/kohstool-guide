@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [Flowise](2026-03-27-flowise.md)
+- 一个可视化构建 AI 代理的开源平台，让用户无需编程即可创建复杂的 AI 工作流程
+- Tags: AI Agent Builder, Visual Programming, Open Source, Workflow Automation, No-Code
+- Categories: Developer Tools, System & Automation
+- Platform: Web
+
 (2026-03-27) [witr](2026-03-27-witr.md)
 - 一款系统进程追踪工具，通过交互式终端界面展示进程的启动原因和依赖关系
 - Tags: Process Monitoring, System Diagnostics, CLI Tool, Cross-platform, Open Source

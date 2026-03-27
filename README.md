@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Flowise](202603/2026-03-27-flowise.md) - 一个可视化构建 AI 代理的开源平台，让用户无需编程即可创建复杂的 AI 工作流程
 - [witr](202603/2026-03-27-witr.md) - 一款系统进程追踪工具，通过交互式终端界面展示进程的启动原因和依赖关系
 - [ai-goofish-monitor](202603/2026-03-26-ai-goofish-monitor.md) - 基于 Playwright 和 AI 的闲鱼多任务实时监控工具，帮助用户从海量商品中找到心仪产品
 - [nanobrew](202603/2026-03-26-nanobrew.md) - 一款专为 macOS 设计的极速软件包管理器，使用 Zig 语言编写，比 Homebrew 快达 7000 倍
@@ -78,4 +79,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (74 entries)
+- [2026-03](202603/monthly-index.md) (75 entries)
