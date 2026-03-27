@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [witr](2026-03-27-witr.md)
+- 一款系统进程追踪工具，通过交互式终端界面展示进程的启动原因和依赖关系
+- Tags: Process Monitoring, System Diagnostics, CLI Tool, Cross-platform, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Linux, Mac, Windows, FreeBSD
+
 (2026-03-26) [ai-goofish-monitor](2026-03-26-ai-goofish-monitor.md)
 - 基于 Playwright 和 AI 的闲鱼多任务实时监控工具，帮助用户从海量商品中找到心仪产品
 - Tags: E-commerce Monitoring, AI-Powered, Web Scraping, Real-Time Monitoring, Task Automation
