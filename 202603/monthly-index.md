@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-27) [docmd](2026-03-27-docmd.md)
+- 一个极简快速的文档生成工具，从 Markdown 创建美观文档，无 React 冗余，专为开发者设计
+- Tags: Documentation Generator, Markdown, Static Site, Zero-Config, Developer Tool
+- Categories: Knowledge Management, Developer Tools
+- Platform: Web, Node.js
+
 (2026-03-27) [toolhive](2026-03-27-toolhive.md)
 - 企业级平台用于运行和管理 Model Context Protocol 服务器
 - Tags: AI Tools, Enterprise Platform, MCP Server, Kubernetes, Workflow Automation

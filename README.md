@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [docmd](202603/2026-03-27-docmd.md) - 一个极简快速的文档生成工具，从 Markdown 创建美观文档，无 React 冗余，专为开发者设计
 - [toolhive](202603/2026-03-27-toolhive.md) - 企业级平台用于运行和管理 Model Context Protocol 服务器
 - [Flowise](202603/2026-03-27-flowise.md) - 一个可视化构建 AI 代理的开源平台，让用户无需编程即可创建复杂的 AI 工作流程
 - [witr](202603/2026-03-27-witr.md) - 一款系统进程追踪工具，通过交互式终端界面展示进程的启动原因和依赖关系
@@ -80,4 +81,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (76 entries)
+- [2026-03](202603/monthly-index.md) (77 entries)
