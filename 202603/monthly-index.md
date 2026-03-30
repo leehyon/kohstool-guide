@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-30) [beautiful-mermaid](2026-03-30-beautiful-mermaid.md)
+- 一个 MIT 授权的 mermaid 图表渲染器，支持 SVG 和 ASCII 输出，具有 15 种内置主题，完全兼容 Shiki，零 DOM 依赖
+- Tags: Diagramming, Developer Tool, Visualization, Open Source, TypeScript
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-03-27) [project-nomad](2026-03-27-project-nomad.md)
 - 一个自包含的离线生存电脑，集成关键工具、知识和 AI，让您随时随地保持知情和赋能
 - Tags: Offline-First, Knowledge Base, Self-Hosted, AI Integration, Educational Platform
