@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-30) [UX Pro Max](2026-03-30-ux-pro-max.md)
+- 一款 AI 驱动的 UI UX 设计智能工具，提供设计风格、色彩搭配、字体配对等资源与代码生成
+- Tags: AI Design, UI Components, Code Generation, Design System, UX Guidelines
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-03-30) [beautiful-mermaid](2026-03-30-beautiful-mermaid.md)
 - 一个 MIT 授权的 mermaid 图表渲染器，支持 SVG 和 ASCII 输出，具有 15 种内置主题，完全兼容 Shiki，零 DOM 依赖
 - Tags: Diagramming, Developer Tool, Visualization, Open Source, TypeScript
