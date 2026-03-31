@@ -1,5 +1,11 @@
 # 2026-03 Tool Guide Index
 
+(2026-03-31) [OpenSpec](2026-03-31-openspec.md)
+- 一个轻量级的规范驱动框架，帮助开发者管理软件规范并与AI辅助工具集成
+- Tags: Specification-Driven, AI Integration, Documentation, Code Review, Open Source
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-03-30) [UX Pro Max](2026-03-30-ux-pro-max.md)
 - 一款 AI 驱动的 UI UX 设计智能工具，提供设计风格、色彩搭配、字体配对等资源与代码生成
 - Tags: AI Design, UI Components, Code Generation, Design System, UX Guidelines

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [OpenSpec](202603/2026-03-31-openspec.md) - 一个轻量级的规范驱动框架，帮助开发者管理软件规范并与AI辅助工具集成
 - [UX Pro Max](202603/2026-03-30-ux-pro-max.md) - 一款 AI 驱动的 UI UX 设计智能工具，提供设计风格、色彩搭配、字体配对等资源与代码生成
 - [beautiful-mermaid](202603/2026-03-30-beautiful-mermaid.md) - 一个 MIT 授权的 mermaid 图表渲染器，支持 SVG 和 ASCII 输出，具有 15 种内置主题，完全兼容 Shiki，零 DOM 依赖
 - [project-nomad](202603/2026-03-27-project-nomad.md) - 一个自包含的离线生存电脑，集成关键工具、知识和 AI，让您随时随地保持知情和赋能
@@ -85,4 +86,4 @@
 
 ## Monthly Archive
 
-- [2026-03](202603/monthly-index.md) (81 entries)
+- [2026-03](202603/monthly-index.md) (82 entries)
