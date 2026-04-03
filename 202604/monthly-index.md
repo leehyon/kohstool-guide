@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [openilink-hub](2026-04-03-openilink-hub.md)
+- 开源微信 Bot 管理平台，支持多平台集成与应用市场扩展
+- Tags: WeChat Integration, Bot Management, Open Source, Multi-Platform, API First
+- Categories: Developer Tools, System & Automation, Communication
+- Platform: Web, Docker
+
 (2026-04-03) [Rename.Tools | 在线批量文件重命名工具](2026-04-03-rename.tools-%E5%9C%A8%E7%BA%BF%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7.md)
 - 一款免费快速的在线批量文件重命名工具，注重隐私安全
 - Tags: File Management, Batch Processing, Privacy-Focused, Web-Based, Free
