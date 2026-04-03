@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [emdash](2026-04-03-emdash.md)
+- 基于 Astro 的全栈 TypeScript CMS，采用沙箱插件和结构化内容设计
+- Tags: CMS, TypeScript, Astro, Cloudflare, Sandboxed Plugins
+- Categories: Text Input & Writing, Developer Tools, File Management
+- Platform: Web
+
 (2026-04-03) [openilink-hub](2026-04-03-openilink-hub.md)
 - 开源微信 Bot 管理平台，支持多平台集成与应用市场扩展
 - Tags: WeChat Integration, Bot Management, Open Source, Multi-Platform, API First
