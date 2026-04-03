@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [WayLog](2026-04-03-waylog.md)
+- 一个本地优先的扩展工具，将转瞬即逝的 AI 对话历史保存为永久的、git 友好的知识库
+- Tags: AI Chat History, Knowledge Base, Developer Tools, Open Source, Privacy First
+- Categories: Knowledge Management, Developer Tools
+- Platform: Browser Extension
+
 (2026-04-03) [winshot](2026-04-03-winshot.md)
 - 一款轻量级截图工具，支持标注、裁剪和导出，具有玻璃态 UI 和原生性能
 - Tags: Screenshot Tool, Annotation, Glassmorphism UI, Cross-platform, Lightweight

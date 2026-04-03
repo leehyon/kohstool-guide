@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [WayLog](202604/2026-04-03-waylog.md) - 一个本地优先的扩展工具，将转瞬即逝的 AI 对话历史保存为永久的、git 友好的知识库
 - [winshot](202604/2026-04-03-winshot.md) - 一款轻量级截图工具，支持标注、裁剪和导出，具有玻璃态 UI 和原生性能
 - [pipx](202604/2026-04-03-pipx.md) - 一个用于在隔离环境中安装和运行 Python 应用程序的工具，类似于 brew 但针对 Python 包
 - [emdash](202604/2026-04-03-emdash.md) - 基于 Astro 的全栈 TypeScript CMS，采用沙箱插件和结构化内容设计
@@ -93,5 +94,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (7 entries)
+- [2026-04](202604/monthly-index.md) (8 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
