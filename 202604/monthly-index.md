@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [pipx](2026-04-03-pipx.md)
+- 一个用于在隔离环境中安装和运行 Python 应用程序的工具，类似于 brew 但针对 Python 包
+- Tags: Python, CLI, Package Management, Isolated Environment, Developer Tool
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-04-03) [emdash](2026-04-03-emdash.md)
 - 基于 Astro 的全栈 TypeScript CMS，采用沙箱插件和结构化内容设计
 - Tags: CMS, TypeScript, Astro, Cloudflare, Sandboxed Plugins

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [pipx](202604/2026-04-03-pipx.md) - 一个用于在隔离环境中安装和运行 Python 应用程序的工具，类似于 brew 但针对 Python 包
 - [emdash](202604/2026-04-03-emdash.md) - 基于 Astro 的全栈 TypeScript CMS，采用沙箱插件和结构化内容设计
 - [openilink-hub](202604/2026-04-03-openilink-hub.md) - 开源微信 Bot 管理平台，支持多平台集成与应用市场扩展
 - [Rename.Tools | 在线批量文件重命名工具](202604/2026-04-03-rename.tools-%E5%9C%A8%E7%BA%BF%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7.md) - 一款免费快速的在线批量文件重命名工具，注重隐私安全
@@ -91,5 +92,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (5 entries)
+- [2026-04](202604/monthly-index.md) (6 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
