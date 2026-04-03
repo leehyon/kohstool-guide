@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [baserow](2026-04-03-baserow.md)
+- 一个无代码平台，可构建数据库、自动化、应用和 AI 代理，支持云端和自托管部署，符合 GDPR、HIPAA 和 SOC 2 标准
+- Tags: No-Code, Database, Open Source, AI Integration, Self-Hosted
+- Categories: Knowledge Management, Developer Tools, Data & Analytics
+- Platform: Web
+
 (2026-04-03) [WayLog](2026-04-03-waylog.md)
 - 一个本地优先的扩展工具，将转瞬即逝的 AI 对话历史保存为永久的、git 友好的知识库
 - Tags: AI Chat History, Knowledge Base, Developer Tools, Open Source, Privacy First
