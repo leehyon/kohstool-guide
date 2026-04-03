@@ -1,10 +1,11 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [winshot](202604/2026-04-03-winshot.md) - 一款轻量级截图工具，支持标注、裁剪和导出，具有玻璃态 UI 和原生性能
 - [pipx](202604/2026-04-03-pipx.md) - 一个用于在隔离环境中安装和运行 Python 应用程序的工具，类似于 brew 但针对 Python 包
 - [emdash](202604/2026-04-03-emdash.md) - 基于 Astro 的全栈 TypeScript CMS，采用沙箱插件和结构化内容设计
 - [openilink-hub](202604/2026-04-03-openilink-hub.md) - 开源微信 Bot 管理平台，支持多平台集成与应用市场扩展
-- [Rename.Tools | 在线批量文件重命名工具](202604/2026-04-03-rename.tools-%E5%9C%A8%E7%BA%BF%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7.md) - 一款免费快速的在线批量文件重命名工具，注重隐私安全
+- [Rename.Tools](202604/2026-04-03-rename.tools.md) - 一款免费快速的在线批量文件重命名工具，注重隐私安全
 - [oxideterm](202604/2026-04-03-oxideterm.md) - 全功能终端工作空间，集成本地终端、SSH、SFTP、远程 IDE、AI 助手和文件管理器
 - [CoPaw](202604/2026-04-01-copaw.md) - 一个可本地部署的 AI 助手工作台，支持多平台接入与能力扩展
 - [OpenSpec](202603/2026-03-31-openspec.md) - 一个轻量级的规范驱动框架，帮助开发者管理软件规范并与AI辅助工具集成
@@ -92,5 +93,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (6 entries)
+- [2026-04](202604/monthly-index.md) (7 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

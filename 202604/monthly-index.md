@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-03) [winshot](2026-04-03-winshot.md)
+- 一款轻量级截图工具，支持标注、裁剪和导出，具有玻璃态 UI 和原生性能
+- Tags: Screenshot Tool, Annotation, Glassmorphism UI, Cross-platform, Lightweight
+- Categories: Developer Tools, System & Automation, Media & Creativity
+- Platform: Windows
+
 (2026-04-03) [pipx](2026-04-03-pipx.md)
 - 一个用于在隔离环境中安装和运行 Python 应用程序的工具，类似于 brew 但针对 Python 包
 - Tags: Python, CLI, Package Management, Isolated Environment, Developer Tool
@@ -18,7 +24,7 @@
 - Categories: Developer Tools, System & Automation, Communication
 - Platform: Web, Docker
 
-(2026-04-03) [Rename.Tools | 在线批量文件重命名工具](2026-04-03-rename.tools-%E5%9C%A8%E7%BA%BF%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D%E5%B7%A5%E5%85%B7.md)
+(2026-04-03) [Rename.Tools](2026-04-03-rename.tools.md)
 - 一款免费快速的在线批量文件重命名工具，注重隐私安全
 - Tags: File Management, Batch Processing, Privacy-Focused, Web-Based, Free
 - Categories: File Management, System & Automation
