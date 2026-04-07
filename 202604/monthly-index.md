@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-07) [Trellis](2026-04-07-trellis.md)
+- 一个 AI 智能体框架，支持多种开发平台，提供智能代码生成与协作能力
+- Tags: AI Agent Framework, Multi-Platform, Code Generation, Developer Productivity, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Web
+
 (2026-04-07) [get-shit-done](2026-04-07-get-shit-done.md)
 - 一个轻量级且强大的元提示、上下文工程和规范驱动开发系统，专为 Claude Code 等AI编程助手设计，解决上下文窗口质量退化问题
 - Tags: AI Development, Prompt Engineering, Code Generation, Context Management, Workflow Automation
