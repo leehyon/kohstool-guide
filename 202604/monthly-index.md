@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-07) [get-shit-done](2026-04-07-get-shit-done.md)
+- 一个轻量级且强大的元提示、上下文工程和规范驱动开发系统，专为 Claude Code 等AI编程助手设计，解决上下文窗口质量退化问题
+- Tags: AI Development, Prompt Engineering, Code Generation, Context Management, Workflow Automation
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-04-07) [Memos](2026-04-07-memos.md)
 - 一个自托管的时间轴笔记工具，支持 Markdown 格式，注重数据所有权和快速记录
 - Tags: Self-Hosted, Markdown, Open Source, Privacy-Focused, Note-Taking
