@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-07) [Memos](2026-04-07-memos.md)
+- 一个自托管的时间轴笔记工具，支持 Markdown 格式，注重数据所有权和快速记录
+- Tags: Self-Hosted, Markdown, Open Source, Privacy-Focused, Note-Taking
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Web, Browser Extension
+
 (2026-04-03) [baserow](2026-04-03-baserow.md)
 - 一个无代码平台，可构建数据库、自动化、应用和 AI 代理，支持云端和自托管部署，符合 GDPR、HIPAA 和 SOC 2 标准
 - Tags: No-Code, Database, Open Source, AI Integration, Self-Hosted

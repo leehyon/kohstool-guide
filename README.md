@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Memos](202604/2026-04-07-memos.md) - 一个自托管的时间轴笔记工具，支持 Markdown 格式，注重数据所有权和快速记录
 - [baserow](202604/2026-04-03-baserow.md) - 一个无代码平台，可构建数据库、自动化、应用和 AI 代理，支持云端和自托管部署，符合 GDPR、HIPAA 和 SOC 2 标准
 - [WayLog](202604/2026-04-03-waylog.md) - 一个本地优先的扩展工具，将转瞬即逝的 AI 对话历史保存为永久的、git 友好的知识库
 - [winshot](202604/2026-04-03-winshot.md) - 一款轻量级截图工具，支持标注、裁剪和导出，具有玻璃态 UI 和原生性能
@@ -95,5 +96,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (9 entries)
+- [2026-04](202604/monthly-index.md) (10 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
