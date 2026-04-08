@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-08) [Open Notebook](2026-04-08-open-notebook.md)
+- 一款开源 AI 驱动的笔记与研究平台，尊重用户隐私，帮助控制学习过程
+- Tags: Note-taking, AI-Powered, Privacy-Focused, Open Source, Learning Tool
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Web
+
 (2026-04-07) [Trellis](2026-04-07-trellis.md)
 - 一个 AI 智能体框架，支持多种开发平台，提供智能代码生成与协作能力
 - Tags: AI Agent Framework, Multi-Platform, Code Generation, Developer Productivity, Open Source
