@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-08) [Compound Engineering](2026-04-08-compound-engineering.md)
+- 一种 AI 原生的工程哲学，通过计划、执行、审查和复合的循环，让每个工作单元使后续工作更容易
+- Tags: AI-Assisted Development, Code Review, Knowledge Management, Productivity, Developer Tools
+- Categories: Text Input & Writing, Developer Tools, System & Automation
+- Platform: Web, Browser Extension
+
 (2026-04-08) [Open Notebook](2026-04-08-open-notebook.md)
 - 一款开源 AI 驱动的笔记与研究平台，尊重用户隐私，帮助控制学习过程
 - Tags: Note-taking, AI-Powered, Privacy-Focused, Open Source, Learning Tool
