@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [btop](202604/2026-04-09-btop.md) - 一款资源监控工具，展示处理器、内存、磁盘、网络和进程的使用情况与统计信息
 - [Compound Engineering](202604/2026-04-08-compound-engineering.md) - 一种 AI 原生的工程哲学，通过计划、执行、审查和复合的循环，让每个工作单元使后续工作更容易
 - [Open Notebook](202604/2026-04-08-open-notebook.md) - 一款开源 AI 驱动的笔记与研究平台，尊重用户隐私，帮助控制学习过程
 - [Trellis](202604/2026-04-07-trellis.md) - 一个 AI 智能体框架，支持多种开发平台，提供智能代码生成与协作能力
@@ -100,5 +101,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (14 entries)
+- [2026-04](202604/monthly-index.md) (15 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

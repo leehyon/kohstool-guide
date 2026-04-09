@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-09) [btop](2026-04-09-btop.md)
+- 一款资源监控工具，展示处理器、内存、磁盘、网络和进程的使用情况与统计信息
+- Tags: System Monitoring, Resource Usage, Terminal UI, Cross-platform, GPU Monitoring
+- Categories: Developer Tools, System & Automation
+- Platform: Linux, macOS, FreeBSD, NetBSD, OpenBSD
+
 (2026-04-08) [Compound Engineering](2026-04-08-compound-engineering.md)
 - 一种 AI 原生的工程哲学，通过计划、执行、审查和复合的循环，让每个工作单元使后续工作更容易
 - Tags: AI-Assisted Development, Code Review, Knowledge Management, Productivity, Developer Tools
