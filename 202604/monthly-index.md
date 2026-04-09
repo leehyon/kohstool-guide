@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-09) [Khoj AI](2026-04-09-khoj-ai.md)
+- 一个开源的个人 AI 助手，可帮助用户管理知识并进行自然语言搜索
+- Tags: AI Assistant, Knowledge Management, Open Source, Privacy-Focused, Cross-Platform
+- Categories: Knowledge Management, Reading & Information, Text Input & Writing
+- Platform: Mac, Windows, Linux, iOS, Android, Web, Browser Extension
+
 (2026-04-09) [btop](2026-04-09-btop.md)
 - 一款资源监控工具，展示处理器、内存、磁盘、网络和进程的使用情况与统计信息
 - Tags: System Monitoring, Resource Usage, Terminal UI, Cross-platform, GPU Monitoring
