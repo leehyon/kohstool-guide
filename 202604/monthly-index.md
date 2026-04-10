@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-10) [unihub](2026-04-10-unihub.md)
+- 一个基于 Electron 的现代化跨平台工具集应用，支持强大的插件系统和插件市场
+- Tags: Cross-Platform, Plugin System, Productivity, Developer Tools, Electron App
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-04-09) [Khoj AI](2026-04-09-khoj-ai.md)
 - 一个开源的个人 AI 助手，可帮助用户管理知识并进行自然语言搜索
 - Tags: AI Assistant, Knowledge Management, Open Source, Privacy-Focused, Cross-Platform

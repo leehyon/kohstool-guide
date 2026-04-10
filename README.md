@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [unihub](202604/2026-04-10-unihub.md) - 一个基于 Electron 的现代化跨平台工具集应用，支持强大的插件系统和插件市场
 - [Khoj AI](202604/2026-04-09-khoj-ai.md) - 一个开源的个人 AI 助手，可帮助用户管理知识并进行自然语言搜索
 - [btop](202604/2026-04-09-btop.md) - 一款资源监控工具，展示处理器、内存、磁盘、网络和进程的使用情况与统计信息
 - [Compound Engineering](202604/2026-04-08-compound-engineering.md) - 一种 AI 原生的工程哲学，通过计划、执行、审查和复合的循环，让每个工作单元使后续工作更容易
@@ -102,5 +103,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (16 entries)
+- [2026-04](202604/monthly-index.md) (17 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
