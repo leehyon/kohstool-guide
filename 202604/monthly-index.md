@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-14) [tealdeer](2026-04-14-tealdeer.md)
+- 用 Rust 编写的快速 tldr 实现，提供简洁的命令行帮助文档
+- Tags: Command-Line, Documentation, Rust, Developer-Tool, Open-Source
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-04-14) [tldr](2026-04-14-tldr.md)
 - 一个简化的命令行工具速查表，提供简洁实用的命令说明
 - Tags: Command Line, Documentation, Reference, Open Source, Developer Tool

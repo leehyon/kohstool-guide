@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [tealdeer](202604/2026-04-14-tealdeer.md) - 用 Rust 编写的快速 tldr 实现，提供简洁的命令行帮助文档
 - [tldr](202604/2026-04-14-tldr.md) - 一个简化的命令行工具速查表，提供简洁实用的命令说明
 - [navi](202604/2026-04-14-navi.md) - 一个交互式命令行速查表工具，帮助用户快速查找和执行命令
 - [llm_wiki](202604/2026-04-14-llm_wiki.md) - 将文档自动转换为组织化、相互链接的知识库，支持多平台桌面应用
@@ -106,5 +107,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (20 entries)
+- [2026-04](202604/monthly-index.md) (21 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
