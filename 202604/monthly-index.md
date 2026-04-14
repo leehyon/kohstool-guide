@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-14) [llm_wiki](2026-04-14-llm_wiki.md)
+- 将文档自动转换为组织化、相互链接的知识库，支持多平台桌面应用
+- Tags: Knowledge Base, AI-Powered, Cross-Platform, Document Organization, Semantic Search
+- Categories: Knowledge Management, Reading & Information, Developer Tools
+- Platform: Mac, Windows, Linux, Browser Extension
+
 (2026-04-10) [unihub](2026-04-10-unihub.md)
 - 一个基于 Electron 的现代化跨平台工具集应用，支持强大的插件系统和插件市场
 - Tags: Cross-Platform, Plugin System, Productivity, Developer Tools, Electron App
