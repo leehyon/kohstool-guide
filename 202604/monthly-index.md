@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-14) [tldr](2026-04-14-tldr.md)
+- 一个简化的命令行工具速查表，提供简洁实用的命令说明
+- Tags: Command Line, Documentation, Reference, Open Source, Developer Tool
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Linux, Mac, Windows, iOS, Android, Web
+
 (2026-04-14) [navi](2026-04-14-navi.md)
 - 一个交互式命令行速查表工具，帮助用户快速查找和执行命令
 - Tags: Command-Line, Cheatsheets, Productivity, CLI, Developer Tool

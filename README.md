@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [tldr](202604/2026-04-14-tldr.md) - 一个简化的命令行工具速查表，提供简洁实用的命令说明
 - [navi](202604/2026-04-14-navi.md) - 一个交互式命令行速查表工具，帮助用户快速查找和执行命令
 - [llm_wiki](202604/2026-04-14-llm_wiki.md) - 将文档自动转换为组织化、相互链接的知识库，支持多平台桌面应用
 - [unihub](202604/2026-04-10-unihub.md) - 一个基于 Electron 的现代化跨平台工具集应用，支持强大的插件系统和插件市场
@@ -105,5 +106,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (19 entries)
+- [2026-04](202604/monthly-index.md) (20 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
