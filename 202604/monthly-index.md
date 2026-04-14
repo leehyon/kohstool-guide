@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-14) [navi](2026-04-14-navi.md)
+- 一个交互式命令行速查表工具，帮助用户快速查找和执行命令
+- Tags: Command-Line, Cheatsheets, Productivity, CLI, Developer Tool
+- Categories: Text Input & Writing, Developer Tools, System & Automation
+- Platform: Mac, Linux, Windows
+
 (2026-04-14) [llm_wiki](2026-04-14-llm_wiki.md)
 - 将文档自动转换为组织化、相互链接的知识库，支持多平台桌面应用
 - Tags: Knowledge Base, AI-Powered, Cross-Platform, Document Organization, Semantic Search
