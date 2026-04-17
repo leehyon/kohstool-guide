@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-17) [Recordly](2026-04-17-recordly.md)
+- 一款开源屏幕录制工具 提供 自动缩放 光标动画 美化背景 功能
+- Tags: Screen Recording, Open Source, Video Editing, Tutorial Creation, Free
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows
+
 (2026-04-14) [tealdeer](2026-04-14-tealdeer.md)
 - 用 Rust 编写的快速 tldr 实现，提供简洁的命令行帮助文档
 - Tags: Command-Line, Documentation, Rust, Developer-Tool, Open-Source
