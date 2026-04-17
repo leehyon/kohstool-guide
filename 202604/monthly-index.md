@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-17) [OpenToggl](2026-04-17-opentoggl.md)
+- 一款开源自托管的时间追踪工具，兼容 Toggl API，无座位限制
+- Tags: Time Tracking, Open Source, Self-Hosted, Privacy-Focused, API Compatible
+- Categories: Developer Tools, System & Automation, Data & Analytics
+- Platform: Web
+
 (2026-04-17) [Recordly](2026-04-17-recordly.md)
 - 一款开源屏幕录制工具 提供 自动缩放 光标动画 美化背景 功能
 - Tags: Screen Recording, Open Source, Video Editing, Tutorial Creation, Free
