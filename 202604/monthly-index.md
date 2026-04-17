@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-17) [openhealth](2026-04-17-openhealth.md)
+- 将 Apple 健康数据导出为 LLM 可读的 Markdown 文件，无需上传服务器
+- Tags: Privacy-Focused, Data Conversion, Health Data, LLM Integration, Open Source
+- Categories: Developer Tools, Data & Analytics
+- Platform: Web, Mac, Linux, iOS, Android
+
 (2026-04-17) [OpenToggl](2026-04-17-opentoggl.md)
 - 一款开源自托管的时间追踪工具，兼容 Toggl API，无座位限制
 - Tags: Time Tracking, Open Source, Self-Hosted, Privacy-Focused, API Compatible
