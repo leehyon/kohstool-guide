@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-20) [jan](2026-04-20-jan.md)
+- 开源 ChatGPT 替代品，可在电脑上完全离线运行
+- Tags: Open Source, Offline AI, Privacy Focused, Local LLM, ChatGPT Alternative
+- Categories: Developer Tools, System & Automation, Media & Creativity
+- Platform: Mac, Windows, Linux
+
 (2026-04-20) [Session Buddy](2026-04-20-session-buddy.md)
 - 一款浏览器扩展工具 帮助用户管理标签页和书签 整理浏览历史 提高工作效率
 - Tags: Tab Management, Bookmark Organizer, Privacy Focused, Browser Extension, Session Management
