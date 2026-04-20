@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-20) [Session Buddy](2026-04-20-session-buddy.md)
+- 一款浏览器扩展工具 帮助用户管理标签页和书签 整理浏览历史 提高工作效率
+- Tags: Tab Management, Bookmark Organizer, Privacy Focused, Browser Extension, Session Management
+- Categories: Reading & Information, Developer Tools, File Management
+- Platform: Browser Extension
+
 (2026-04-17) [openhealth](2026-04-17-openhealth.md)
 - 将 Apple 健康数据导出为 LLM 可读的 Markdown 文件，无需上传服务器
 - Tags: Privacy-Focused, Data Conversion, Health Data, LLM Integration, Open Source
