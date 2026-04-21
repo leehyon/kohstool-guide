@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-21) [html-ppt-skill](2026-04-21-html-ppt-skill.md)
+- 一个基于 HTML 的专业演示工具，提供 36 主题、31 布局、47 种动画和真正的演示者模式
+- Tags: Presentation Tool, HTML-based, Web Design, Animation, Developer Tool
+- Categories: Text Input & Writing, Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-04-20) [jan](2026-04-20-jan.md)
 - 开源 ChatGPT 替代品，可在电脑上完全离线运行
 - Tags: Open Source, Offline AI, Privacy Focused, Local LLM, ChatGPT Alternative
