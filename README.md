@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Subtitle Edit](202604/2026-04-22-subtitle-edit.md) - 一款免费开源的字幕编辑器，支持创建调整同步翻译字幕，兼容 300+ 种格式
 - [html-ppt-skill](202604/2026-04-21-html-ppt-skill.md) - 一个基于 HTML 的专业演示工具，提供 36 主题、31 布局、47 种动画和真正的演示者模式
 - [jan](202604/2026-04-20-jan.md) - 开源 ChatGPT 替代品，可在电脑上完全离线运行
 - [Session Buddy](202604/2026-04-20-session-buddy.md) - 一款浏览器扩展工具 帮助用户管理标签页和书签 整理浏览历史 提高工作效率
@@ -113,5 +114,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (27 entries)
+- [2026-04](202604/monthly-index.md) (28 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

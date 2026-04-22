@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-22) [Subtitle Edit](2026-04-22-subtitle-edit.md)
+- 一款免费开源的字幕编辑器，支持创建调整同步翻译字幕，兼容 300+ 种格式
+- Tags: Subtitle Editor, Free, Open Source, Video Editing, Format Converter
+- Categories: Developer Tools, Media & Creativity
+- Platform: Windows
+
 (2026-04-21) [html-ppt-skill](2026-04-21-html-ppt-skill.md)
 - 一个基于 HTML 的专业演示工具，提供 36 主题、31 布局、47 种动画和真正的演示者模式
 - Tags: Presentation Tool, HTML-based, Web Design, Animation, Developer Tool
