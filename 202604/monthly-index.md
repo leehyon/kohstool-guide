@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-24) [Little Snitch for Linux](2026-04-24-little-snitch-for-linux.md)
+- 一款网络监控工具，让用户能够查看并控制应用程序的网络连接活动
+- Tags: Network Monitoring, Firewall, Privacy Protection, Connection Control, Linux Security
+- Categories: System & Automation, Security & Privacy
+- Platform: Linux
+
 (2026-04-22) [Subtitle Edit](2026-04-22-subtitle-edit.md)
 - 一款免费开源的字幕编辑器，支持创建调整同步翻译字幕，兼容 300+ 种格式
 - Tags: Subtitle Editor, Free, Open Source, Video Editing, Format Converter
