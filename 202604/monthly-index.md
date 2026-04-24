@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-24) [Laws of Software Engineering](2026-04-24-laws-of-software-engineering.md)
+- A collection of 56 principles and patterns that shape software systems, teams, and decisions
+- Tags: Software Engineering, Best Practices, Principles, Patterns, Reference
+- Categories: Knowledge Management, Developer Tools
+- Platform: Web
+
 (2026-04-24) [himi-recorder](2026-04-24-himi-recorder.md)
 - 一款具有隐身能力的 macOS 录屏工具，绕过系统录屏检测机制，让被录制应用无法感知正在被录屏
 - Tags: Screen Recording, Anti-Detection, macOS, Privacy, Developer Tool

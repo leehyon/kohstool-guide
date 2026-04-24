@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Laws of Software Engineering](202604/2026-04-24-laws-of-software-engineering.md) - A collection of 56 principles and patterns that shape software systems, teams, and decisions
 - [himi-recorder](202604/2026-04-24-himi-recorder.md) - 一款具有隐身能力的 macOS 录屏工具，绕过系统录屏检测机制，让被录制应用无法感知正在被录屏
 - [Little Snitch for Linux](202604/2026-04-24-little-snitch-for-linux.md) - 一款网络监控工具，让用户能够查看并控制应用程序的网络连接活动
 - [Subtitle Edit](202604/2026-04-22-subtitle-edit.md) - 一款免费开源的字幕编辑器，支持创建调整同步翻译字幕，兼容 300+ 种格式
@@ -116,5 +117,5 @@
 
 ## Monthly Archive
 
-- [2026-04](202604/monthly-index.md) (30 entries)
+- [2026-04](202604/monthly-index.md) (31 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
