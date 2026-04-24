@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-24) [himi-recorder](2026-04-24-himi-recorder.md)
+- 一款具有隐身能力的 macOS 录屏工具，绕过系统录屏检测机制，让被录制应用无法感知正在被录屏
+- Tags: Screen Recording, Anti-Detection, macOS, Privacy, Developer Tool
+- Categories: Developer Tools, System & Automation, Media & Creativity
+- Platform: Mac
+
 (2026-04-24) [Little Snitch for Linux](2026-04-24-little-snitch-for-linux.md)
 - 一款网络监控工具，让用户能够查看并控制应用程序的网络连接活动
 - Tags: Network Monitoring, Firewall, Privacy Protection, Connection Control, Linux Security
