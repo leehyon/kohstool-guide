@@ -1,5 +1,11 @@
 # 2026-04 Tool Guide Index
 
+(2026-04-30) [MemOS](2026-04-30-memos.md)
+- 一个为 AI 应用提供长期记忆能力的开源 SDK 与云服务
+- Tags: AI Memory, Open Source, SDK, Cloud Service, Long-term Memory
+- Categories: Knowledge Management, Developer Tools
+- Platform: Web
+
 (2026-04-24) [Laws of Software Engineering](2026-04-24-laws-of-software-engineering.md)
 - A collection of 56 principles and patterns that shape software systems, teams, and decisions
 - Tags: Software Engineering, Best Practices, Principles, Patterns, Reference
