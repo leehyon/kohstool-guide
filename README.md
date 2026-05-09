@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Docling](202605/2026-05-09-docling.md) - Docling 是一款文档处理工具，支持多种格式解析与高级 PDF 理解，并能与生成式 AI 生态系统无缝集成
 - [MemOS](202604/2026-04-30-memos.md) - 一个为 AI 应用提供长期记忆能力的开源 SDK 与云服务
 - [Laws of Software Engineering](202604/2026-04-24-laws-of-software-engineering.md) - A collection of 56 principles and patterns that shape software systems, teams, and decisions
 - [himi-recorder](202604/2026-04-24-himi-recorder.md) - 一款具有隐身能力的 macOS 录屏工具，绕过系统录屏检测机制，让被录制应用无法感知正在被录屏
@@ -118,5 +119,6 @@
 
 ## Monthly Archive
 
+- [2026-05](202605/monthly-index.md) (1 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
