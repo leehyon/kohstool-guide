@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-09) [grobid](2026-05-09-grobid.md)
+- A machine learning library for extracting structured data from academic PDF documents
+- Tags: Machine Learning, PDF Processing, Text Mining, Academic Research, Natural Language Processing
+- Categories: Reading & Information, Developer Tools, Data & Analytics
+- Platform: Linux, Mac, Web
+
 (2026-05-09) [marker](2026-05-09-marker.md)
 - Marker 是一个快速准确地将 PDF、图像等文档转换为 Markdown、JSON、HTML 等格式的工具
 - Tags: Document Conversion, PDF Processing, OCR, Markdown, Open Source
