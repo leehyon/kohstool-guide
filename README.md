@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [marker](202605/2026-05-09-marker.md) - Marker 是一个快速准确地将 PDF、图像等文档转换为 Markdown、JSON、HTML 等格式的工具
 - [Docling](202605/2026-05-09-docling.md) - Docling 是一款文档处理工具，支持多种格式解析与高级 PDF 理解，并能与生成式 AI 生态系统无缝集成
 - [MemOS](202604/2026-04-30-memos.md) - 一个为 AI 应用提供长期记忆能力的开源 SDK 与云服务
 - [Laws of Software Engineering](202604/2026-04-24-laws-of-software-engineering.md) - A collection of 56 principles and patterns that shape software systems, teams, and decisions
@@ -119,6 +120,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (1 entries)
+- [2026-05](202605/monthly-index.md) (2 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
