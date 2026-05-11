@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-11) [agency-agents](2026-05-11-agency-agents.md)
+- 一个完整的 AI 代理集合，提供各领域专家角色，帮助用户完成从开发到营销的各种任务
+- Tags: AI Agents, Specialized Experts, Productivity, Multi-Tool Integration, Workflow Automation
+- Categories: Developer Tools, Media & Creativity, Data & Analytics
+- Platform: Web
+
 (2026-05-11) [video-helper](2026-05-11-video-helper.md)
 - AI 视频学习助手，自动生成 B站/YouTube/抖音/本地视频的思维导图、笔记与总结，支持播客分析与视频索引
 - Tags: AI-Powered, Video Analysis, Mind Mapping, Knowledge Management, Note-Taking
