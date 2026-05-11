@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-11) [小遥账单](2026-05-11-%E5%B0%8F%E9%81%A5%E8%B4%A6%E5%8D%95.md)
+- 一款隐私优先的个人账单分析工具，支持支付宝微信账单智能分析，帮助用户看清每一分钱的去向
+- Tags: Privacy-First, Finance Analytics, Bill Management, Data Visualization, Open Source
+- Categories: Reading & Information, File Management, Data & Analytics
+- Platform: Web, Docker
+
 (2026-05-11) [RapidRAW](2026-05-11-rapidraw.md)
 - 一款轻量级非破坏性 RAW 图像编辑器，具有 GPU 加速和现代化界面
 - Tags: RAW Editing, GPU Accelerated, Non-destructive, AI Masking, Cross-platform
