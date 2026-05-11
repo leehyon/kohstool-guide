@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-11) [video-helper](2026-05-11-video-helper.md)
+- AI 视频学习助手，自动生成 B站/YouTube/抖音/本地视频的思维导图、笔记与总结，支持播客分析与视频索引
+- Tags: AI-Powered, Video Analysis, Mind Mapping, Knowledge Management, Note-Taking
+- Categories: Knowledge Management, Reading & Information, Developer Tools
+- Platform: Mac, Windows, Linux, Web
+
 (2026-05-09) [grobid](2026-05-09-grobid.md)
 - A machine learning library for extracting structured data from academic PDF documents
 - Tags: Machine Learning, PDF Processing, Text Mining, Academic Research, Natural Language Processing
