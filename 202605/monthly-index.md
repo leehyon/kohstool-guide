@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-11) [RapidRAW](2026-05-11-rapidraw.md)
+- 一款轻量级非破坏性 RAW 图像编辑器，具有 GPU 加速和现代化界面
+- Tags: RAW Editing, GPU Accelerated, Non-destructive, AI Masking, Cross-platform
+- Categories: Developer Tools, Media & Creativity
+- Platform: Windows, Mac, Linux, Android
+
 (2026-05-11) [agency-agents](2026-05-11-agency-agents.md)
 - 一个完整的 AI 代理集合，提供各领域专家角色，帮助用户完成从开发到营销的各种任务
 - Tags: AI Agents, Specialized Experts, Productivity, Multi-Tool Integration, Workflow Automation

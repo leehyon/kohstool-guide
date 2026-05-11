@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [RapidRAW](202605/2026-05-11-rapidraw.md) - 一款轻量级非破坏性 RAW 图像编辑器，具有 GPU 加速和现代化界面
 - [agency-agents](202605/2026-05-11-agency-agents.md) - 一个完整的 AI 代理集合，提供各领域专家角色，帮助用户完成从开发到营销的各种任务
 - [video-helper](202605/2026-05-11-video-helper.md) - AI 视频学习助手，自动生成 B站/YouTube/抖音/本地视频的思维导图、笔记与总结，支持播客分析与视频索引
 - [grobid](202605/2026-05-09-grobid.md) - A machine learning library for extracting structured data from academic PDF documents
@@ -123,6 +124,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (5 entries)
+- [2026-05](202605/monthly-index.md) (6 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
