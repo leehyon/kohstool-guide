@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-13) [publa](2026-05-13-publa.md)
+- 基于 Next.js 的动态博客系统，支持 SQLite 与 PostgreSQL 数据库，提供完整的博客创建与管理功能
+- Tags: Blog Platform, Next.js, Dynamic Content, Multi-Database, Open Source
+- Categories: Knowledge Management, Text Input & Writing
+- Platform: Web, Docker
+
 (2026-05-11) [小遥账单](2026-05-11-%E5%B0%8F%E9%81%A5%E8%B4%A6%E5%8D%95.md)
 - 一款隐私优先的个人账单分析工具，支持支付宝微信账单智能分析，帮助用户看清每一分钱的去向
 - Tags: Privacy-First, Finance Analytics, Bill Management, Data Visualization, Open Source
