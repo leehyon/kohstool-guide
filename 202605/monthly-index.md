@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-15) [FeedFuse](2026-05-15-feedfuse.md)
+- 一个整合 RSS 阅读、全文抓取和 AI 辅助理解的信息阅读器，让信息处理更高效
+- Tags: RSS Reader, AI-Powered, Self-Hosted, Knowledge Management, Open Source
+- Categories: Reading & Information, Developer Tools
+- Platform: Web
+
 (2026-05-15) [gitforms](2026-05-15-gitforms.md)
 - 一个零成本的表单解决方案，使用 GitHub Issues 作为数据库，无需月费
 - Tags: Open-Source, Free, GitHub Integration, No-Code, Contact Forms
