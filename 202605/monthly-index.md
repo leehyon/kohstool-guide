@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-15) [Pinta](2026-05-15-pinta.md)
+- 一款免费开源的绘图与图像编辑工具，简单易用且功能强大
+- Tags: Image Editing, Drawing, Open Source, Free, Cross-platform
+- Categories: Media & Creativity
+- Platform: Mac, Windows, Linux
+
 (2026-05-13) [publa](2026-05-13-publa.md)
 - 基于 Next.js 的动态博客系统，支持 SQLite 与 PostgreSQL 数据库，提供完整的博客创建与管理功能
 - Tags: Blog Platform, Next.js, Dynamic Content, Multi-Database, Open Source

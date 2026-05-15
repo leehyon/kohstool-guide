@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Pinta](202605/2026-05-15-pinta.md) - 一款免费开源的绘图与图像编辑工具，简单易用且功能强大
 - [publa](202605/2026-05-13-publa.md) - 基于 Next.js 的动态博客系统，支持 SQLite 与 PostgreSQL 数据库，提供完整的博客创建与管理功能
 - [小遥账单](202605/2026-05-11-%E5%B0%8F%E9%81%A5%E8%B4%A6%E5%8D%95.md) - 一款隐私优先的个人账单分析工具，支持支付宝微信账单智能分析，帮助用户看清每一分钱的去向
 - [RapidRAW](202605/2026-05-11-rapidraw.md) - 一款轻量级非破坏性 RAW 图像编辑器，具有 GPU 加速和现代化界面
@@ -126,6 +127,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (8 entries)
+- [2026-05](202605/monthly-index.md) (9 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
