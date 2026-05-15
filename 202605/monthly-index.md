@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-15) [gitforms](2026-05-15-gitforms.md)
+- 一个零成本的表单解决方案，使用 GitHub Issues 作为数据库，无需月费
+- Tags: Open-Source, Free, GitHub Integration, No-Code, Contact Forms
+- Categories: Text Input & Writing, Developer Tools, File Management
+- Platform: Web
+
 (2026-05-15) [Pinta](2026-05-15-pinta.md)
 - 一款免费开源的绘图与图像编辑工具，简单易用且功能强大
 - Tags: Image Editing, Drawing, Open Source, Free, Cross-platform
