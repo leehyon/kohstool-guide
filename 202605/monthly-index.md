@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-15) [kooky](2026-05-15-kooky.md)
+- A minimal modern terminal for AI coding experience with split panes and agent support
+- Tags: AI Coding, Terminal, SwiftUI, Multi-pane, Local-first
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-05-15) [FeedFuse](2026-05-15-feedfuse.md)
 - 一个整合 RSS 阅读、全文抓取和 AI 辅助理解的信息阅读器，让信息处理更高效
 - Tags: RSS Reader, AI-Powered, Self-Hosted, Knowledge Management, Open Source

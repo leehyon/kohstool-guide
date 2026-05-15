@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [kooky](202605/2026-05-15-kooky.md) - A minimal modern terminal for AI coding experience with split panes and agent support
 - [FeedFuse](202605/2026-05-15-feedfuse.md) - 一个整合 RSS 阅读、全文抓取和 AI 辅助理解的信息阅读器，让信息处理更高效
 - [gitforms](202605/2026-05-15-gitforms.md) - 一个零成本的表单解决方案，使用 GitHub Issues 作为数据库，无需月费
 - [Pinta](202605/2026-05-15-pinta.md) - 一款免费开源的绘图与图像编辑工具，简单易用且功能强大
@@ -129,6 +130,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (11 entries)
+- [2026-05](202605/monthly-index.md) (12 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
