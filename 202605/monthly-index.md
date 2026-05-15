@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-15) [openhuman](2026-05-15-openhuman.md)
+- 一个私密、简单且功能强大的个人 AI 超级智能助手，支持多种平台和自定义代理
+- Tags: AI Assistant, Privacy-Focused, Cross-Platform, Modular Agents, Open Source
+- Categories: Developer Tools
+- Platform: Mac, Windows, Linux, iOS, Android, Web
+
 (2026-05-15) [kooky](2026-05-15-kooky.md)
 - A minimal modern terminal for AI coding experience with split panes and agent support
 - Tags: AI Coding, Terminal, SwiftUI, Multi-pane, Local-first
