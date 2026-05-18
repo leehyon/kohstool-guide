@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-18) [reveal.js](2026-05-18-reveal.js.md)
+- 一个基于 HTML 的交互式演示框架，支持 Markdown 和丰富的动画效果
+- Tags: Presentation, Web-based, Open Source, Markdown, Interactive
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-05-15) [openhuman](2026-05-15-openhuman.md)
 - 一个私密、简单且功能强大的个人 AI 超级智能助手，支持多种平台和自定义代理
 - Tags: AI Assistant, Privacy-Focused, Cross-Platform, Modular Agents, Open Source
