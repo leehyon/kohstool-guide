@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-19) [guizang-ppt-skill](2026-05-19-guizang-ppt-skill.md)
+- 一个适配 Claude Code 等 Agent 环境的网页 PPT 技能，用于生成单文件 HTML 横向翻页 PPT、配图和多平台封面
+- Tags: AI-Powered, Presentation, HTML-Based, Design System, Cross-Platform
+- Categories: Text Input & Writing, Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-05-18) [reveal.js](2026-05-18-reveal.js.md)
 - 一个基于 HTML 的交互式演示框架，支持 Markdown 和丰富的动画效果
 - Tags: Presentation, Web-based, Open Source, Markdown, Interactive
