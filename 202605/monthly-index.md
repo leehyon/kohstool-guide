@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-20) [tmux](2026-05-20-tmux.md)
+- 一个终端复用器，允许用户在一个终端中轻松切换多个程序，可分离和重新连接会话
+- Tags: Terminal Multiplexer, Session Management, Remote Development, Command Line, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Linux, Mac, Windows
+
 (2026-05-20) [ttyd](2026-05-20-ttyd.md)
 - 一个命令行工具，可通过 Web 实时分享终端会话
 - Tags: Terminal Sharing, Web-Based, Cross-Platform, Remote Access, Open Source

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [tmux](202605/2026-05-20-tmux.md) - 一个终端复用器，允许用户在一个终端中轻松切换多个程序，可分离和重新连接会话
 - [ttyd](202605/2026-05-20-ttyd.md) - 一个命令行工具，可通过 Web 实时分享终端会话
 - [guizang-ppt-skill](202605/2026-05-19-guizang-ppt-skill.md) - 一个适配 Claude Code 等 Agent 环境的网页 PPT 技能，用于生成单文件 HTML 横向翻页 PPT、配图和多平台封面
 - [reveal.js](202605/2026-05-18-reveal.js.md) - 一个基于 HTML 的交互式演示框架，支持 Markdown 和丰富的动画效果
@@ -134,6 +135,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (16 entries)
+- [2026-05](202605/monthly-index.md) (17 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
