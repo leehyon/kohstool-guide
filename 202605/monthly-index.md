@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-20) [ttyd](2026-05-20-ttyd.md)
+- 一个命令行工具，可通过 Web 实时分享终端会话
+- Tags: Terminal Sharing, Web-Based, Cross-Platform, Remote Access, Open Source
+- Categories: Developer Tools, System & Automation, Communication
+- Platform: Mac, Linux, Windows, Web, Docker
+
 (2026-05-19) [guizang-ppt-skill](2026-05-19-guizang-ppt-skill.md)
 - 一个适配 Claude Code 等 Agent 环境的网页 PPT 技能，用于生成单文件 HTML 横向翻页 PPT、配图和多平台封面
 - Tags: AI-Powered, Presentation, HTML-Based, Design System, Cross-Platform
