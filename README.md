@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Forgejo](202605/2026-05-22-forgejo.md) - 一个轻量级自托管软件 forge 平台，提供项目协作与管理功能，专注于安全、可扩展性和隐私保护
 - [Stock SDK](202605/2026-05-22-stock-sdk.md) - 面向浏览器与 Node.js 的股票行情 SDK，零依赖，覆盖多市场与技术指标
 - [tmux](202605/2026-05-20-tmux.md) - 一个终端复用器，允许用户在一个终端中轻松切换多个程序，可分离和重新连接会话
 - [ttyd](202605/2026-05-20-ttyd.md) - 一个命令行工具，可通过 Web 实时分享终端会话
@@ -136,6 +137,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (18 entries)
+- [2026-05](202605/monthly-index.md) (19 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

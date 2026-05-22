@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-22) [Forgejo](2026-05-22-forgejo.md)
+- 一个轻量级自托管软件 forge 平台，提供项目协作与管理功能，专注于安全、可扩展性和隐私保护
+- Tags: Self-Hosted, Version Control, Code Hosting, Open Source, Collaboration
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Web, Browser Extension
+
 (2026-05-22) [Stock SDK](2026-05-22-stock-sdk.md)
 - 面向浏览器与 Node.js 的股票行情 SDK，零依赖，覆盖多市场与技术指标
 - Tags: Stock Market, SDK, TypeScript, Real-time Data, Technical Analysis
