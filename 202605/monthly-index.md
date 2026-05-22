@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-22) [Stock SDK](2026-05-22-stock-sdk.md)
+- 面向浏览器与 Node.js 的股票行情 SDK，零依赖，覆盖多市场与技术指标
+- Tags: Stock Market, SDK, TypeScript, Real-time Data, Technical Analysis
+- Categories: Developer Tools, Data & Analytics
+- Platform: Web, Browser Extension
+
 (2026-05-20) [tmux](2026-05-20-tmux.md)
 - 一个终端复用器，允许用户在一个终端中轻松切换多个程序，可分离和重新连接会话
 - Tags: Terminal Multiplexer, Session Management, Remote Development, Command Line, Open Source
