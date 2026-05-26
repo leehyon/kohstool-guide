@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-26) [9arm-skills](2026-05-26-9arm-skills.md)
+- 一组 Claude AI 的工程技能集合，帮助开发者提升调试、代码审查和团队沟通效率
+- Tags: AI Assistant, Engineering Skills, Code Review, Debugging, Technical Communication
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-05-22) [Forgejo](2026-05-22-forgejo.md)
 - 一个轻量级自托管软件 forge 平台，提供项目协作与管理功能，专注于安全、可扩展性和隐私保护
 - Tags: Self-Hosted, Version Control, Code Hosting, Open Source, Collaboration
