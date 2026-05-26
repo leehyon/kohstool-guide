@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-26) [nocodb](2026-05-26-nocodb.md)
+- 一个免费且可自托管的 Airtable 替代方案，提供强大的电子表格界面和数据库功能
+- Tags: Database, Spreadsheet, Self-hosted, No-code, Open Source
+- Categories: Developer Tools, File Management, Data & Analytics
+- Platform: Web, Mac, Windows, Linux
+
 (2026-05-26) [Baserow](2026-05-26-baserow.md)
 - 一款开源的无代码数据库与应用程序构建工具，帮助团队组织数据、构建应用并自动化业务流程，同时保持对数据的完全控制
 - Tags: No-Code, Open Source, Database, Collaboration, Self-Hosted
