@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-26) [Metabase](2026-05-26-metabase.md)
+- 开源商业智能和嵌入式分析工具，支持自然语言查询和AI驱动的数据分析
+- Tags: Business Intelligence, Data Visualization, Analytics, Open Source, Embedded Analytics
+- Categories: Data & Analytics
+- Platform: Web
+
 (2026-05-26) [nocodb](2026-05-26-nocodb.md)
 - 一个免费且可自托管的 Airtable 替代方案，提供强大的电子表格界面和数据库功能
 - Tags: Database, Spreadsheet, Self-hosted, No-code, Open Source
