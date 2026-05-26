@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Baserow](202605/2026-05-26-baserow.md) - 一款开源的无代码数据库与应用程序构建工具，帮助团队组织数据、构建应用并自动化业务流程，同时保持对数据的完全控制
 - [9arm-skills](202605/2026-05-26-9arm-skills.md) - 一组 Claude AI 的工程技能集合，帮助开发者提升调试、代码审查和团队沟通效率
 - [Forgejo](202605/2026-05-22-forgejo.md) - 一个轻量级自托管软件 forge 平台，提供项目协作与管理功能，专注于安全、可扩展性和隐私保护
 - [Stock SDK](202605/2026-05-22-stock-sdk.md) - 面向浏览器与 Node.js 的股票行情 SDK，零依赖，覆盖多市场与技术指标
@@ -138,6 +139,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (20 entries)
+- [2026-05](202605/monthly-index.md) (21 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-26) [Baserow](2026-05-26-baserow.md)
+- 一款开源的无代码数据库与应用程序构建工具，帮助团队组织数据、构建应用并自动化业务流程，同时保持对数据的完全控制
+- Tags: No-Code, Open Source, Database, Collaboration, Self-Hosted
+- Categories: Knowledge Management, Developer Tools, Data & Analytics
+- Platform: Web
+
 (2026-05-26) [9arm-skills](2026-05-26-9arm-skills.md)
 - 一组 Claude AI 的工程技能集合，帮助开发者提升调试、代码审查和团队沟通效率
 - Tags: AI Assistant, Engineering Skills, Code Review, Debugging, Technical Communication
