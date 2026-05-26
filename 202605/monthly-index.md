@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-26) [appsmith](2026-05-26-appsmith.md)
+- 一个开源低代码平台，用于构建管理面板、内部工具和仪表板，支持 25+ 种数据库和任何 API
+- Tags: Low-code, Open Source, Internal Tools, Dashboard, Database Integration
+- Categories: Developer Tools, System & Automation, Data & Analytics
+- Platform: Web
+
 (2026-05-26) [Metabase](2026-05-26-metabase.md)
 - 开源商业智能和嵌入式分析工具，支持自然语言查询和AI驱动的数据分析
 - Tags: Business Intelligence, Data Visualization, Analytics, Open Source, Embedded Analytics
