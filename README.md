@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [zoxide](202605/2026-05-27-zoxide.md) - 一个更智能的 cd 命令，基于访问频率和最近性排序目录，让你只需键入几个字符就能跳转到最常使用的目录，支持所有主流 shell
 - [appsmith](202605/2026-05-26-appsmith.md) - 一个开源低代码平台，用于构建管理面板、内部工具和仪表板，支持 25+ 种数据库和任何 API
 - [Metabase](202605/2026-05-26-metabase.md) - 开源商业智能和嵌入式分析工具，支持自然语言查询和AI驱动的数据分析
 - [nocodb](202605/2026-05-26-nocodb.md) - 一个免费且可自托管的 Airtable 替代方案，提供强大的电子表格界面和数据库功能
@@ -142,6 +143,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (24 entries)
+- [2026-05](202605/monthly-index.md) (25 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

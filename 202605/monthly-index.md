@@ -1,5 +1,10 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-27) [zoxide](2026-05-27-zoxide.md)
+- 一个更智能的 cd 命令，基于访问频率和最近性排序目录，让你只需键入几个字符就能跳转到最常使用的目录，支持所有主流 shell
+- Tags: Frecency, Fuzzy Matching, Shell Integration, Rust, Free
+- Categories: Developer Tools, System & Automation
+
 (2026-05-26) [appsmith](2026-05-26-appsmith.md)
 - 一个开源低代码平台，用于构建管理面板、内部工具和仪表板，支持 25+ 种数据库和任何 API
 - Tags: Low-code, Open Source, Internal Tools, Dashboard, Database Integration
