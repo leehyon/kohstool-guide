@@ -7,7 +7,7 @@
 - Platform: Web
 
 (2026-04-24) [Laws of Software Engineering](2026-04-24-laws-of-software-engineering.md)
-- A collection of 56 principles and patterns that shape software systems, teams, and decisions
+- 一套由 56 条原则与模式组成的集合，用于塑造软件系统、团队以及决策
 - Tags: Software Engineering, Best Practices, Principles, Patterns, Reference
 - Categories: Knowledge Management, Developer Tools
 - Platform: Web

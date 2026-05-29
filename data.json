@@ -3374,5 +3374,27 @@
     ],
     "tldr": "一款原生 macOS 终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及 GPU 加速渲染，支持 CLI 和 Socket API 自动化",
     "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202605/2026-05-29-cmux.md"
+  },
+  {
+    "month": "202605",
+    "name": "docx-editor",
+    "url": "https://github.com/eigenpal/docx-editor",
+    "timestamp": 1780025766,
+    "tags": [
+      "Open Source",
+      "WYSIWYG",
+      "OOXML",
+      "Real-time Collaboration",
+      "React"
+    ],
+    "categories": [
+      "Text Input & Writing",
+      "Developer Tools"
+    ],
+    "Platform": [
+      "Web"
+    ],
+    "tldr": "一个开源的 WYSIWYG .docx 编辑器库，支持规范 OOXML、修订追踪和实时协作，适用于 React 和 Vue 应用",
+    "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202605/2026-05-29-docx-editor.md"
   }
 ]

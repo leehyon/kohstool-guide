@@ -1,9 +1,10 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
-- [cmux](202605/2026-05-29-cmux.md) - 一款原生macOS终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及GPU加速渲染，支持CLI和Socket API自动化
-- [open-design](202605/2026-05-29-open-design.md) - 本地优先、开源的设计替代方案，利用你已有的编码代理CLI驱动设计工作流，内置132种技能和150个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到Vercel
-- [capcap](202605/2026-05-29-capcap.md) - 通过双击⌘键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生AppKit开发，无遥测无订阅
+- [docx-editor](202605/2026-05-29-docx-editor.md) - 一个开源的 WYSIWYG .docx 编辑器库，支持规范 OOXML、修订追踪和实时协作，适用于 React 和 Vue 应用
+- [cmux](202605/2026-05-29-cmux.md) - 一款原生 macOS 终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及 GPU 加速渲染，支持 CLI 和 Socket API 自动化
+- [open-design](202605/2026-05-29-open-design.md) - 本地优先、开源的设计替代方案，利用你已有的编码代理 CLI 驱动设计工作流，内置 132 种技能和 150 个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到 Vercel
+- [capcap](202605/2026-05-29-capcap.md) - 通过双击 ⌘ 键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生 AppKit 开发，无遥测无订阅
 - [zoxide](202605/2026-05-27-zoxide.md) - 一个更智能的 cd 命令，基于访问频率和最近性排序目录，让你只需键入几个字符就能跳转到最常使用的目录，支持所有主流 shell
 - [appsmith](202605/2026-05-26-appsmith.md) - 一个开源低代码平台，用于构建管理面板、内部工具和仪表板，支持 25+ 种数据库和任何 API
 - [Metabase](202605/2026-05-26-metabase.md) - 开源商业智能和嵌入式分析工具，支持自然语言查询和AI驱动的数据分析
@@ -17,7 +18,7 @@
 - [guizang-ppt-skill](202605/2026-05-19-guizang-ppt-skill.md) - 一个适配 Claude Code 等 Agent 环境的网页 PPT 技能，用于生成单文件 HTML 横向翻页 PPT、配图和多平台封面
 - [reveal.js](202605/2026-05-18-reveal.js.md) - 一个基于 HTML 的交互式演示框架，支持 Markdown 和丰富的动画效果
 - [openhuman](202605/2026-05-15-openhuman.md) - 一个私密、简单且功能强大的个人 AI 超级智能助手，支持多种平台和自定义代理
-- [kooky](202605/2026-05-15-kooky.md) - A minimal modern terminal for AI coding experience with split panes and agent support
+- [kooky](202605/2026-05-15-kooky.md) - 一款面向 AI 编程体验的极简现代终端，支持分屏窗格和智能代理
 - [FeedFuse](202605/2026-05-15-feedfuse.md) - 一个整合 RSS 阅读、全文抓取和 AI 辅助理解的信息阅读器，让信息处理更高效
 - [gitforms](202605/2026-05-15-gitforms.md) - 一个零成本的表单解决方案，使用 GitHub Issues 作为数据库，无需月费
 - [Pinta](202605/2026-05-15-pinta.md) - 一款免费开源的绘图与图像编辑工具，简单易用且功能强大
@@ -26,11 +27,11 @@
 - [RapidRAW](202605/2026-05-11-rapidraw.md) - 一款轻量级非破坏性 RAW 图像编辑器，具有 GPU 加速和现代化界面
 - [agency-agents](202605/2026-05-11-agency-agents.md) - 一个完整的 AI 代理集合，提供各领域专家角色，帮助用户完成从开发到营销的各种任务
 - [video-helper](202605/2026-05-11-video-helper.md) - AI 视频学习助手，自动生成 B站/YouTube/抖音/本地视频的思维导图、笔记与总结，支持播客分析与视频索引
-- [grobid](202605/2026-05-09-grobid.md) - A machine learning library for extracting structured data from academic PDF documents
+- [grobid](202605/2026-05-09-grobid.md) - 一个用于从学术 PDF 文档中提取结构化数据的机器学习库
 - [marker](202605/2026-05-09-marker.md) - Marker 是一个快速准确地将 PDF、图像等文档转换为 Markdown、JSON、HTML 等格式的工具
 - [Docling](202605/2026-05-09-docling.md) - Docling 是一款文档处理工具，支持多种格式解析与高级 PDF 理解，并能与生成式 AI 生态系统无缝集成
 - [MemOS](202604/2026-04-30-memos.md) - 一个为 AI 应用提供长期记忆能力的开源 SDK 与云服务
-- [Laws of Software Engineering](202604/2026-04-24-laws-of-software-engineering.md) - A collection of 56 principles and patterns that shape software systems, teams, and decisions
+- [Laws of Software Engineering](202604/2026-04-24-laws-of-software-engineering.md) - 一套由 56 条原则与模式组成的集合，用于塑造软件系统、团队以及决策
 - [himi-recorder](202604/2026-04-24-himi-recorder.md) - 一款具有隐身能力的 macOS 录屏工具，绕过系统录屏检测机制，让被录制应用无法感知正在被录屏
 - [Little Snitch for Linux](202604/2026-04-24-little-snitch-for-linux.md) - 一款网络监控工具，让用户能够查看并控制应用程序的网络连接活动
 - [Subtitle Edit](202604/2026-04-22-subtitle-edit.md) - 一款免费开源的字幕编辑器，支持创建调整同步翻译字幕，兼容 300+ 种格式
@@ -146,6 +147,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (28 entries)
+- [2026-05](202605/monthly-index.md) (29 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

@@ -1,19 +1,25 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-29) [docx-editor](2026-05-29-docx-editor.md)
+- 一个开源的 WYSIWYG .docx 编辑器库，支持规范 OOXML、修订追踪和实时协作，适用于 React 和 Vue 应用
+- Tags: Open Source, WYSIWYG, OOXML, Real-time Collaboration, React
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-05-29) [cmux](2026-05-29-cmux.md)
-- 一款原生macOS终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及GPU加速渲染，支持CLI和Socket API自动化
+- 一款原生 macOS 终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及 GPU 加速渲染，支持 CLI 和 Socket API 自动化
 - Tags: Terminal, Multitasking, GPU-Accelerated, Free, Open Source
 - Categories: Developer Tools, System & Automation
 - Platform: Mac
 
 (2026-05-29) [open-design](2026-05-29-open-design.md)
-- 本地优先、开源的设计替代方案，利用你已有的编码代理CLI驱动设计工作流，内置132种技能和150个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到Vercel
+- 本地优先、开源的设计替代方案，利用你已有的编码代理 CLI 驱动设计工作流，内置 132 种技能和 150 个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到 Vercel
 - Tags: Open Source, Local-first, Design Tool, Agent-driven, Skill-based
 - Categories: Developer Tools, Media & Creativity
 - Platform: Mac, Windows, Linux, Web
 
 (2026-05-29) [capcap](2026-05-29-capcap.md)
-- 通过双击⌘键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生AppKit开发，无遥测无订阅
+- 通过双击 ⌘ 键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生 AppKit 开发，无遥测无订阅
 - Tags: Screenshot, Annotation, macOS, Menu Bar, Open Source
 - Categories: System & Automation, Media & Creativity
 - Platform: Mac
@@ -96,7 +102,7 @@
 - Platform: Mac, Windows, Linux, iOS, Android, Web
 
 (2026-05-15) [kooky](2026-05-15-kooky.md)
-- A minimal modern terminal for AI coding experience with split panes and agent support
+- 一款面向 AI 编程体验的极简现代终端，支持分屏窗格和智能代理
 - Tags: AI Coding, Terminal, SwiftUI, Multi-pane, Local-first
 - Categories: Developer Tools, System & Automation
 - Platform: Mac
@@ -150,7 +156,7 @@
 - Platform: Mac, Windows, Linux, Web
 
 (2026-05-09) [grobid](2026-05-09-grobid.md)
-- A machine learning library for extracting structured data from academic PDF documents
+- 一个用于从学术 PDF 文档中提取结构化数据的机器学习库
 - Tags: Machine Learning, PDF Processing, Text Mining, Academic Research, Natural Language Processing
 - Categories: Reading & Information, Developer Tools, Data & Analytics
 - Platform: Linux, Mac, Web
