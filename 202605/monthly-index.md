@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-29) [dive](2026-05-29-dive.md)
+- 探索 Docker 镜像每一层的内容，分析文件变更，估算镜像效率，帮助优化镜像大小
+- Tags: Docker Image Analysis, Layer Inspection, CI Integration, Free, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-05-29) [docx-editor](2026-05-29-docx-editor.md)
 - 一个开源的 WYSIWYG .docx 编辑器库，支持规范 OOXML、修订追踪和实时协作，适用于 React 和 Vue 应用
 - Tags: Open Source, WYSIWYG, OOXML, Real-time Collaboration, React

@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [dive](202605/2026-05-29-dive.md) - 探索 Docker 镜像每一层的内容，分析文件变更，估算镜像效率，帮助优化镜像大小
 - [docx-editor](202605/2026-05-29-docx-editor.md) - 一个开源的 WYSIWYG .docx 编辑器库，支持规范 OOXML、修订追踪和实时协作，适用于 React 和 Vue 应用
 - [cmux](202605/2026-05-29-cmux.md) - 一款原生 macOS 终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及 GPU 加速渲染，支持 CLI 和 Socket API 自动化
 - [open-design](202605/2026-05-29-open-design.md) - 本地优先、开源的设计替代方案，利用你已有的编码代理 CLI 驱动设计工作流，内置 132 种技能和 150 个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到 Vercel
@@ -147,6 +148,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (29 entries)
+- [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
