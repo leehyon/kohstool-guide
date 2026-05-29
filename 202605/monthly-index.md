@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-29) [open-design](2026-05-29-open-design.md)
+- 本地优先、开源的设计替代方案，利用你已有的编码代理CLI驱动设计工作流，内置132种技能和150个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到Vercel
+- Tags: Open Source, Local-first, Design Tool, Agent-driven, Skill-based
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux, Web
+
 (2026-05-29) [capcap](2026-05-29-capcap.md)
 - 通过双击⌘键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生AppKit开发，无遥测无订阅
 - Tags: Screenshot, Annotation, macOS, Menu Bar, Open Source
