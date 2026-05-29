@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [cmux](202605/2026-05-29-cmux.md) - 一款原生macOS终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及GPU加速渲染，支持CLI和Socket API自动化
 - [open-design](202605/2026-05-29-open-design.md) - 本地优先、开源的设计替代方案，利用你已有的编码代理CLI驱动设计工作流，内置132种技能和150个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到Vercel
 - [capcap](202605/2026-05-29-capcap.md) - 通过双击⌘键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生AppKit开发，无遥测无订阅
 - [zoxide](202605/2026-05-27-zoxide.md) - 一个更智能的 cd 命令，基于访问频率和最近性排序目录，让你只需键入几个字符就能跳转到最常使用的目录，支持所有主流 shell
@@ -145,6 +146,6 @@
 
 ## Monthly Archive
 
-- [2026-05](202605/monthly-index.md) (27 entries)
+- [2026-05](202605/monthly-index.md) (28 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

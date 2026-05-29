@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-29) [cmux](2026-05-29-cmux.md)
+- 一款原生macOS终端模拟器，专为多任务和编码代理设计，提供垂直标签、通知环、内置可脚本化浏览器、分屏及GPU加速渲染，支持CLI和Socket API自动化
+- Tags: Terminal, Multitasking, GPU-Accelerated, Free, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-05-29) [open-design](2026-05-29-open-design.md)
 - 本地优先、开源的设计替代方案，利用你已有的编码代理CLI驱动设计工作流，内置132种技能和150个设计系统，支持原型、演示文稿、图片、视频等多格式输出，完全本地运行，可部署到Vercel
 - Tags: Open Source, Local-first, Design Tool, Agent-driven, Skill-based
