@@ -1,5 +1,11 @@
 # 2026-05 Tool Guide Index
 
+(2026-05-29) [capcap](2026-05-29-capcap.md)
+- 通过双击⌘键快速截图，支持窗口/区域/滚动捕获，内置可编辑标注工具（箭头、马赛克、文本等），可美化并一键上传至自建对象存储，常驻菜单栏，纯原生AppKit开发，无遥测无订阅
+- Tags: Screenshot, Annotation, macOS, Menu Bar, Open Source
+- Categories: System & Automation, Media & Creativity
+- Platform: Mac
+
 (2026-05-27) [zoxide](2026-05-27-zoxide.md)
 - 一个更智能的 cd 命令，基于访问频率和最近性排序目录，让你只需键入几个字符就能跳转到最常使用的目录，支持所有主流 shell
 - Tags: Frecency, Fuzzy Matching, Shell Integration, Rust, Free
