@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-03) [邸报 Dibao](2026-06-03-%E9%82%B8%E6%8A%A5-dibao.md)
+- 基于个人信源的本地推荐阅读器，将 RSS 订阅排序成可复核的个人日报，数据与兴趣画像完全留在你的设备上，零 Token 使用
+- Tags: RSS Reader, Self-hosted, Personalized Ranking, Fair-code, Privacy-focused
+- Categories: Knowledge Management, Reading & Information
+- Platform: Mac, Linux
+
 (2026-06-03) [rtk](2026-06-03-rtk.md)
 - 高性能 CLI 代理，将常见开发命令输出压缩 60-90%，大幅降低 LLM 令牌消耗，单一 Rust 二进制文件零依赖
 - Tags: CLI Proxy, Token Optimization, Developer Tool, Rust, Open Source
