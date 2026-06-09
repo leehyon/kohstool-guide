@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-09) [Open Design](2026-06-09-open-design.md)
+- 开源本地代理驱动设计平台，连接多种编码代理，通过可组合技能包和 Markdown 设计系统工作，是 Figma 和 Claude Design 的开源替代方案
+- Tags: Open Source, Local-first, Agent-driven, Design System, BYOK
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux, Web
+
 (2026-06-03) [邸报 Dibao](2026-06-03-%E9%82%B8%E6%8A%A5-dibao.md)
 - 基于个人信源的本地推荐阅读器，将 RSS 订阅排序成可复核的个人日报，数据与兴趣画像完全留在你的设备上，零 Token 使用
 - Tags: RSS Reader, Self-hosted, Personalized Ranking, Fair-code, Privacy-focused
