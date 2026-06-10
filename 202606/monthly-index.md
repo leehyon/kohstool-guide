@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-10) [html-anything](2026-06-10-html-anything.md)
+- 由本地 AI 代理驱动的 HTML 编辑器，将 Markdown 瞬间转换为发布就绪的 HTML，支持一键导出到微信、X 等平台，无需 API 密钥
+- Tags: HTML Editor, AI-Powered, Local-First, Free, Export Tools
+- Categories: Text Input & Writing, Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux, Web
+
 (2026-06-09) [Open Design](2026-06-09-open-design.md)
 - 开源本地代理驱动设计平台，连接多种编码代理，通过可组合技能包和 Markdown 设计系统工作，是 Figma 和 Claude Design 的开源替代方案
 - Tags: Open Source, Local-first, Agent-driven, Design System, BYOK
