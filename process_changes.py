@@ -2,9 +2,10 @@ import argparse
 import json
 import logging
 import os
+import queue
 import re
+import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from functools import lru_cache, wraps
@@ -62,6 +63,38 @@ def _get_requests_session():
         return requests.Session()
     except Exception:  # noqa: BLE001
         return None
+
+
+# Module-level daemon worker for wayback submissions.
+# Using a single daemon consumer keeps archive.org load gentle while
+# ensuring pending submissions do not block process exit.
+_wayback_worker_lock = threading.Lock()
+_wayback_queue: Optional[queue.Queue[str]] = None
+
+
+def _wayback_worker_loop(work_queue: queue.Queue[str]) -> None:
+    while True:
+        url = work_queue.get()
+        try:
+            submit_to_wayback_machine(url)
+        finally:
+            work_queue.task_done()
+
+
+def _get_wayback_queue() -> queue.Queue[str]:
+    global _wayback_queue
+    if _wayback_queue is None:
+        with _wayback_worker_lock:
+            if _wayback_queue is None:
+                _wayback_queue = queue.Queue()
+                worker = threading.Thread(
+                    target=_wayback_worker_loop,
+                    args=(_wayback_queue,),
+                    name="wayback-worker",
+                    daemon=True,
+                )
+                worker.start()
+    return _wayback_queue
 
 
 def log_execution_time(func):
@@ -1510,7 +1543,10 @@ def call_openai_api(prompt: str, content: str) -> str:
     logging.info("API endpoint: %s", api_endpoint)
 
     response: requests.Response = session.post(
-        api_endpoint, headers=headers, data=json.dumps(data)
+        api_endpoint,
+        headers=headers,
+        data=json.dumps(data),
+        timeout=(HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS),
     )
     logging.info("Response status code: %d", response.status_code)
     response_json = response.json()
@@ -1924,37 +1960,28 @@ def ingest_tool(
     url = normalize_http_url(url)
 
     # Wayback submission is network-bound and independent of guide generation.
-    # Overlap it with Jina/OpenAI calls to reduce overall wall-clock time.
-    with ThreadPoolExecutor(max_workers=1) as executor:
-        wayback_future = (
-            executor.submit(submit_to_wayback_machine, url) if archive else None
-        )
+    # Queue it to a single daemon worker so slow archive.org responses do not
+    # block ingestion or process shutdown.
+    if archive:
+        try:
+            _get_wayback_queue().put_nowait(url)
+        except Exception as error:  # noqa: BLE001
+            logging.warning("Failed to schedule wayback submission: %s", error)
 
-        page_text = ""
-        if fetch:
-            try:
-                page_text = get_text_content(url)
-            except Exception as error:  # noqa: BLE001
-                logging.warning(
-                    "Failed to fetch page content for %s; continuing with empty text.",
-                    url,
-                )
-                logging.exception(error)
+    page_text = ""
+    if fetch:
+        try:
+            page_text = get_text_content(url)
+        except Exception as error:  # noqa: BLE001
+            logging.warning(
+                "Failed to fetch page content for %s; continuing with empty text.",
+                url,
+            )
+            logging.exception(error)
 
-        guide = generate_tool_guide_with_options(
-            name, url, page_text, heuristic=heuristic
-        )
-
-        if wayback_future is not None:
-            try:
-                wayback_future.result()
-            except Exception as error:  # noqa: BLE001
-                # submit_to_wayback_machine already logs; keep this guard to
-                # avoid bubbling unexpected thread exceptions.
-                logging.warning(
-                    "Wayback submission failed (async), skipping, url=%s", url
-                )
-                logging.exception(error)
+    guide = generate_tool_guide_with_options(
+        name, url, page_text, heuristic=heuristic
+    )
 
     timestamp = int(datetime.now(timezone.utc).timestamp())
     month = datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime("%Y%m")
