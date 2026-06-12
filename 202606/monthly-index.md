@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-12) [transmission](2026-06-12-transmission.md)
+- 跨平台的 BitTorrent 客户端，注重轻量、快速和低资源占用 支持加密、磁力链接、远程控制等功能
+- Tags: BitTorrent Client, Open Source, Lightweight, Cross-platform
+- Categories: File Management
+- Platform: Mac, Windows, Linux, Android, Web
+
 (2026-06-10) [html-anything](2026-06-10-html-anything.md)
 - 由本地 AI 代理驱动的 HTML 编辑器，将 Markdown 瞬间转换为发布就绪的 HTML，支持一键导出到微信、X 等平台，无需 API 密钥
 - Tags: HTML Editor, AI-Powered, Local-First, Free, Export Tools
