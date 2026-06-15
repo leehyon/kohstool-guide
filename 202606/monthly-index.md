@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-15) [book-to-skill](2026-06-15-book-to-skill.md)
+- 将技术书籍 PDF、文档或文件夹转化为 AI 助手可调用的结构化 skill，包含核心概念、章节摘要和速查表，按需加载以减少上下文开销
+- Tags: Technical Books, AI Agent Skill, Knowledge Base, PDF, Open Source
+- Categories: Knowledge Management, Reading & Information, Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-06-15) [Recuva](2026-06-15-recuva.md)
 - 一款免费的文件恢复工具，能够从 Windows 电脑、回收站、数码相机卡或 MP3 播放器中找回误删、丢失或损坏的文件，支持深度扫描和高级恢复模式
 - Tags: Data Recovery, Free, Windows, File Recovery, Undelete

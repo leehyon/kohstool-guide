@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [book-to-skill](202606/2026-06-15-book-to-skill.md) - 将技术书籍 PDF、文档或文件夹转化为 AI 助手可调用的结构化 skill，包含核心概念、章节摘要和速查表，按需加载以减少上下文开销
 - [Recuva](202606/2026-06-15-recuva.md) - 一款免费的文件恢复工具，能够从 Windows 电脑、回收站、数码相机卡或 MP3 播放器中找回误删、丢失或损坏的文件，支持深度扫描和高级恢复模式
 - [testdisk](202606/2026-06-15-testdisk.md) - 磁盘分区与数据恢复工具，可恢复丢失的分区及删除的文件，支持多种文件系统
 - [transmission](202606/2026-06-12-transmission.md) - 跨平台的 BitTorrent 客户端，注重轻量、快速和低资源占用 支持加密、磁力链接、远程控制等功能
@@ -156,7 +157,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (8 entries)
+- [2026-06](202606/monthly-index.md) (9 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
