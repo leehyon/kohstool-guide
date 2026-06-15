@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-15) [Recuva](2026-06-15-recuva.md)
+- 一款免费的文件恢复工具，能够从 Windows 电脑、回收站、数码相机卡或 MP3 播放器中找回误删、丢失或损坏的文件，支持深度扫描和高级恢复模式
+- Tags: Data Recovery, Free, Windows, File Recovery, Undelete
+- Categories: File Management, System & Automation
+- Platform: Windows
+
 (2026-06-15) [testdisk](2026-06-15-testdisk.md)
 - 磁盘分区与数据恢复工具，可恢复丢失的分区及删除的文件，支持多种文件系统
 - Tags: Data Recovery, Disk, Filesystem, TestDisk, PhotoRec
