@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [testdisk](202606/2026-06-15-testdisk.md) - 磁盘分区与数据恢复工具，可恢复丢失的分区及删除的文件，支持多种文件系统
 - [transmission](202606/2026-06-12-transmission.md) - 跨平台的 BitTorrent 客户端，注重轻量、快速和低资源占用 支持加密、磁力链接、远程控制等功能
 - [html-anything](202606/2026-06-10-html-anything.md) - 由本地 AI 代理驱动的 HTML 编辑器，将 Markdown 瞬间转换为发布就绪的 HTML，支持一键导出到微信、X 等平台，无需 API 密钥
 - [Open Design](202606/2026-06-09-open-design.md) - 开源本地代理驱动设计平台，连接多种编码代理，通过可组合技能包和 Markdown 设计系统工作，是 Figma 和 Claude Design 的开源替代方案
@@ -154,7 +155,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (6 entries)
+- [2026-06](202606/monthly-index.md) (7 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)

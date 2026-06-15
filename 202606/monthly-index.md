@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-15) [testdisk](2026-06-15-testdisk.md)
+- 磁盘分区与数据恢复工具，可恢复丢失的分区及删除的文件，支持多种文件系统
+- Tags: Data Recovery, Disk, Filesystem, TestDisk, PhotoRec
+- Categories: File Management, System & Automation
+- Platform: Windows, Linux, Mac
+
 (2026-06-12) [transmission](2026-06-12-transmission.md)
 - 跨平台的 BitTorrent 客户端，注重轻量、快速和低资源占用 支持加密、磁力链接、远程控制等功能
 - Tags: BitTorrent Client, Open Source, Lightweight, Cross-platform
