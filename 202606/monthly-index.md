@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-16) [Satty](2026-06-16-satty.md)
+- 一个受 Swappy 和 Flameshot 启发的现代截图标注工具，提供简洁工具集、全屏标注、硬件加速渲染，支持 Wayland 合成器
+- Tags: Screenshot, Annotation, Open Source, Linux, Wayland
+- Categories: System & Automation, Media & Creativity
+- Platform: Linux
+
 (2026-06-15) [Battle-Tested Patterns](2026-06-15-battle-tested-patterns.md)
 - 通过交互式可视化、多语言实现和生产代码溯源，帮助开发者学习 46 个经生产验证的编程模式，提升实战理解能力
 - Tags: Programming Patterns, Interactive Learning, Multi-Language, Visualization, Production-Proven
