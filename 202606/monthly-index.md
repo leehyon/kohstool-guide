@@ -1,5 +1,10 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-17) [awesome-agent-skills](2026-06-17-awesome-agent-skills.md)
+- 一个精选的 1000+ 个真实 Agent 技能集合，来自官方团队与社区，兼容 Claude Code、Codex、Gemini CLI 等，手工挑选而非 AI 生成
+- Tags: Agent Skills, Curated List, Open Source, Developer Tools, Community
+- Categories: Developer Tools
+
 (2026-06-16) [Satty](2026-06-16-satty.md)
 - 一个受 Swappy 和 Flameshot 启发的现代截图标注工具，提供简洁工具集、全屏标注、硬件加速渲染，支持 Wayland 合成器
 - Tags: Screenshot, Annotation, Open Source, Linux, Wayland
