@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-17) [awesome-claude-code-toolkit](2026-06-17-awesome-claude-code-toolkit.md)
+- Claude Code 的终极资源集合，提供 176+ 插件、135 个代理、42 个命令、20 个钩子、15 条规则等，一站式发现与集成社区贡献的最佳 AI 编码工具
+- Tags: Claude Code, Plugin Marketplace, AI Coding, Curated List, Developer Tools
+- Categories: Knowledge Management, Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-06-17) [antigravity-awesome-skills](2026-06-17-antigravity-awesome-skills.md)
 - 可安装的 GitHub 技能库，包含 1,569+ 个可复用的 SKILL.md 指南，支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手，通过 npx 快速安装使用
 - Tags: Agent Skills, Installable, GitHub, Open Source, CLI
