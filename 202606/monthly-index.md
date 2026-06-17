@@ -1,5 +1,10 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-17) [antigravity-awesome-skills](2026-06-17-antigravity-awesome-skills.md)
+- 可安装的 GitHub 技能库，包含 1,569+ 个可复用的 SKILL.md 指南，支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手，通过 npx 快速安装使用
+- Tags: Agent Skills, Installable, GitHub, Open Source, CLI
+- Categories: Knowledge Management, Developer Tools
+
 (2026-06-17) [awesome-agent-skills](2026-06-17-awesome-agent-skills.md)
 - 一个精选的 1000+ 个真实 Agent 技能集合，来自官方团队与社区，兼容 Claude Code、Codex、Gemini CLI 等，手工挑选而非 AI 生成
 - Tags: Agent Skills, Curated List, Open Source, Developer Tools, Community

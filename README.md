@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [antigravity-awesome-skills](202606/2026-06-17-antigravity-awesome-skills.md) - 可安装的 GitHub 技能库，包含 1,569+ 个可复用的 SKILL.md 指南，支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手，通过 npx 快速安装使用
 - [awesome-agent-skills](202606/2026-06-17-awesome-agent-skills.md) - 一个精选的 1000+ 个真实 Agent 技能集合，来自官方团队与社区，兼容 Claude Code、Codex、Gemini CLI 等，手工挑选而非 AI 生成
 - [Satty](202606/2026-06-16-satty.md) - 一个受 Swappy 和 Flameshot 启发的现代截图标注工具，提供简洁工具集、全屏标注、硬件加速渲染，支持 Wayland 合成器
 - [Battle-Tested Patterns](202606/2026-06-15-battle-tested-patterns.md) - 通过交互式可视化、多语言实现和生产代码溯源，帮助开发者学习 46 个经生产验证的编程模式，提升实战理解能力
@@ -160,7 +161,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (12 entries)
+- [2026-06](202606/monthly-index.md) (13 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
