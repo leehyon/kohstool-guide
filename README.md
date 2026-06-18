@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [RustDesk](202606/2026-06-18-rustdesk.md) - 开源远程桌面软件，支持自托管服务器，提供安全可靠的远程访问和技术支持，数据完全由用户控制
 - [awesome-claude-code-toolkit](202606/2026-06-17-awesome-claude-code-toolkit.md) - Claude Code 的终极资源集合，提供 176+ 插件、135 个代理、42 个命令、20 个钩子、15 条规则等，一站式发现与集成社区贡献的最佳 AI 编码工具
 - [antigravity-awesome-skills](202606/2026-06-17-antigravity-awesome-skills.md) - 可安装的 GitHub 技能库，包含 1,569+ 个可复用的 SKILL.md 指南，支持 Claude Code、Cursor、Codex CLI、Gemini CLI 等多种 AI 编码助手，通过 npx 快速安装使用
 - [awesome-agent-skills](202606/2026-06-17-awesome-agent-skills.md) - 一个精选的 1000+ 个真实 Agent 技能集合，来自官方团队与社区，兼容 Claude Code、Codex、Gemini CLI 等，手工挑选而非 AI 生成
@@ -162,7 +163,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (14 entries)
+- [2026-06](202606/monthly-index.md) (15 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
