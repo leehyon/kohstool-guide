@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-24) [puncover](2026-06-24-puncover.md)
+- 一个用于分析嵌入式 C/C++ 代码函数调用关系和堆栈使用情况的工具 帮助开发者理解代码结构并优化性能
+- Tags: Static Analysis, Embedded, Call Graph, Stack Usage
+- Categories: Developer Tools, Data & Analytics
+- Platform: Linux, Mac, Windows
+
 (2026-06-18) [RustDesk](2026-06-18-rustdesk.md)
 - 开源远程桌面软件，支持自托管服务器，提供安全可靠的远程访问和技术支持，数据完全由用户控制
 - Tags: Open-Source, Remote Desktop, Self-Hosted, Secure, Cross-platform
