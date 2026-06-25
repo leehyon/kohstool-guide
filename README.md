@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [tldraw](202606/2026-06-25-tldraw.md) - 一个基于 React 的无限画布 SDK，提供绘图、图表、多人协作等功能，可高度扩展并用于构建自定义画布应用
 - [puncover](202606/2026-06-24-puncover.md) - 一个用于分析嵌入式 C/C++ 代码函数调用关系和堆栈使用情况的工具 帮助开发者理解代码结构并优化性能
 - [RustDesk](202606/2026-06-18-rustdesk.md) - 开源远程桌面软件，支持自托管服务器，提供安全可靠的远程访问和技术支持，数据完全由用户控制
 - [awesome-claude-code-toolkit](202606/2026-06-17-awesome-claude-code-toolkit.md) - Claude Code 的终极资源集合，提供 176+ 插件、135 个代理、42 个命令、20 个钩子、15 条规则等，一站式发现与集成社区贡献的最佳 AI 编码工具
@@ -164,7 +165,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (16 entries)
+- [2026-06](202606/monthly-index.md) (17 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
