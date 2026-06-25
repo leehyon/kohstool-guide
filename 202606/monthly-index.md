@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-25) [CC Switch](2026-06-25-cc-switch.md)
+- 统一管理 AI 编程工具的工作流，提供供应商配置、本地路由与自动故障转移，支持用量追踪、MCP 与会话管理，开源免费基于 MIT 协议
+- Tags: AI Programming, Tool Management, Local Routing, Open Source, Free
+- Categories: Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-06-25) [tldraw](2026-06-25-tldraw.md)
 - 一个基于 React 的无限画布 SDK，提供绘图、图表、多人协作等功能，可高度扩展并用于构建自定义画布应用
 - Tags: React, Whiteboarding, Diagramming, Collaboration, Open Source
