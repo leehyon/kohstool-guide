@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-29) [Understand Anything](2026-06-29-understand-anything.md)
+- 通过 AI 生成可交互的知识图谱，将代码结构映射为业务领域与流程，支持模糊搜索、层次化钻取和 AI 引导导览，帮助开发者快速理解代码库
+- Tags: Code Understanding, AI, Knowledge Graph, Interactive, Developer Tool
+- Categories: Knowledge Management, Developer Tools
+- Platform: Web
+
 (2026-06-29) [skills](2026-06-29-skills.md)
 - 一套可组合、开源的 AI 编码代理技能，通过 grilling、共享语言、TDD 和架构设计来提升代码质量与工程实践，解决代理沟通偏差、冗长输出、代码混乱等常见问题
 - Tags: AI Coding Agents, Software Engineering, Developer Productivity, Open Source, Code Quality
