@@ -1,5 +1,11 @@
 # 2026-06 Tool Guide Index
 
+(2026-06-29) [skills](2026-06-29-skills.md)
+- 一套可组合、开源的 AI 编码代理技能，通过 grilling、共享语言、TDD 和架构设计来提升代码质量与工程实践，解决代理沟通偏差、冗长输出、代码混乱等常见问题
+- Tags: AI Coding Agents, Software Engineering, Developer Productivity, Open Source, Code Quality
+- Categories: Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-06-25) [CC Switch](2026-06-25-cc-switch.md)
 - 统一管理 AI 编程工具的工作流，提供供应商配置、本地路由与自动故障转移，支持用量追踪、MCP 与会话管理，开源免费基于 MIT 协议
 - Tags: AI Programming, Tool Management, Local Routing, Open Source, Free

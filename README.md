@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [skills](202606/2026-06-29-skills.md) - 一套可组合、开源的 AI 编码代理技能，通过 grilling、共享语言、TDD 和架构设计来提升代码质量与工程实践，解决代理沟通偏差、冗长输出、代码混乱等常见问题
 - [CC Switch](202606/2026-06-25-cc-switch.md) - 统一管理 AI 编程工具的工作流，提供供应商配置、本地路由与自动故障转移，支持用量追踪、MCP 与会话管理，开源免费基于 MIT 协议
 - [tldraw](202606/2026-06-25-tldraw.md) - 一个基于 React 的无限画布 SDK，提供绘图、图表、多人协作等功能，可高度扩展并用于构建自定义画布应用
 - [puncover](202606/2026-06-24-puncover.md) - 一个用于分析嵌入式 C/C++ 代码函数调用关系和堆栈使用情况的工具 帮助开发者理解代码结构并优化性能
@@ -166,7 +167,7 @@
 
 ## Monthly Archive
 
-- [2026-06](202606/monthly-index.md) (18 entries)
+- [2026-06](202606/monthly-index.md) (19 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
 - [2026-03](202603/monthly-index.md) (82 entries)
