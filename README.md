@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [DSA](202607/2026-07-02-dsa.md) - 基于 LLM 的智能股票分析系统，覆盖 A 股、港股、美股，整合多源报价、新闻情绪、技术面与基本面，生成结构化个股决策报告与市场评论，并支持策略问答与多通道通知
 - [Understand Anything](202606/2026-06-29-understand-anything.md) - 通过 AI 生成可交互的知识图谱，将代码结构映射为业务领域与流程，支持模糊搜索、层次化钻取和 AI 引导导览，帮助开发者快速理解代码库
 - [skills](202606/2026-06-29-skills.md) - 一套可组合、开源的 AI 编码代理技能，通过 grilling、共享语言、TDD 和架构设计来提升代码质量与工程实践，解决代理沟通偏差、冗长输出、代码混乱等常见问题
 - [CC Switch](202606/2026-06-25-cc-switch.md) - 统一管理 AI 编程工具的工作流，提供供应商配置、本地路由与自动故障转移，支持用量追踪、MCP 与会话管理，开源免费基于 MIT 协议
@@ -168,6 +169,7 @@
 
 ## Monthly Archive
 
+- [2026-07](202607/monthly-index.md) (1 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
