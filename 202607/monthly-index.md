@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-03) [clash-for-linux-install](2026-07-03-clash-for-linux-install.md)
+- 在 Linux 上一键部署和管理基于 clash/mihomo 的代理环境，支持订阅管理、TUN 模式及内核升级
+- Tags: Linux, Clash, Proxy, One-click Install, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Linux
+
 (2026-07-03) [TablePro](2026-07-03-tablepro.md)
 - 原生 Mac 与 iPhone 数据库客户端，免费开源，支持 21+ 种数据库，集成 SQL 编辑器、AI 助手、数据网格、终端等特性
 - Tags: Database Client, Free, Open Source, Native, macOS
