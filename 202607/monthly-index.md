@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-07) [hermex](2026-07-07-hermex.md)
+- 一个用于控制自托管 Hermes AI agent 的原生 iPhone 客户端，支持聊天、文件浏览、任务管理等核心功能，强调隐私和免费
+- Tags: AI Agent, Self-hosted, SwiftUI, Free, Privacy-focused
+- Categories: Developer Tools, Security & Privacy
+- Platform: iOS
+
 (2026-07-07) [PicForge](2026-07-07-picforge.md)
 - 一个本地优先的浏览器应用，用于批量图像压缩和调整大小，支持 MozJPEG、WebP、OxiPNG、AVIF 等多种格式，通过 Canvas、Web Workers 和 WASM 编解码器在设备上处理，无需上传或注册，支持 PWA 离线使用
 - Tags: Image Compression, Batch Processing, PWA, Local-First, Open Source
