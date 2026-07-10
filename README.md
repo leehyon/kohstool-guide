@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [TaskTick](202607/2026-07-10-tasktick.md) - 一个轻量级的任务管理工具，帮助用户高效跟踪待办事项并保持专注
 - [hermex](202607/2026-07-07-hermex.md) - 一个用于控制自托管 Hermes AI agent 的原生 iPhone 客户端，支持聊天、文件浏览、任务管理等核心功能，强调隐私和免费
 - [PicForge](202607/2026-07-07-picforge.md) - 一个本地优先的浏览器应用，用于批量图像压缩和调整大小，支持 MozJPEG、WebP、OxiPNG、AVIF 等多种格式，通过 Canvas、Web Workers 和 WASM 编解码器在设备上处理，无需上传或注册，支持 PWA 离线使用
 - [clash-for-linux-install](202607/2026-07-03-clash-for-linux-install.md) - 在 Linux 上一键部署和管理基于 clash/mihomo 的代理环境，支持订阅管理、TUN 模式及内核升级
@@ -173,7 +174,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (5 entries)
+- [2026-07](202607/monthly-index.md) (6 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)

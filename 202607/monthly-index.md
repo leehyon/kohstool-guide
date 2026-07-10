@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-10) [TaskTick](2026-07-10-tasktick.md)
+- 一个轻量级的任务管理工具，帮助用户高效跟踪待办事项并保持专注
+- Tags: Task Management, Open Source, Minimal, Offline-first
+- Categories: System & Automation
+- Platform: Windows, Mac, Linux
+
 (2026-07-07) [hermex](2026-07-07-hermex.md)
 - 一个用于控制自托管 Hermes AI agent 的原生 iPhone 客户端，支持聊天、文件浏览、任务管理等核心功能，强调隐私和免费
 - Tags: AI Agent, Self-hosted, SwiftUI, Free, Privacy-focused
