@@ -1,6 +1,12 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-10) [boss-zhipin-scraper](2026-07-10-boss-zhipin-scraper.md)
+- 一个用于爬取 Boss 直聘职位信息的 Python 爬虫工具，支持关键词搜索与分页抓取，输出结构化数据
+- Tags: Job Scraping, Python, Automation, Open Source
+- Categories: Developer Tools, System & Automation, Data & Analytics
+
 (2026-07-10) [eve](2026-07-10-eve.md)
+- ## 应用场景 - _暂无_
 
 (2026-07-10) [TaskTick](2026-07-10-tasktick.md)
 - 一个轻量级的任务管理工具，帮助用户高效跟踪待办事项并保持专注
