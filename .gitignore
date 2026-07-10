@@ -1,0 +1,4 @@
+# Last-run manifest written by process_changes.py. The GitHub Actions
+# validation step reads it to gate on freshly produced entries; it is
+# not a permanent artifact and should never be committed.
+.last_run.json

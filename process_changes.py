@@ -785,6 +785,38 @@ def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> No
         json.dump(payload, handle, indent=2, ensure_ascii=False)
 
 
+# Path to the manifest recording which guide files this run produced. The
+# workflow's validation step reads this to gate only on fresh entries,
+# so stale broken entries from earlier buggy runs don't block the workflow.
+# Anchored at SUMMARY_ROOT (same resolution rule as DATA_PATH) so the path
+# is correct whether the script is run from the outer repo root or from
+# inside kohstool-guide/ directly.
+LAST_RUN_MANIFEST_PATH: Path = SUMMARY_ROOT / ".last_run.json"
+
+
+def _write_last_run_manifest(guide_paths: Iterable[Path]) -> None:
+    """Write a small JSON file listing the guide paths produced this run.
+
+    The manifest is consumed by the GitHub Actions validation step. Writing
+    it even when the list is empty lets the validator distinguish "no new
+    entries this run" (an empty list) from "manifest missing" (the file
+    doesn't exist), which is useful for first-time / corrupted runs.
+    """
+    paths = [str(p) for p in guide_paths]
+    ensure_directory(LAST_RUN_MANIFEST_PATH.parent, dry_run=False)
+    payload = {
+        "written_at": int(datetime.now(timezone.utc).timestamp()),
+        "guide_paths": paths,
+    }
+    with LAST_RUN_MANIFEST_PATH.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2, ensure_ascii=False)
+    logging.info(
+        "Wrote last-run manifest with %d guide path(s) to %s",
+        len(paths),
+        LAST_RUN_MANIFEST_PATH,
+    )
+
+
 def get_guide_file_path(
     name: str,
     timestamp: int,
@@ -1973,11 +2005,15 @@ def ingest_tool(
         try:
             page_text = get_text_content(url)
         except Exception as error:  # noqa: BLE001
-            logging.warning(
-                "Failed to fetch page content for %s; continuing with empty text.",
-                url,
-            )
-            logging.exception(error)
+            # When fetch was requested, a fetch failure must abort ingestion.
+            # Falling back to empty page_text silently produces a near-empty
+            # TL;DR / guide (the OpenAI call hallucinates from name+url alone)
+            # and ships a broken entry to data.json + downstream tools repo.
+            # Re-raise so the workflow fails loudly and the next run can retry.
+            raise RuntimeError(
+                f"Aborting ingestion of {name}: failed to fetch page content "
+                f"for {url}: {error}"
+            ) from error
 
     guide = generate_tool_guide_with_options(
         name, url, page_text, heuristic=heuristic
@@ -2079,6 +2115,10 @@ def process_tools(options: RunOptions) -> None:
     tool_lines = read_tool_collection_lines(collection_readme_path)
     tool_pairs = extract_tool_links(tool_lines)
 
+    # Paths of guide markdown files written in this run. Initialized outside
+    # the ingestion branch so _write_last_run_manifest can always be called
+    # even when no new tools were processed (backfill / dry-run / etc.).
+    new_guide_paths: List[Path] = []
     ingestion_result: Optional[IngestionResult] = None
     if backfill:
         logging.info(
@@ -2133,6 +2173,7 @@ def process_tools(options: RunOptions) -> None:
                     ingestion_result.guide_markdown,
                     dry_run=False,
                 )
+                new_guide_paths.append(ingestion_result.guide_path)
 
             # Ensure cached fields reflect what was written.
             ingestion_result.entry.guide_markdown = build_guide_markdown_blob_url(
@@ -2146,6 +2187,14 @@ def process_tools(options: RunOptions) -> None:
             logging.info("No new tools to process.")
         else:
             logging.info("Processed %d new tool(s).", processed_count)
+
+    # Record the guide files written in this run so downstream workflow
+    # validation (data.json guardrail) can check only the freshly produced
+    # entries instead of being blocked by stale broken entries from earlier
+    # buggy runs. Always write — even when new_guide_paths is empty — so the
+    # validator can distinguish "no new entries this run" from "missing file".
+    if not dry_run:
+        _write_last_run_manifest(new_guide_paths)
 
     if hydrated_any and not dry_run:
         logging.info("Cached TL;DR/guide markdown hydrated into entries.")
