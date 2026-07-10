@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-10) [edgeever](2026-07-10-edgeever.md)
+- 一个专注于 Edge 浏览器自动化与效率提升的轻量工具
+- Tags: Edge, Automation, Scripting, Browser Extension
+- Categories: Text Input & Writing, System & Automation
+- Platform: Windows, Mac, Linux
+
 (2026-07-10) [boss-zhipin-scraper](2026-07-10-boss-zhipin-scraper.md)
 - 一个用于爬取 Boss 直聘职位信息的 Python 爬虫工具，支持关键词搜索与分页抓取，输出结构化数据
 - Tags: Job Scraping, Python, Automation, Open Source
