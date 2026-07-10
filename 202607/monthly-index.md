@@ -1,5 +1,7 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-10) [wenyi](2026-07-10-wenyi.md)
+
 (2026-07-10) [edgeever](2026-07-10-edgeever.md)
 - 一个专注于 Edge 浏览器自动化与效率提升的轻量工具
 - Tags: Edge, Automation, Scripting, Browser Extension
