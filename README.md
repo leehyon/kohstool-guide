@@ -1,7 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
-- [wenyi](202607/2026-07-10-wenyi.md)
+- [wenyi](202607/2026-07-10-wenyi.md) - ## 应用场景 - _暂无_
 - [edgeever](202607/2026-07-10-edgeever.md) - 一个专注于 Edge 浏览器自动化与效率提升的轻量工具
 - [boss-zhipin-scraper](202607/2026-07-10-boss-zhipin-scraper.md) - 一个用于爬取 Boss 直聘职位信息的 Python 爬虫工具，支持关键词搜索与分页抓取，输出结构化数据
 - [eve](202607/2026-07-10-eve.md) - ## 应用场景 - _暂无_
