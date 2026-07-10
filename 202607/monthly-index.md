@@ -1,5 +1,7 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-10) [eve](2026-07-10-eve.md)
+
 (2026-07-10) [TaskTick](2026-07-10-tasktick.md)
 - 一个轻量级的任务管理工具，帮助用户高效跟踪待办事项并保持专注
 - Tags: Task Management, Open Source, Minimal, Offline-first
