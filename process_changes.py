@@ -37,6 +37,13 @@ MAX_CONTENT_LENGTH: int = 32 * 1024  # 32KB
 MIN_CONTENT_LENGTH: int = 200
 MAX_RETRIES: int = 3
 
+# Minimum acceptable guide markdown file size on disk, in bytes. Entries
+# whose guide file is smaller than this are treated as "broken" (likely
+# produced by a Jina fetch failure) and become candidates for --retry-broken.
+# Mirrors the threshold in .github/workflows/extraction.yml so the script
+# and the workflow guardrail agree on what "empty" means.
+MIN_GUIDE_BYTES: int = 500
+
 # data.json caches guide_markdown as a full GitHub blob URL (not the markdown content).
 # You may override repo/ref detection via:
 # - GUIDE_GITHUB_REPO=owner/repo
@@ -181,6 +188,7 @@ class RunOptions:
     max_new: int
     heuristic: bool
     fetch: bool
+    retry_broken: bool = False
 
 
 @dataclass
@@ -815,6 +823,75 @@ def _write_last_run_manifest(guide_paths: Iterable[Path]) -> None:
         len(paths),
         LAST_RUN_MANIFEST_PATH,
     )
+
+
+def find_broken_entries(
+    entries: Iterable["ToolGuideEntry"],
+    min_bytes: int = MIN_GUIDE_BYTES,
+) -> List["ToolGuideEntry"]:
+    """Return entries whose on-disk guide markdown file is missing or too small.
+
+    "Too small" means the file is below `min_bytes` bytes — typically a sign
+    that the original Jina fetch failed and the OpenAI call hallucinated a
+    near-empty guide from the tool name + URL alone. Used by --retry-broken
+    to find candidates that need re-ingestion. Entries are returned in the
+    same order they appeared in `entries` so retries are deterministic.
+    """
+    broken: List[ToolGuideEntry] = []
+    for entry in entries:
+        guide_path = get_guide_file_path(
+            name=entry.name, timestamp=entry.timestamp, month=entry.month
+        )
+        size = guide_path.stat().st_size if guide_path.exists() else 0
+        if size < min_bytes:
+            logging.info(
+                "Broken entry detected: %s -> %s (%dB)",
+                entry.name,
+                guide_path,
+                size,
+            )
+            broken.append(entry)
+    return broken
+
+
+def retry_entry(entry: "ToolGuideEntry") -> None:
+    """Re-fetch and re-generate the guide for an existing entry in place.
+
+    Mutates `entry` (tldr / tags / categories / platform / guide_markdown)
+    and overwrites its guide markdown file on disk. Keeps the original
+    month / name / timestamp so external ordering and stable URLs are
+    preserved.
+
+    Raises if the Jina fetch fails — caller is expected to log and skip
+    rather than overwrite with partial data.
+    """
+    page_text = get_text_content(entry.url)
+    guide = generate_tool_guide_with_options(
+        entry.name, entry.url, page_text, heuristic=False
+    )
+    guide_path = get_guide_file_path(
+        name=entry.name, timestamp=entry.timestamp, month=entry.month
+    )
+    markdown = build_guide_markdown(
+        name=entry.name,
+        url=entry.url,
+        tldr=guide.tldr,
+        scenarios=guide.scenarios,
+        pain_points=guide.pain_points,
+        design_principles=guide.design_principles,
+        categories=guide.categories,
+        similar_tools=guide.similar_tools,
+        tags=normalize_tags(guide.tags, max_count=5),
+        platform=normalize_platforms(guide.platform),
+    )
+    write_text_file(guide_path, markdown, dry_run=False)
+
+    entry.tags = normalize_tags(guide.tags, max_count=5)
+    entry.categories = normalize_categories(guide.categories, max_count=3)
+    entry.platform = normalize_platforms(guide.platform)
+    entry.tldr = (guide.tldr or "").strip()
+    entry.guide_markdown = build_guide_markdown_blob_url(entry)
+    logging.info("Retried %s -> %s (%dB)", entry.name, guide_path, len(markdown))
 
 
 def get_guide_file_path(
@@ -2060,6 +2137,7 @@ def process_tools(options: RunOptions) -> None:
     max_new = options.max_new
     heuristic = options.heuristic
     fetch = options.fetch
+    retry_broken = options.retry_broken
 
     try:
         same_readme = collection_readme_path.resolve() == SUMMARY_README_PATH.resolve()
@@ -2139,6 +2217,39 @@ def process_tools(options: RunOptions) -> None:
             )
         else:
             logging.info("Dry-run: no new tools to process.")
+    elif retry_broken:
+        logging.info("Retry-broken mode enabled; re-fetching entries with empty guides.")
+        broken = find_broken_entries(entries, min_bytes=MIN_GUIDE_BYTES)
+        if not broken:
+            logging.info("No broken entries found; nothing to retry.")
+        else:
+            logging.info("Found %d broken entr%s.", len(broken),
+                         "y" if len(broken) == 1 else "ies")
+            retried = 0
+            for entry in broken:
+                if retried >= max_new:
+                    logging.info("Reached --max-new=%d limit; stopping retry loop.", max_new)
+                    break
+                logging.info("Retrying %s (%s)...", entry.name, entry.url)
+                try:
+                    retry_entry(entry)
+                    overrides[entry.identity()] = entry.tldr
+                    new_guide_paths.append(get_guide_file_path(
+                        name=entry.name, timestamp=entry.timestamp, month=entry.month,
+                    ))
+                    retried += 1
+                except Exception as error:  # noqa: BLE001
+                    # Don't overwrite — keep the original (still-bad) data so
+                    # the user can investigate. Log loudly so the next run
+                    # has a clear trail.
+                    logging.error(
+                        "Retry failed for %s; entry left unchanged. Error: %s",
+                        entry.name,
+                        error,
+                    )
+            if retried:
+                logging.info("Retried %d broken entr%s.", retried,
+                             "y" if retried == 1 else "ies")
     elif requests is None:
         logging.warning(
             "requests dependency missing; cannot ingest new tools. Run with --backfill or install dependencies."
@@ -2270,6 +2381,16 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip fetching page text via Jina Reader (guide generated from name/url only).",
     )
+    parser.add_argument(
+        "--retry-broken",
+        action="store_true",
+        help=(
+            "Re-fetch and re-generate entries whose guide markdown file is "
+            "missing or below MIN_GUIDE_BYTES. Use --max-new to control how "
+            "many broken entries to retry per run. Mutually exclusive with "
+            "--backfill in practice (one or the other, not both)."
+        ),
+    )
     args = parser.parse_args()
 
     env_dry_run = os.getenv("TOOL_GUIDE_DRY_RUN", "").lower() in ("1", "true", "yes")
@@ -2289,6 +2410,7 @@ def main() -> None:
         max_new=max(0, int(args.max_new)),
         heuristic=bool(args.heuristic),
         fetch=not bool(args.no_fetch),
+        retry_broken=bool(args.retry_broken),
     )
     process_tools(options)
 
