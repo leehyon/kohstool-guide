@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-14) [Davit](2026-07-14-davit.md)
+- 一款原生的 macOS 应用，通过 XPC 直接与 Apple 容器守护进程交互，提供图形界面管理容器、镜像、卷、网络等，支持 docker-compose 导入和 Dockerfile 构建，无需 Docker Desktop，轻量且开源
+- Tags: macOS, Container, Native, Free, Open Source
+- Categories: Developer Tools, System & Automation
+- Platform: Mac
+
 (2026-07-10) [edgeever](2026-07-10-edgeever.md)
 - 一个专注于 Edge 浏览器自动化与效率提升的轻量工具
 - Tags: Edge, Automation, Scripting, Browser Extension
