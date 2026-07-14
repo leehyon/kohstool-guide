@@ -1,5 +1,10 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-14) [wenyi](2026-07-14-wenyi.md)
+- 一个将多语言 EPUB、FB2、TXT 小说翻译为中文的命令行工具，专为长篇小说优化，支持全书预扫、滚动上下文、实时术语库、润色和审校
+- Tags: Chinese Translation, EPUB, Novel, CLI, Open Source
+- Categories: Reading & Information, Text Input & Writing, Developer Tools
+
 (2026-07-14) [LaTeXSnipper](2026-07-14-latexsnipper.md)
 - 截图 OCR 识别、手写识别和 PDF 转 LaTeX/Markdown 的数学工作台，集成公式编辑与计算，提供 Office 插件和离线优先的隐私保护
 - Tags: LaTeX, OCR, Math Recognition, Handwriting Recognition, Open Source

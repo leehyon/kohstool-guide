@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [wenyi](202607/2026-07-14-wenyi.md) - 一个将多语言 EPUB、FB2、TXT 小说翻译为中文的命令行工具，专为长篇小说优化，支持全书预扫、滚动上下文、实时术语库、润色和审校
 - [LaTeXSnipper](202607/2026-07-14-latexsnipper.md) - 截图 OCR 识别、手写识别和 PDF 转 LaTeX/Markdown 的数学工作台，集成公式编辑与计算，提供 Office 插件和离线优先的隐私保护
 - [Davit](202607/2026-07-14-davit.md) - 一款原生的 macOS 应用，通过 XPC 直接与 Apple 容器守护进程交互，提供图形界面管理容器、镜像、卷、网络等，支持 docker-compose 导入和 Dockerfile 构建，无需 Docker Desktop，轻量且开源
 - [edgeever](202607/2026-07-10-edgeever.md) - 一个专注于 Edge 浏览器自动化与效率提升的轻量工具
@@ -178,7 +179,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (10 entries)
+- [2026-07](202607/monthly-index.md) (11 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
