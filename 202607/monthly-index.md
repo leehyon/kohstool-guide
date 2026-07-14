@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-14) [LaTeXSnipper](2026-07-14-latexsnipper.md)
+- 截图 OCR 识别、手写识别和 PDF 转 LaTeX/Markdown 的数学工作台，集成公式编辑与计算，提供 Office 插件和离线优先的隐私保护
+- Tags: LaTeX, OCR, Math Recognition, Handwriting Recognition, Open Source
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux
+
 (2026-07-14) [Davit](2026-07-14-davit.md)
 - 一款原生的 macOS 应用，通过 XPC 直接与 Apple 容器守护进程交互，提供图形界面管理容器、镜像、卷、网络等，支持 docker-compose 导入和 Dockerfile 构建，无需 Docker Desktop，轻量且开源
 - Tags: macOS, Container, Native, Free, Open Source
