@@ -6,6 +6,7 @@ import queue
 import re
 import threading
 import time
+from html import unescape
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from functools import lru_cache, wraps
@@ -1525,6 +1526,49 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
         return None, str(error)
 
 
+def _extract_text_from_html(html_content: str) -> str:
+    """Best-effort HTML to text extraction without extra dependencies."""
+    if not html_content:
+        return ""
+
+    # Drop non-content blocks first.
+    text = re.sub(r"<script\b[^>]*>.*?</script>", " ", html_content, flags=re.I | re.S)
+    text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<noscript\b[^>]*>.*?</noscript>", " ", text, flags=re.I | re.S)
+
+    # Preserve rough structure for better downstream summarization.
+    text = re.sub(r"</(p|div|section|article|li|h[1-6]|tr|td|br)>", "\n", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = unescape(text)
+    text = re.sub(r"\r\n?", "\n", text)
+    text = re.sub(r"\n\s*\n+", "\n\n", text)
+    text = re.sub(r"[ \t]+", " ", text)
+    return text.strip()
+
+
+def _fetch_origin_content_fallback(
+    url: str,
+    session,
+    headers: dict,
+    timeout: Tuple[int, int],
+) -> str:
+    """Fallback fetch path when Jina is unavailable or blocked (e.g., HTTP 403)."""
+    response: requests.Response = session.get(
+        url,
+        headers=headers,
+        timeout=timeout,
+        allow_redirects=True,
+    )
+    if response.status_code >= 400:
+        raise RuntimeError(f"Origin fetch failed (HTTP {response.status_code})")
+
+    content_type = (response.headers.get("content-type") or "").lower()
+    body = response.text or ""
+    if "text/html" in content_type or "<html" in body.lower():
+        return _extract_text_from_html(body)
+    return body.strip()
+
+
 @log_execution_time
 def get_text_content(url: str) -> str:
     if requests is None:
@@ -1558,6 +1602,7 @@ def get_text_content(url: str) -> str:
     }
     timeout = (HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS)
 
+    last_error_message = "unknown error"
     for attempt in range(MAX_RETRIES):
         try:
             response: requests.Response = session.get(
@@ -1566,6 +1611,7 @@ def get_text_content(url: str) -> str:
             if response.status_code >= 400:
                 status = response.status_code
                 error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{MAX_RETRIES}"
+                last_error_message = error_msg
                 logging.warning(error_msg)
                 should_retry = status in (429, 500, 502, 503, 504)
                 if should_retry and attempt < MAX_RETRIES - 1:
@@ -1573,22 +1619,19 @@ def get_text_content(url: str) -> str:
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
                     continue
-                raise Exception(
-                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}"
-                )
+                break
 
             content = response.text.strip()
             if len(content) < MIN_CONTENT_LENGTH:
                 error_msg = f"Content too short ({len(content)} chars, minimum {MIN_CONTENT_LENGTH}) - attempt {attempt + 1}/{MAX_RETRIES}"
+                last_error_message = error_msg
                 logging.warning(error_msg)
                 if attempt < MAX_RETRIES - 1:
                     wait_time = 2**attempt
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
                     continue
-                raise Exception(
-                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error_msg}"
-                )
+                break
 
             if len(content) > MAX_CONTENT_LENGTH:
                 logging.warning(
@@ -1603,6 +1646,7 @@ def get_text_content(url: str) -> str:
             )
             return content
         except requests.RequestException as error:
+            last_error_message = str(error)
             logging.warning(
                 "Request failed (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, error
             )
@@ -1610,10 +1654,33 @@ def get_text_content(url: str) -> str:
                 wait_time = 2**attempt
                 logging.info("Retrying in %d seconds...", wait_time)
                 time.sleep(wait_time)
-            else:
-                raise Exception(
-                    f"All {MAX_RETRIES} retry attempts failed. Last error: {error}"
-                ) from error
+
+    # Fallback path: fetch from origin directly and extract readable text.
+    # This salvages runs where Jina is blocked by target site policy (e.g. 403).
+    try:
+        logging.info("Jina fetch failed; falling back to direct origin fetch for %s", url)
+        fallback_content = _fetch_origin_content_fallback(url, session, headers, timeout)
+        if len(fallback_content) < MIN_CONTENT_LENGTH:
+            raise RuntimeError(
+                f"Origin content too short ({len(fallback_content)} chars, minimum {MIN_CONTENT_LENGTH})"
+            )
+        if len(fallback_content) > MAX_CONTENT_LENGTH:
+            logging.warning(
+                "Fallback content length (%d) exceeds maximum (%d), truncating...",
+                len(fallback_content),
+                MAX_CONTENT_LENGTH,
+            )
+            fallback_content = fallback_content[:MAX_CONTENT_LENGTH]
+        logging.info(
+            "Fallback origin fetch succeeded with %d characters", len(fallback_content)
+        )
+        return fallback_content
+    except Exception as fallback_error:  # noqa: BLE001
+        raise Exception(
+            "All content-fetch strategies failed. "
+            f"Jina last error: {last_error_message}; "
+            f"origin fallback error: {fallback_error}"
+        ) from fallback_error
 
 
 @log_execution_time
