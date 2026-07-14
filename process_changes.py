@@ -2092,6 +2092,14 @@ def ingest_tool(
                 f"for {url}: {error}"
             ) from error
 
+        # Defensive fail-fast: even if a future refactor accidentally
+        # swallows fetch exceptions and returns empty content, never continue
+        # to AI generation with blank page_text.
+        if not (page_text or "").strip():
+            raise RuntimeError(
+                f"Aborting ingestion of {name}: empty page content fetched for {url}"
+            )
+
     guide = generate_tool_guide_with_options(
         name, url, page_text, heuristic=heuristic
     )
@@ -2263,13 +2271,23 @@ def process_tools(options: RunOptions) -> None:
 
             name, url = next_tool
             logging.info("Processing new tool: %s", name)
-            ingestion_result = ingest_tool(
-                name,
-                url,
-                archive=archive,
-                heuristic=heuristic,
-                fetch=fetch,
-            )
+            try:
+                ingestion_result = ingest_tool(
+                    name,
+                    url,
+                    archive=archive,
+                    heuristic=heuristic,
+                    fetch=fetch,
+                )
+            except Exception as error:  # noqa: BLE001
+                logging.error(
+                    "Fatal ingestion error for %s (%s). Aborting run.",
+                    name,
+                    url,
+                )
+                raise RuntimeError(
+                    f"Ingestion failed for {name} ({url}): {error}"
+                ) from error
             entries.append(ingestion_result.entry)
             processed_urls.append(ingestion_result.entry.url)
             processed_count += 1
