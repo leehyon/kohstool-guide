@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-15) [airi](2026-07-15-airi.md)
+- 一个自托管的 AI 虚拟伴侣项目，灵感来自 Neuro-sama，支持实时语音聊天、玩 Minecraft 和 Factorio 等游戏，让你拥有自己的数字生命体
+- Tags: AI Companion, Self-hosted, Open Source, VTuber, Real-time Voice
+- Categories: Communication, Media & Creativity, Security & Privacy
+- Platform: Mac, Windows, Linux, Web
+
 (2026-07-15) [Kill AI Slop](2026-07-15-kill-ai-slop.md)
 - 一份识别并移除 AI 生成的低质量 UI 设计模式的实战手册 通过 33 种常见 slop 的前后对比 教你把千篇一律的蓝紫渐变、发光卡片、emoji 泛滥等俗套彻底清理干净
 - Tags: Design Guide, AI Slop, UI Patterns, Visual Design, Anti-Patterns
