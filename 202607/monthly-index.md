@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-15) [MacTools](2026-07-15-mactools.md)
+- 免费开源的 macOS 菜单栏工具集合，提供显示亮度、深色模式、缓存清理、窗口管理、翻译等数十个功能模块，支持插件扩展与快捷键操作
+- Tags: macOS, Menu Bar, Free, Open Source, System Utility
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Mac
+
 (2026-07-14) [wenyi](2026-07-14-wenyi.md)
 - 一个将多语言 EPUB、FB2、TXT 小说翻译为中文的命令行工具，专为长篇小说优化，支持全书预扫、滚动上下文、实时术语库、润色和审校
 - Tags: Chinese Translation, EPUB, Novel, CLI, Open Source
