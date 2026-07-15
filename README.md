@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Kill AI Slop](202607/2026-07-15-kill-ai-slop.md) - 一份识别并移除 AI 生成的低质量 UI 设计模式的实战手册 通过 33 种常见 slop 的前后对比 教你把千篇一律的蓝紫渐变、发光卡片、emoji 泛滥等俗套彻底清理干净
 - [MacTools](202607/2026-07-15-mactools.md) - 免费开源的 macOS 菜单栏工具集合，提供显示亮度、深色模式、缓存清理、窗口管理、翻译等数十个功能模块，支持插件扩展与快捷键操作
 - [wenyi](202607/2026-07-14-wenyi.md) - 一个将多语言 EPUB、FB2、TXT 小说翻译为中文的命令行工具，专为长篇小说优化，支持全书预扫、滚动上下文、实时术语库、润色和审校
 - [LaTeXSnipper](202607/2026-07-14-latexsnipper.md) - 截图 OCR 识别、手写识别和 PDF 转 LaTeX/Markdown 的数学工作台，集成公式编辑与计算，提供 Office 插件和离线优先的隐私保护
@@ -180,7 +181,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (12 entries)
+- [2026-07](202607/monthly-index.md) (13 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
