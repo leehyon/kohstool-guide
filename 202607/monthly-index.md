@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-15) [osmosmemo](2026-07-15-osmosmemo.md)
+- 将 GitHub 仓库变成书签管理器，通过浏览器扩展快速抓取页面标题和 URL 为 Markdown 片段，一键保存到 README.md，支持标签和即时搜索
+- Tags: Bookmark Manager, GitHub, Open Source, Browser Extension, Markdown
+- Categories: Knowledge Management, Reading & Information
+- Platform: Browser Extension
+
 (2026-07-15) [airi](2026-07-15-airi.md)
 - 一个自托管的 AI 虚拟伴侣项目，灵感来自 Neuro-sama，支持实时语音聊天、玩 Minecraft 和 Factorio 等游戏，让你拥有自己的数字生命体
 - Tags: AI Companion, Self-hosted, Open Source, VTuber, Real-time Voice
