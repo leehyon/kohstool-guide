@@ -36,7 +36,6 @@ GUIDE_REPO_NAME: str = "kohstool-guide"
 
 MAX_CONTENT_LENGTH: int = 32 * 1024  # 32KB
 MIN_CONTENT_LENGTH: int = 200
-MAX_RETRIES: int = 3
 
 # Minimum acceptable guide markdown file size on disk, in bytes. Entries
 # whose guide file is smaller than this are treated as "broken" (likely
@@ -50,8 +49,15 @@ MIN_GUIDE_BYTES: int = 500
 # - GUIDE_GITHUB_REPO=owner/repo
 # - GUIDE_GITHUB_REF=main
 
-HTTP_CONNECT_TIMEOUT_SECONDS: int = 5
-HTTP_READ_TIMEOUT_SECONDS: int = 30
+FETCH_MAX_RETRIES: int = 3
+FETCH_HTTP_CONNECT_TIMEOUT_SECONDS: int = 5
+FETCH_HTTP_READ_TIMEOUT_SECONDS: int = 30
+# Preflight adds extra network round-trips. Keep disabled by default for speed.
+FETCH_ENABLE_PREFLIGHT: bool = False
+
+OPENAI_MAX_RETRIES: int = 3
+OPENAI_HTTP_CONNECT_TIMEOUT_SECONDS: int = 5
+OPENAI_HTTP_READ_TIMEOUT_SECONDS: int = 30
 # -- configurations end --
 
 
@@ -69,6 +75,16 @@ def _get_requests_session():
         return None
     try:
         return requests.Session()
+    except Exception:  # noqa: BLE001
+        return None
+
+
+@lru_cache(maxsize=1)
+def _get_mistune_markdown_parser():
+    if mistune is None:
+        return None
+    try:
+        return mistune.create_markdown(renderer=None)
     except Exception:  # noqa: BLE001
         return None
 
@@ -646,6 +662,16 @@ def write_text_file(path: Path, content: str, dry_run: bool = False) -> None:
             "Dry-run: would write %s (%d bytes)", path, len(content.encode("utf-8"))
         )
         return
+
+    # Avoid unnecessary disk writes when content is unchanged.
+    if path.exists():
+        try:
+            existing = path.read_text(encoding="utf-8")
+            if existing == content:
+                return
+        except Exception:  # noqa: BLE001
+            pass
+
     ensure_directory(path.parent, dry_run=False)
     with path.open("w", encoding="utf-8") as handle:
         handle.write(content)
@@ -705,6 +731,14 @@ def normalize_http_url(url: str) -> str:
     return f"https://{url}"
 
 
+def _normalize_url_for_match(url: str) -> str:
+    """Best-effort URL normalization for de-duplication/matching."""
+    try:
+        return normalize_http_url(url)
+    except Exception:  # noqa: BLE001
+        return (url or "").strip()
+
+
 def read_tool_collection_lines(collection_readme_path: Path) -> List[str]:
     if not collection_readme_path.exists():
         logging.warning(
@@ -738,7 +772,7 @@ def extract_tool_links(lines: Iterable[str]) -> List[Tuple[str, str]]:
             continue
         name, url = match.groups()
         name = canonicalize_tool_name(name)
-        url = url.strip()
+        url = _normalize_url_for_match(url)
         if not name or not url:
             continue
         started = True
@@ -765,6 +799,7 @@ def load_entries() -> List[ToolGuideEntry]:
     for payload in raw_entries:
         entry = ToolGuideEntry.from_dict(payload)
         entry.name = canonicalize_tool_name(entry.name)
+        entry.url = _normalize_url_for_match(entry.url)
         entry.tags = normalize_tags(entry.tags, max_count=5)
         entry.categories = normalize_categories(entry.categories, max_count=3)
         entry.platform = normalize_platforms(entry.platform)
@@ -789,9 +824,8 @@ def save_entries(entries: Iterable[ToolGuideEntry], dry_run: bool = False) -> No
             "Dry-run: would write %s with %d entries.", DATA_PATH, len(payload)
         )
         return
-    ensure_directory(DATA_PATH.parent, dry_run=False)
-    with DATA_PATH.open("w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2, ensure_ascii=False)
+    serialized = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    write_text_file(DATA_PATH, serialized, dry_run=False)
 
 
 # Path to the manifest recording which guide files this run produced. The
@@ -812,13 +846,12 @@ def _write_last_run_manifest(guide_paths: Iterable[Path]) -> None:
     doesn't exist), which is useful for first-time / corrupted runs.
     """
     paths = [str(p) for p in guide_paths]
-    ensure_directory(LAST_RUN_MANIFEST_PATH.parent, dry_run=False)
     payload = {
         "written_at": int(datetime.now(timezone.utc).timestamp()),
         "guide_paths": paths,
     }
-    with LAST_RUN_MANIFEST_PATH.open("w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2, ensure_ascii=False)
+    serialized = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    write_text_file(LAST_RUN_MANIFEST_PATH, serialized, dry_run=False)
     logging.info(
         "Wrote last-run manifest with %d guide path(s) to %s",
         len(paths),
@@ -1232,15 +1265,6 @@ def extract_tldr_from_markdown(file_path: str) -> str:
         extracted = match.group(1).strip()
         return re.sub(r"\s+", " ", extracted)
 
-    @lru_cache(maxsize=1)
-    def _get_mistune_markdown_parser():
-        if mistune is None:
-            return None
-        try:
-            return mistune.create_markdown(renderer=None)
-        except Exception:  # noqa: BLE001
-            return None
-
     try:
         with open(file_path, "r", encoding="utf-8") as handle:
             content = handle.read()
@@ -1509,9 +1533,9 @@ def preflight_check_url(url: str) -> Tuple[Optional[int], Optional[str]]:
             "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
         )
     }
-    timeout = (HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS)
+    timeout = (FETCH_HTTP_CONNECT_TIMEOUT_SECONDS, FETCH_HTTP_READ_TIMEOUT_SECONDS)
     try:
-        response: requests.Response = session.head(
+        response = session.head(
             url, allow_redirects=True, headers=headers, timeout=timeout
         )
         status = response.status_code
@@ -1553,7 +1577,7 @@ def _fetch_origin_content_fallback(
     timeout: Tuple[int, int],
 ) -> str:
     """Fallback fetch path when Jina is unavailable or blocked (e.g., HTTP 403)."""
-    response: requests.Response = session.get(
+    response = session.get(
         url,
         headers=headers,
         timeout=timeout,
@@ -1579,19 +1603,20 @@ def get_text_content(url: str) -> str:
         raise RuntimeError("requests session not available; cannot fetch content.")
 
     url = normalize_http_url(url)
-    status_code, preflight_error = preflight_check_url(url)
-    if preflight_error:
-        logging.warning("Preflight check failed for %s: %s", url, preflight_error)
-    elif (
-        status_code is not None
-        and status_code >= 400
-        and status_code not in (401, 403, 429)
-    ):
-        logging.warning(
-            "Origin URL returned HTTP %d for %s; content fetch may fail.",
-            status_code,
-            url,
-        )
+    if FETCH_ENABLE_PREFLIGHT:
+        status_code, preflight_error = preflight_check_url(url)
+        if preflight_error:
+            logging.warning("Preflight check failed for %s: %s", url, preflight_error)
+        elif (
+            status_code is not None
+            and status_code >= 400
+            and status_code not in (401, 403, 429)
+        ):
+            logging.warning(
+                "Origin URL returned HTTP %d for %s; content fetch may fail.",
+                status_code,
+                url,
+            )
 
     jina_url = f"https://r.jina.ai/{url}"
     headers = {
@@ -1600,21 +1625,21 @@ def get_text_content(url: str) -> str:
             "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
         )
     }
-    timeout = (HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS)
+    timeout = (FETCH_HTTP_CONNECT_TIMEOUT_SECONDS, FETCH_HTTP_READ_TIMEOUT_SECONDS)
 
     last_error_message = "unknown error"
-    for attempt in range(MAX_RETRIES):
+    for attempt in range(FETCH_MAX_RETRIES):
         try:
-            response: requests.Response = session.get(
+            response = session.get(
                 jina_url, headers=headers, timeout=timeout
             )
             if response.status_code >= 400:
                 status = response.status_code
-                error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{MAX_RETRIES}"
+                error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{FETCH_MAX_RETRIES}"
                 last_error_message = error_msg
                 logging.warning(error_msg)
                 should_retry = status in (429, 500, 502, 503, 504)
-                if should_retry and attempt < MAX_RETRIES - 1:
+                if should_retry and attempt < FETCH_MAX_RETRIES - 1:
                     wait_time = 2**attempt
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
@@ -1623,10 +1648,10 @@ def get_text_content(url: str) -> str:
 
             content = response.text.strip()
             if len(content) < MIN_CONTENT_LENGTH:
-                error_msg = f"Content too short ({len(content)} chars, minimum {MIN_CONTENT_LENGTH}) - attempt {attempt + 1}/{MAX_RETRIES}"
+                error_msg = f"Content too short ({len(content)} chars, minimum {MIN_CONTENT_LENGTH}) - attempt {attempt + 1}/{FETCH_MAX_RETRIES}"
                 last_error_message = error_msg
                 logging.warning(error_msg)
-                if attempt < MAX_RETRIES - 1:
+                if attempt < FETCH_MAX_RETRIES - 1:
                     wait_time = 2**attempt
                     logging.info("Retrying in %d seconds...", wait_time)
                     time.sleep(wait_time)
@@ -1648,9 +1673,9 @@ def get_text_content(url: str) -> str:
         except requests.RequestException as error:
             last_error_message = str(error)
             logging.warning(
-                "Request failed (attempt %d/%d): %s", attempt + 1, MAX_RETRIES, error
+                "Request failed (attempt %d/%d): %s", attempt + 1, FETCH_MAX_RETRIES, error
             )
-            if attempt < MAX_RETRIES - 1:
+            if attempt < FETCH_MAX_RETRIES - 1:
                 wait_time = 2**attempt
                 logging.info("Retrying in %d seconds...", wait_time)
                 time.sleep(wait_time)
@@ -1692,14 +1717,14 @@ def call_openai_api(prompt: str, content: str) -> str:
     if session is None:
         raise RuntimeError("requests session not available; cannot call OpenAI API.")
 
-    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    api_key = os.environ.get("LLM_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError(
-            "OPENAI_API_KEY is not set. Set it in your environment before running, "
+            "LLM_API_KEY is not set. Set it in your environment before running, "
             "or run with --dry-run/--backfill."
         )
 
-    model: str = os.environ.get("OPENAI_API_MODEL", "gpt-4o-mini")
+    model: str = os.environ.get("LLM_MODEL", "").strip() or "gpt-4o-mini"
     headers: dict = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -1711,31 +1736,73 @@ def call_openai_api(prompt: str, content: str) -> str:
             {"role": "user", "content": content},
         ],
     }
-    api_endpoint: str = os.environ.get(
-        "OPENAI_API_ENDPOINT", "https://api.openai.com/v1/chat/completions"
+    api_endpoint: str = (
+        os.environ.get("LLM_API_ENDPOINT", "").strip()
+        or "https://api.openai.com/v1/chat/completions"
     )
 
     logging.info("Calling OpenAI API with model: %s", model)
     logging.info("API endpoint: %s", api_endpoint)
 
-    response: requests.Response = session.post(
-        api_endpoint,
-        headers=headers,
-        data=json.dumps(data),
-        timeout=(HTTP_CONNECT_TIMEOUT_SECONDS, HTTP_READ_TIMEOUT_SECONDS),
-    )
-    logging.info("Response status code: %d", response.status_code)
-    response_json = response.json()
+    timeout = (OPENAI_HTTP_CONNECT_TIMEOUT_SECONDS, OPENAI_HTTP_READ_TIMEOUT_SECONDS)
+    last_error_message = "unknown error"
 
-    if response.status_code != 200:
-        logging.error("OpenAI API request failed with status %s", response.status_code)
-        logging.error("Error response: %s", response_json)
-        raise Exception(f"OpenAI API request failed with status {response.status_code}")
+    for attempt in range(OPENAI_MAX_RETRIES):
+        try:
+            response = session.post(
+                api_endpoint,
+                headers=headers,
+                data=json.dumps(data),
+                timeout=timeout,
+            )
+            logging.info(
+                "Response status code: %d (attempt %d/%d)",
+                response.status_code,
+                attempt + 1,
+                OPENAI_MAX_RETRIES,
+            )
 
-    if "choices" not in response_json:
-        raise Exception("Response does not contain 'choices' field")
+            try:
+                response_json = response.json()
+            except ValueError:
+                response_json = {"raw": (response.text or "")[:500]}
 
-    return response_json["choices"][0]["message"]["content"]
+            if response.status_code == 200:
+                if "choices" not in response_json:
+                    raise Exception("Response does not contain 'choices' field")
+                return response_json["choices"][0]["message"]["content"]
+
+            last_error_message = f"HTTP {response.status_code}: {response_json}"
+            should_retry = response.status_code in (429, 500, 502, 503, 504)
+            if should_retry and attempt < OPENAI_MAX_RETRIES - 1:
+                wait_time = 2**attempt
+                logging.warning(
+                    "OpenAI API request failed with status %d; retrying in %d seconds...",
+                    response.status_code,
+                    wait_time,
+                )
+                time.sleep(wait_time)
+                continue
+
+            logging.error(
+                "OpenAI API request failed with status %d", response.status_code
+            )
+            logging.error("Error response: %s", response_json)
+            break
+        except requests.RequestException as error:
+            last_error_message = str(error)
+            logging.warning(
+                "OpenAI request failed (attempt %d/%d): %s",
+                attempt + 1,
+                OPENAI_MAX_RETRIES,
+                error,
+            )
+            if attempt < OPENAI_MAX_RETRIES - 1:
+                wait_time = 2**attempt
+                logging.info("Retrying in %d seconds...", wait_time)
+                time.sleep(wait_time)
+
+    raise Exception(f"OpenAI API request failed after retries: {last_error_message}")
 
 
 def _extract_first_json_object(text: str) -> str:
@@ -2044,10 +2111,10 @@ def generate_tool_guide_with_options(
     if heuristic:
         return heuristic_tool_guide(name, url, page_text)
 
-    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    api_key = os.environ.get("LLM_API_KEY", "").strip()
     if not api_key:
         logging.warning(
-            "OPENAI_API_KEY not set; falling back to heuristic guide generation."
+            "LLM_API_KEY not set; falling back to heuristic guide generation."
         )
         return heuristic_tool_guide(name, url, page_text)
 
@@ -2117,11 +2184,12 @@ def find_next_tool_to_process(
     tool_pairs: Iterable[Tuple[str, str]],
     processed_urls: Iterable[str],
 ) -> Optional[Tuple[str, str]]:
-    processed = set(processed_urls)
+    processed = {_normalize_url_for_match(url) for url in processed_urls}
     for name, url in tool_pairs:
-        if url in processed:
+        normalized_url = _normalize_url_for_match(url)
+        if normalized_url in processed:
             continue
-        return name, url
+        return name, normalized_url
     return None
 
 
@@ -2231,13 +2299,13 @@ def process_tools(options: RunOptions) -> None:
     entries = load_entries()
 
     migrated_any = False
+    repaired_any = False
+    hydrated_any = False
     for entry in entries:
         if migrate_entry_name_and_file(entry, dry_run=dry_run):
             migrated_any = True
 
-    # Even if names are already canonical, keep guide markdown titles consistent.
-    repaired_any = False
-    for entry in entries:
+        # Even if names are already canonical, keep guide markdown titles consistent.
         guide_path = get_guide_file_path(
             name=entry.name,
             timestamp=entry.timestamp,
@@ -2254,10 +2322,8 @@ def process_tools(options: RunOptions) -> None:
             ):
                 repaired_any = True
 
-    # Hydrate cached fields (tldr/guide_markdown) from disk so data.json can be
-    # used for downstream processing without re-reading guide files.
-    hydrated_any = False
-    for entry in entries:
+        # Hydrate cached fields (tldr/guide_markdown) from disk so data.json can be
+        # used for downstream processing without re-reading guide files.
         if _hydrate_entry_cached_fields_from_file(entry, dry_run=dry_run):
             hydrated_any = True
 
@@ -2426,7 +2492,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Extract tool links and generate tool guides."
     )
-    parser.add_argument(
+    mode_group = parser.add_mutually_exclusive_group()
+    mode_group.add_argument(
         "--backfill",
         action="store_true",
         help="Rebuild README and monthly indexes without ingesting new tools.",
@@ -2466,14 +2533,13 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip fetching page text via Jina Reader (guide generated from name/url only).",
     )
-    parser.add_argument(
+    mode_group.add_argument(
         "--retry-broken",
         action="store_true",
         help=(
             "Re-fetch and re-generate entries whose guide markdown file is "
             "missing or below MIN_GUIDE_BYTES. Use --max-new to control how "
-            "many broken entries to retry per run. Mutually exclusive with "
-            "--backfill in practice (one or the other, not both)."
+            "many broken entries to retry per run."
         ),
     )
     args = parser.parse_args()
