@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Bruno](202607/2026-07-16-bruno.md) - 一个开源的 Git 原生 API 客户端，将集合存储为纯文本文件，本地运行，通过 Git 进行团队协作而不是依赖云同步
 - [osmosmemo](202607/2026-07-15-osmosmemo.md) - 将 GitHub 仓库变成书签管理器，通过浏览器扩展快速抓取页面标题和 URL 为 Markdown 片段，一键保存到 README.md，支持标签和即时搜索
 - [airi](202607/2026-07-15-airi.md) - 一个自托管的 AI 虚拟伴侣项目，灵感来自 Neuro-sama，支持实时语音聊天、玩 Minecraft 和 Factorio 等游戏，让你拥有自己的数字生命体
 - [Kill AI Slop](202607/2026-07-15-kill-ai-slop.md) - 一份识别并移除 AI 生成的低质量 UI 设计模式的实战手册 通过 33 种常见 slop 的前后对比 教你把千篇一律的蓝紫渐变、发光卡片、emoji 泛滥等俗套彻底清理干净
@@ -183,7 +184,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (15 entries)
+- [2026-07](202607/monthly-index.md) (16 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)

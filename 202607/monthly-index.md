@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-16) [Bruno](2026-07-16-bruno.md)
+- 一个开源的 Git 原生 API 客户端，将集合存储为纯文本文件，本地运行，通过 Git 进行团队协作而不是依赖云同步
+- Tags: Open Source, API Client, Git-Native, Local-First, Cross-Platform
+- Categories: Developer Tools, File Management, Security & Privacy
+- Platform: Mac, Windows, Linux
+
 (2026-07-15) [osmosmemo](2026-07-15-osmosmemo.md)
 - 将 GitHub 仓库变成书签管理器，通过浏览器扩展快速抓取页面标题和 URL 为 Markdown 片段，一键保存到 README.md，支持标签和即时搜索
 - Tags: Bookmark Manager, GitHub, Open Source, Browser Extension, Markdown
