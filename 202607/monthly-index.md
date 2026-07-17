@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-17) [Herdr](2026-07-17-herdr.md)
+- 一个运行在终端中的 Agent 多路复用器，支持持久会话、远程 SSH 附加和实时状态查看，兼容任何编码 Agent，并能从手机操控
+- Tags: Terminal Multiplexer, Agent Management, SSH, Persistent Sessions, Plugin System
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux
+
 (2026-07-16) [Bruno](2026-07-16-bruno.md)
 - 一个开源的 Git 原生 API 客户端，将集合存储为纯文本文件，本地运行，通过 Git 进行团队协作而不是依赖云同步
 - Tags: Open Source, API Client, Git-Native, Local-First, Cross-Platform
