@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-17) [PDFSlice](2026-07-17-pdfslice.md)
+- 一个完全在浏览器中运行的 PDF 编辑工具包，无需上传文件到服务器，支持合并、拆分、压缩、加密等 20 多种操作，注重隐私且完全免费
+- Tags: PDF, Privacy, Free, Open Source, Client-side
+- Categories: Developer Tools, File Management, Security & Privacy
+- Platform: Web
+
 (2026-07-17) [Mouser](2026-07-17-mouser.md)
 - 轻量级开源 Logitech HID++ 鼠标按键重映射工具，完全本地运行，无需账号或遥测，支持 Windows、macOS 及 Linux 平台
 - Tags: Mouse Remapping, Open Source, Cross-platform, HID++, Privacy
