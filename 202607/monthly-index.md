@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-17) [Mouser](2026-07-17-mouser.md)
+- 轻量级开源 Logitech HID++ 鼠标按键重映射工具，完全本地运行，无需账号或遥测，支持 Windows、macOS 及 Linux 平台
+- Tags: Mouse Remapping, Open Source, Cross-platform, HID++, Privacy
+- Categories: System & Automation, Security & Privacy
+- Platform: Windows, macOS, Linux
+
 (2026-07-17) [Herdr](2026-07-17-herdr.md)
 - 一个运行在终端中的 Agent 多路复用器，支持持久会话、远程 SSH 附加和实时状态查看，兼容任何编码 Agent，并能从手机操控
 - Tags: Terminal Multiplexer, Agent Management, SSH, Persistent Sessions, Plugin System

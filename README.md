@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Mouser](202607/2026-07-17-mouser.md) - 轻量级开源 Logitech HID++ 鼠标按键重映射工具，完全本地运行，无需账号或遥测，支持 Windows、macOS 及 Linux 平台
 - [Herdr](202607/2026-07-17-herdr.md) - 一个运行在终端中的 Agent 多路复用器，支持持久会话、远程 SSH 附加和实时状态查看，兼容任何编码 Agent，并能从手机操控
 - [Bruno](202607/2026-07-16-bruno.md) - 一个开源的 Git 原生 API 客户端，将集合存储为纯文本文件，本地运行，通过 Git 进行团队协作而不是依赖云同步
 - [osmosmemo](202607/2026-07-15-osmosmemo.md) - 将 GitHub 仓库变成书签管理器，通过浏览器扩展快速抓取页面标题和 URL 为 Markdown 片段，一键保存到 README.md，支持标签和即时搜索
@@ -185,7 +186,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (17 entries)
+- [2026-07](202607/monthly-index.md) (18 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
