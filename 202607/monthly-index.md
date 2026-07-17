@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-17) [kula](2026-07-17-kula.md)
+- 轻量级、自包含的 Linux 服务器监控工具，零依赖，单二进制部署，通过 Web UI 和 TUI 实时展示系统指标
+- Tags: Lightweight, Self-contained, Linux, Server Monitoring, Real-time
+- Categories: System & Automation, Data & Analytics
+- Platform: Linux, Web
+
 (2026-07-17) [PDFSlice](2026-07-17-pdfslice.md)
 - 一个完全在浏览器中运行的 PDF 编辑工具包，无需上传文件到服务器，支持合并、拆分、压缩、加密等 20 多种操作，注重隐私且完全免费
 - Tags: PDF, Privacy, Free, Open Source, Client-side
