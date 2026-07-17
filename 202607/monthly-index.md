@@ -1,5 +1,10 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-17) [pi-auto-approval](2026-07-17-pi-auto-approval.md)
+- 在 Pi AI 助手中自动批准低风险工具调用，高风险或不确定时回退人工审批，提升效率和安全性
+- Tags: AI Approval, Workflow Automation, Pi Extension, Low-Risk Approval
+- Categories: Developer Tools, System & Automation
+
 (2026-07-17) [kula](2026-07-17-kula.md)
 - 轻量级、自包含的 Linux 服务器监控工具，零依赖，单二进制部署，通过 Web UI 和 TUI 实时展示系统指标
 - Tags: Lightweight, Self-contained, Linux, Server Monitoring, Real-time

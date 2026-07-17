@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [pi-auto-approval](202607/2026-07-17-pi-auto-approval.md) - 在 Pi AI 助手中自动批准低风险工具调用，高风险或不确定时回退人工审批，提升效率和安全性
 - [kula](202607/2026-07-17-kula.md) - 轻量级、自包含的 Linux 服务器监控工具，零依赖，单二进制部署，通过 Web UI 和 TUI 实时展示系统指标
 - [PDFSlice](202607/2026-07-17-pdfslice.md) - 一个完全在浏览器中运行的 PDF 编辑工具包，无需上传文件到服务器，支持合并、拆分、压缩、加密等 20 多种操作，注重隐私且完全免费
 - [Mouser](202607/2026-07-17-mouser.md) - 轻量级开源 Logitech HID++ 鼠标按键重映射工具，完全本地运行，无需账号或遥测，支持 Windows、macOS 及 Linux 平台
@@ -188,7 +189,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (20 entries)
+- [2026-07](202607/monthly-index.md) (21 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
