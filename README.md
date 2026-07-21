@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [cue](202607/2026-07-21-cue.md) - 开源 AI 助手，浮于屏幕之上，能实时查看屏幕和听取会议内容，在屏幕共享时自动隐藏，需自带 AI 密钥，是 Cluely 的免费替代品
 - [wardrobe](202607/2026-07-21-wardrobe.md) - 用 GPT 图像技术从照片中自动提取衣物并生成干净的产品抠图和模型预览，本地管理衣物库
 - [yoinks](202607/2026-07-21-yoinks.md) - 通过终端从 1800+ 站点下载视频或音频，无广告无弹窗，支持分辨率选择，键盘鼠标操作，自动处理依赖
 - [pi-auto-approval](202607/2026-07-17-pi-auto-approval.md) - 在 Pi AI 助手中自动批准低风险工具调用，高风险或不确定时回退人工审批，提升效率和安全性
@@ -191,7 +192,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (23 entries)
+- [2026-07](202607/monthly-index.md) (24 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)

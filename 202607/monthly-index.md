@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-21) [cue](2026-07-21-cue.md)
+- 开源 AI 助手，浮于屏幕之上，能实时查看屏幕和听取会议内容，在屏幕共享时自动隐藏，需自带 AI 密钥，是 Cluely 的免费替代品
+- Tags: Open-source, AI Copilot, macOS, Screen Share Hidden, Real-time Assistance
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac, Windows
+
 (2026-07-21) [wardrobe](2026-07-21-wardrobe.md)
 - 用 GPT 图像技术从照片中自动提取衣物并生成干净的产品抠图和模型预览，本地管理衣物库
 - Tags: Clothing Management, AI Extraction, Image Processing, Local-first, Open Source
