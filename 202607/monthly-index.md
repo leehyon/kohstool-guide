@@ -1,5 +1,10 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-21) [wardrobe](2026-07-21-wardrobe.md)
+- 用 GPT 图像技术从照片中自动提取衣物并生成干净的产品抠图和模型预览，本地管理衣物库
+- Tags: Clothing Management, AI Extraction, Image Processing, Local-first, Open Source
+- Categories: File Management, Media & Creativity
+
 (2026-07-21) [yoinks](2026-07-21-yoinks.md)
 - 通过终端从 1800+ 站点下载视频或音频，无广告无弹窗，支持分辨率选择，键盘鼠标操作，自动处理依赖
 - Tags: Video Downloader, CLI, Terminal, Free, Open Source
