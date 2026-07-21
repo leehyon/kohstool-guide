@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-21) [yoinks](2026-07-21-yoinks.md)
+- 通过终端从 1800+ 站点下载视频或音频，无广告无弹窗，支持分辨率选择，键盘鼠标操作，自动处理依赖
+- Tags: Video Downloader, CLI, Terminal, Free, Open Source
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux
+
 (2026-07-17) [pi-auto-approval](2026-07-17-pi-auto-approval.md)
 - 在 Pi AI 助手中自动批准低风险工具调用，高风险或不确定时回退人工审批，提升效率和安全性
 - Tags: AI Approval, Workflow Automation, Pi Extension, Low-Risk Approval
