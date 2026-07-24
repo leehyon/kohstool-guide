@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-24) [SurfSense](2026-07-24-surfsense.md)
+- 开源的 NotebookLM 替代品，为 AI agents 提供从 Reddit、YouTube 等社交平台抓取结构化实时数据的连接器，并内置研究工作空间与知识库
+- Tags: Open Source, AI Agents, Web Scraping, Data Extraction, Research Tool
+- Categories: Knowledge Management, Reading & Information, Data & Analytics
+- Platform: Web
+
 (2026-07-24) [CloudFlare-ImgBed](2026-07-24-cloudflare-imgbed.md)
 - 一个基于 Cloudflare 的无服务器开源文件托管方案，支持多种存储后端和 WebDAV，提供完整的文件生命周期管理功能
 - Tags: File Hosting, Serverless, Image Hosting, Open Source, Cloudflare
