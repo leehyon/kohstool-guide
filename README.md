@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [CloudFlare-ImgBed](202607/2026-07-24-cloudflare-imgbed.md) - 一个基于 Cloudflare 的无服务器开源文件托管方案，支持多种存储后端和 WebDAV，提供完整的文件生命周期管理功能
 - [holaOS](202607/2026-07-24-holaos.md) - 一个开源的工作空间环境，描述长期运行的任务后自动创建含目标、上下文、规则和下一步的持久工作区，支持本地运行、BYOK、可调度和多应用集成，让工作累积而非每次重新开始
 - [cue](202607/2026-07-21-cue.md) - 开源 AI 助手，浮于屏幕之上，能实时查看屏幕和听取会议内容，在屏幕共享时自动隐藏，需自带 AI 密钥，是 Cluely 的免费替代品
 - [wardrobe](202607/2026-07-21-wardrobe.md) - 用 GPT 图像技术从照片中自动提取衣物并生成干净的产品抠图和模型预览，本地管理衣物库
@@ -193,7 +194,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (25 entries)
+- [2026-07](202607/monthly-index.md) (26 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
