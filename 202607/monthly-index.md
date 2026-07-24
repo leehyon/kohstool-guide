@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-24) [holaOS](2026-07-24-holaos.md)
+- 一个开源的工作空间环境，描述长期运行的任务后自动创建含目标、上下文、规则和下一步的持久工作区，支持本地运行、BYOK、可调度和多应用集成，让工作累积而非每次重新开始
+- Tags: Open Source, Agent-Based, Workspace Automation, Local First, Long-running Tasks
+- Categories: Knowledge Management, Developer Tools, System & Automation
+- Platform: Mac, Windows
+
 (2026-07-21) [cue](2026-07-21-cue.md)
 - 开源 AI 助手，浮于屏幕之上，能实时查看屏幕和听取会议内容，在屏幕共享时自动隐藏，需自带 AI 密钥，是 Cluely 的免费替代品
 - Tags: Open-source, AI Copilot, macOS, Screen Share Hidden, Real-time Assistance
