@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-29) [MarkEdit](2026-07-29-markedit.md)
+- 类似 TextEdit 但专注于 Markdown 的免费开源编辑器 原生轻量快速 仅 4 MB 可流畅编辑千万行文件 隐私友好
+- Tags: Markdown Editor, Free, Open Source, Native, Lightweight
+- Categories: Text Input & Writing, Developer Tools
+- Platform: Mac
+
 (2026-07-29) [SoloMD](2026-07-29-solomd.md)
 - 免费开源跨平台 Markdown 编辑器，支持 WYSIWYG 预览、AI 重写、本地语义搜索、AutoGit 版本历史、MCP 服务器，无账户无订阅无遥测，纯文本文件永远可访问
 - Tags: Markdown Editor, Free, Open Source, Cross-platform, WYSIWYG

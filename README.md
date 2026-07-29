@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [MarkEdit](202607/2026-07-29-markedit.md) - 类似 TextEdit 但专注于 Markdown 的免费开源编辑器 原生轻量快速 仅 4 MB 可流畅编辑千万行文件 隐私友好
 - [SoloMD](202607/2026-07-29-solomd.md) - 免费开源跨平台 Markdown 编辑器，支持 WYSIWYG 预览、AI 重写、本地语义搜索、AutoGit 版本历史、MCP 服务器，无账户无订阅无遥测，纯文本文件永远可访问
 - [SurfSense](202607/2026-07-24-surfsense.md) - 开源的 NotebookLM 替代品，为 AI agents 提供从 Reddit、YouTube 等社交平台抓取结构化实时数据的连接器，并内置研究工作空间与知识库
 - [CloudFlare-ImgBed](202607/2026-07-24-cloudflare-imgbed.md) - 一个基于 Cloudflare 的无服务器开源文件托管方案，支持多种存储后端和 WebDAV，提供完整的文件生命周期管理功能
@@ -196,7 +197,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (28 entries)
+- [2026-07](202607/monthly-index.md) (29 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
