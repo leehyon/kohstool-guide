@@ -1,5 +1,10 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-29) [graphify](2026-07-29-graphify.md)
+- 将任何代码库及其文档、SQL 模式、配置和 PDF 通过本地 AST 解析转换为可查询的知识图谱，每条边都有解释，无需向量存储
+- Tags: Code Analysis, Knowledge Graph, Local-first, Open Source, Developer Tool
+- Categories: Knowledge Management, Developer Tools
+
 (2026-07-29) [MarkEdit](2026-07-29-markedit.md)
 - 类似 TextEdit 但专注于 Markdown 的免费开源编辑器 原生轻量快速 仅 4 MB 可流畅编辑千万行文件 隐私友好
 - Tags: Markdown Editor, Free, Open Source, Native, Lightweight
