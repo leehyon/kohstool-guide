@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-29) [SoloMD](2026-07-29-solomd.md)
+- 免费开源跨平台 Markdown 编辑器，支持 WYSIWYG 预览、AI 重写、本地语义搜索、AutoGit 版本历史、MCP 服务器，无账户无订阅无遥测，纯文本文件永远可访问
+- Tags: Markdown Editor, Free, Open Source, Cross-platform, WYSIWYG
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux, iOS, Android
+
 (2026-07-24) [SurfSense](2026-07-24-surfsense.md)
 - 开源的 NotebookLM 替代品，为 AI agents 提供从 Reddit、YouTube 等社交平台抓取结构化实时数据的连接器，并内置研究工作空间与知识库
 - Tags: Open Source, AI Agents, Web Scraping, Data Extraction, Research Tool
