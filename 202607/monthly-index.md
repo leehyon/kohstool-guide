@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-29) [openworker](2026-07-29-openworker.md)
+- 一款开源 AI 桌面助手，能将复杂任务拆解为步骤，连接本地文件和应用，生成完整文档或回复，支持多种模型且本地优先，关键操作需审批
+- Tags: AI, Open Source, Desktop, Automation, Local-first
+- Categories: Text Input & Writing, Developer Tools, System & Automation
+- Platform: Mac, Windows
+
 (2026-07-29) [graphify](2026-07-29-graphify.md)
 - 将任何代码库及其文档、SQL 模式、配置和 PDF 通过本地 AST 解析转换为可查询的知识图谱，每条边都有解释，无需向量存储
 - Tags: Code Analysis, Knowledge Graph, Local-first, Open Source, Developer Tool
