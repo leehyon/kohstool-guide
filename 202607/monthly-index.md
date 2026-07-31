@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [open-connector](2026-07-31-open-connector.md)
+- 开源认证网关，将 1000+ 个 SaaS 服务通过 SDK、CLI、MCP、HTTP 与 OpenAPI 连接到 AI 代理，具备凭据管理、Action 合约与可检查的运行日志，支持本地、云与自托管部署
+- Tags: AI Agents, API Gateway, MCP, OAuth, Self-hosted
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Web
+
 (2026-07-29) [openworker](2026-07-29-openworker.md)
 - 一款开源 AI 桌面助手，能将复杂任务拆解为步骤，连接本地文件和应用，生成完整文档或回复，支持多种模型且本地优先，关键操作需审批
 - Tags: AI, Open Source, Desktop, Automation, Local-first

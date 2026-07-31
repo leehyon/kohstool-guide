@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [open-connector](202607/2026-07-31-open-connector.md) - 开源认证网关，将 1000+ 个 SaaS 服务通过 SDK、CLI、MCP、HTTP 与 OpenAPI 连接到 AI 代理，具备凭据管理、Action 合约与可检查的运行日志，支持本地、云与自托管部署
 - [openworker](202607/2026-07-29-openworker.md) - 一款开源 AI 桌面助手，能将复杂任务拆解为步骤，连接本地文件和应用，生成完整文档或回复，支持多种模型且本地优先，关键操作需审批
 - [graphify](202607/2026-07-29-graphify.md) - 将任何代码库及其文档、SQL 模式、配置和 PDF 通过本地 AST 解析转换为可查询的知识图谱，每条边都有解释，无需向量存储
 - [MarkEdit](202607/2026-07-29-markedit.md) - 类似 TextEdit 但专注于 Markdown 的免费开源编辑器 原生轻量快速 仅 4 MB 可流畅编辑千万行文件 隐私友好
@@ -199,7 +200,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (31 entries)
+- [2026-07](202607/monthly-index.md) (32 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)
