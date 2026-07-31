@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Linux-Router](202607/2026-07-31-linux-router.md) - 将 Debian 或 Armbian 设备变成路由器，通过 Web 控制台查看系统状态、管理有线和 Wi-Fi、创建热点、查看客户端并执行维护
 - [lazyrsync](202607/2026-07-31-lazyrsync.md) - 一款基于 Rust 的 rsync 终端界面，提供可复用任务配置、执行前的 dry-run diff 以及实时进度，并支持通过 SSH 管理远程备份与同步
 - [bento](202607/2026-07-31-bento.md) - 本地优先的演示文稿工具，将文档、编辑器与播放器打包进一个 HTML 文件；支持 AI 直接读写 JSON、实时加密协作与离线使用，无需账号和云端
 - [Orion Browser](202607/2026-07-31-orion-browser.md) - 一款基于 WebKit 的隐私浏览器，内置广告拦截与反追踪，支持 Safari、Chrome 和 Firefox 扩展，提供深度自定义，在 Mac、iOS、Linux 等平台运行
@@ -203,7 +204,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (35 entries)
+- [2026-07](202607/monthly-index.md) (36 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)

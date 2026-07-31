@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [Linux-Router](2026-07-31-linux-router.md)
+- 将 Debian 或 Armbian 设备变成路由器，通过 Web 控制台查看系统状态、管理有线和 Wi-Fi、创建热点、查看客户端并执行维护
+- Tags: Network Management, Web Console, Open Source, Self-hosted, Linux
+- Categories: System & Automation
+- Platform: Linux, Web
+
 (2026-07-31) [lazyrsync](2026-07-31-lazyrsync.md)
 - 一款基于 Rust 的 rsync 终端界面，提供可复用任务配置、执行前的 dry-run diff 以及实时进度，并支持通过 SSH 管理远程备份与同步
 - Tags: Backup, Sync, TUI, Rsync, Rust
