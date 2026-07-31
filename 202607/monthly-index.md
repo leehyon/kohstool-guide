@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [FluxDown](2026-07-31-fluxdown.md)
+- 基于 Rust 与 Tokio 的多协议下载管理器，支持 HTTP、FTP、BitTorrent、eD2K 及 HLS/DASH 流媒体，具备智能分段加速、浏览器扩展与 MCP AI 集成，本地优先、无广告
+- Tags: Download Manager, Open Source, Cross-Platform, Privacy-Focused, Browser Integration
+- Categories: Developer Tools, File Management, System & Automation
+- Platform: Windows, Mac, Linux, Android, Browser Extension
+
 (2026-07-31) [Linux-Router](2026-07-31-linux-router.md)
 - 将 Debian 或 Armbian 设备变成路由器，通过 Web 控制台查看系统状态、管理有线和 Wi-Fi、创建热点、查看客户端并执行维护
 - Tags: Network Management, Web Console, Open Source, Self-hosted, Linux
