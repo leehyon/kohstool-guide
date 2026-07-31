@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [ai-disk-cleaner](202607/2026-07-31-ai-disk-cleaner.md) - 一款基于 LLM 的智能磁盘清理助手，通过 AI 分析磁盘占用、识别可清理垃圾文件，并支持符号链接管理与一键迁移文件到其他磁盘
 - [FluxDown](202607/2026-07-31-fluxdown.md) - 基于 Rust 与 Tokio 的多协议下载管理器，支持 HTTP、FTP、BitTorrent、eD2K 及 HLS/DASH 流媒体，具备智能分段加速、浏览器扩展与 MCP AI 集成，本地优先、无广告
 - [Linux-Router](202607/2026-07-31-linux-router.md) - 将 Debian 或 Armbian 设备变成路由器，通过 Web 控制台查看系统状态、管理有线和 Wi-Fi、创建热点、查看客户端并执行维护
 - [lazyrsync](202607/2026-07-31-lazyrsync.md) - 一款基于 Rust 的 rsync 终端界面，提供可复用任务配置、执行前的 dry-run diff 以及实时进度，并支持通过 SSH 管理远程备份与同步
@@ -205,7 +206,7 @@
 
 ## Monthly Archive
 
-- [2026-07](202607/monthly-index.md) (37 entries)
+- [2026-07](202607/monthly-index.md) (38 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
 - [2026-04](202604/monthly-index.md) (32 entries)

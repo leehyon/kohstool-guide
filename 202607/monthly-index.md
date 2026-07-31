@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [ai-disk-cleaner](2026-07-31-ai-disk-cleaner.md)
+- 一款基于 LLM 的智能磁盘清理助手，通过 AI 分析磁盘占用、识别可清理垃圾文件，并支持符号链接管理与一键迁移文件到其他磁盘
+- Tags: Disk Cleanup, AI-Powered, Open Source, Windows, LLM
+- Categories: File Management, System & Automation, Data & Analytics
+- Platform: Windows
+
 (2026-07-31) [FluxDown](2026-07-31-fluxdown.md)
 - 基于 Rust 与 Tokio 的多协议下载管理器，支持 HTTP、FTP、BitTorrent、eD2K 及 HLS/DASH 流媒体，具备智能分段加速、浏览器扩展与 MCP AI 集成，本地优先、无广告
 - Tags: Download Manager, Open Source, Cross-Platform, Privacy-Focused, Browser Integration
