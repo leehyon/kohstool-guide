@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [bento](2026-07-31-bento.md)
+- 本地优先的演示文稿工具，将文档、编辑器与播放器打包进一个 HTML 文件；支持 AI 直接读写 JSON、实时加密协作与离线使用，无需账号和云端
+- Tags: Presentation, Local-First, AI-Native, Open Source, Offline-First
+- Categories: Knowledge Management, Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-07-31) [Orion Browser](2026-07-31-orion-browser.md)
 - 一款基于 WebKit 的隐私浏览器，内置广告拦截与反追踪，支持 Safari、Chrome 和 Firefox 扩展，提供深度自定义，在 Mac、iOS、Linux 等平台运行
 - Tags: Privacy, WebKit, Extensions, Ad-blocking, No Telemetry
