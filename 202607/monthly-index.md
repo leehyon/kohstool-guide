@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [lazyrsync](2026-07-31-lazyrsync.md)
+- 一款基于 Rust 的 rsync 终端界面，提供可复用任务配置、执行前的 dry-run diff 以及实时进度，并支持通过 SSH 管理远程备份与同步
+- Tags: Backup, Sync, TUI, Rsync, Rust
+- Categories: File Management, System & Automation
+- Platform: Linux, Mac
+
 (2026-07-31) [bento](2026-07-31-bento.md)
 - 本地优先的演示文稿工具，将文档、编辑器与播放器打包进一个 HTML 文件；支持 AI 直接读写 JSON、实时加密协作与离线使用，无需账号和云端
 - Tags: Presentation, Local-First, AI-Native, Open Source, Offline-First
