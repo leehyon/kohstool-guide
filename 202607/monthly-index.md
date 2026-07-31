@@ -1,5 +1,11 @@
 # 2026-07 Tool Guide Index
 
+(2026-07-31) [howtodraw](2026-07-31-howtodraw.md)
+- 提供免费易学的分步绘画教程，将每个物体拆解为简单形状，用 6 到 15 个清晰步骤引导零基础初学者和儿童完成画作，无需任何经验
+- Tags: Drawing Tutorials, Step-by-Step, Free, Kids, Beginners
+- Categories: Media & Creativity
+- Platform: Web
+
 (2026-07-31) [ai-disk-cleaner](2026-07-31-ai-disk-cleaner.md)
 - 一款基于 LLM 的智能磁盘清理助手，通过 AI 分析磁盘占用、识别可清理垃圾文件，并支持符号链接管理与一键迁移文件到其他磁盘
 - Tags: Disk Cleanup, AI-Powered, Open Source, Windows, LLM
