@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [prime-agent](202608/2026-08-11-prime-agent.md) - 一款开源的编码与研究代理，基于递归语言模型构建，提供持久 Python 环境、子代理、后台会话、自主模式与可自我改进的持续记忆，适合长时自动驾驶任务
 - [howtodraw](202607/2026-07-31-howtodraw.md) - 提供免费易学的分步绘画教程，将每个物体拆解为简单形状，用 6 到 15 个清晰步骤引导零基础初学者和儿童完成画作，无需任何经验
 - [ai-disk-cleaner](202607/2026-07-31-ai-disk-cleaner.md) - 一款基于 LLM 的智能磁盘清理助手，通过 AI 分析磁盘占用、识别可清理垃圾文件，并支持符号链接管理与一键迁移文件到其他磁盘
 - [FluxDown](202607/2026-07-31-fluxdown.md) - 基于 Rust 与 Tokio 的多协议下载管理器，支持 HTTP、FTP、BitTorrent、eD2K 及 HLS/DASH 流媒体，具备智能分段加速、浏览器扩展与 MCP AI 集成，本地优先、无广告
@@ -207,6 +208,7 @@
 
 ## Monthly Archive
 
+- [2026-08](202608/monthly-index.md) (1 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
