@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [llama.app](202608/2026-08-12-llama.app.md) - 本地运行开源大语言模型的命令行工具，支持多种硬件与模型，无需 API Key 和网络连接，所有数据留在电脑上，强调隐私与自主权
 - [OpenViking](202608/2026-08-12-openviking.md) - 开源上下文数据库，以虚拟文件系统统一 AI 代理的记忆、知识与技能，采用 L0/L1/L2 分层存储和按需加载，支持可观测的目录式检索，降低 token 消耗并让会话经验沉淀为长期记忆
 - [prime-agent](202608/2026-08-11-prime-agent.md) - 一款开源的编码与研究代理，基于递归语言模型构建，提供持久 Python 环境、子代理、后台会话、自主模式与可自我改进的持续记忆，适合长时自动驾驶任务
 - [howtodraw](202607/2026-07-31-howtodraw.md) - 提供免费易学的分步绘画教程，将每个物体拆解为简单形状，用 6 到 15 个清晰步骤引导零基础初学者和儿童完成画作，无需任何经验
@@ -209,7 +210,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (2 entries)
+- [2026-08](202608/monthly-index.md) (3 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
