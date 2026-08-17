@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-17) [MarkCardStudio](2026-08-17-markcardstudio.md)
+- 本地优先的 Markdown 社交媒体卡片排版与导出工具，支持智能分页、多平台尺寸、16 款内置主题、KaTeX 公式与 Mermaid 图表，可导出 PNG 或 PDF
+- Tags: Markdown, Social Cards, Local-first, PDF Export, Content Creation
+- Categories: Text Input & Writing, Media & Creativity
+- Platform: Mac, Windows, Linux
+
 (2026-08-17) [LeePanel](2026-08-17-leepanel.md)
 - 开源跨平台 Linux 服务器管理桌面面板，通过本地 SSH 操作实现服务器零安装零残留，以轻量级原生客户端替代传统 Web 面板，降低安全风险
 - Tags: Linux, Open Source, Free, SSH, VPS
