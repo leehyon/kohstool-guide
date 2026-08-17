@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-17) [CertMate](2026-08-17-certmate.md)
+- 自托管 TLS 证书管理系统，支持 29+ DNS 提供商自动签发与续期，具备可审计、防篡改的日志链，提供 Web UI、REST API、CLI 与 MCP 集成，密钥永不离场
+- Tags: SSL Certificate, Self-hosted, Automation, Audit Trail, REST API
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Web
+
 (2026-08-17) [insect-world](2026-08-17-insect-world.md)
 - 一款浏览器端的交互式 3D 昆虫图鉴，63 个物种全部由 TypeScript 与 Three.js 程序化生成，支持旋转缩放、标注点讲解、剖切对比与测验，桌面移动端均可运行
 - Tags: Entomology, 3D Visualization, Procedural Generation, Education, Open Source

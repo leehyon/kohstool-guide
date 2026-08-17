@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [CertMate](202608/2026-08-17-certmate.md) - 自托管 TLS 证书管理系统，支持 29+ DNS 提供商自动签发与续期，具备可审计、防篡改的日志链，提供 Web UI、REST API、CLI 与 MCP 集成，密钥永不离场
 - [insect-world](202608/2026-08-17-insect-world.md) - 一款浏览器端的交互式 3D 昆虫图鉴，63 个物种全部由 TypeScript 与 Three.js 程序化生成，支持旋转缩放、标注点讲解、剖切对比与测验，桌面移动端均可运行
 - [MarkCardStudio](202608/2026-08-17-markcardstudio.md) - 本地优先的 Markdown 社交媒体卡片排版与导出工具，支持智能分页、多平台尺寸、16 款内置主题、KaTeX 公式与 Mermaid 图表，可导出 PNG 或 PDF
 - [LeePanel](202608/2026-08-17-leepanel.md) - 开源跨平台 Linux 服务器管理桌面面板，通过本地 SSH 操作实现服务器零安装零残留，以轻量级原生客户端替代传统 Web 面板，降低安全风险
@@ -213,7 +214,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (6 entries)
+- [2026-08](202608/monthly-index.md) (7 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
