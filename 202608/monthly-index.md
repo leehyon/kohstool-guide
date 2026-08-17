@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-17) [LeePanel](2026-08-17-leepanel.md)
+- 开源跨平台 Linux 服务器管理桌面面板，通过本地 SSH 操作实现服务器零安装零残留，以轻量级原生客户端替代传统 Web 面板，降低安全风险
+- Tags: Linux, Open Source, Free, SSH, VPS
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Windows, macOS, Linux
+
 (2026-08-12) [llama.app](2026-08-12-llama.app.md)
 - 本地运行开源大语言模型的命令行工具，支持多种硬件与模型，无需 API Key 和网络连接，所有数据留在电脑上，强调隐私与自主权
 - Tags: Local AI, Open Source, Privacy, On-Device, LLM
