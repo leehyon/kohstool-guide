@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-17) [insect-world](2026-08-17-insect-world.md)
+- 一款浏览器端的交互式 3D 昆虫图鉴，63 个物种全部由 TypeScript 与 Three.js 程序化生成，支持旋转缩放、标注点讲解、剖切对比与测验，桌面移动端均可运行
+- Tags: Entomology, 3D Visualization, Procedural Generation, Education, Open Source
+- Categories: Reading & Information, Media & Creativity
+- Platform: Web
+
 (2026-08-17) [MarkCardStudio](2026-08-17-markcardstudio.md)
 - 本地优先的 Markdown 社交媒体卡片排版与导出工具，支持智能分页、多平台尺寸、16 款内置主题、KaTeX 公式与 Mermaid 图表，可导出 PNG 或 PDF
 - Tags: Markdown, Social Cards, Local-first, PDF Export, Content Creation
