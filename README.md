@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Anx Reader](202608/2026-08-18-anx-reader.md) - 一款为书虫打造的现代电子书阅读器，支持 EPUB/MOBI/AZW3 等多种格式，集成 AI 辅助阅读、笔记管理、阅读统计与跨平台同步，提供专注纯粹的阅读体验
 - [CertMate](202608/2026-08-17-certmate.md) - 自托管 TLS 证书管理系统，支持 29+ DNS 提供商自动签发与续期，具备可审计、防篡改的日志链，提供 Web UI、REST API、CLI 与 MCP 集成，密钥永不离场
 - [insect-world](202608/2026-08-17-insect-world.md) - 一款浏览器端的交互式 3D 昆虫图鉴，63 个物种全部由 TypeScript 与 Three.js 程序化生成，支持旋转缩放、标注点讲解、剖切对比与测验，桌面移动端均可运行
 - [MarkCardStudio](202608/2026-08-17-markcardstudio.md) - 本地优先的 Markdown 社交媒体卡片排版与导出工具，支持智能分页、多平台尺寸、16 款内置主题、KaTeX 公式与 Mermaid 图表，可导出 PNG 或 PDF
@@ -214,7 +215,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (7 entries)
+- [2026-08](202608/monthly-index.md) (8 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)

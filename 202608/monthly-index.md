@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-18) [Anx Reader](2026-08-18-anx-reader.md)
+- 一款为书虫打造的现代电子书阅读器，支持 EPUB/MOBI/AZW3 等多种格式，集成 AI 辅助阅读、笔记管理、阅读统计与跨平台同步，提供专注纯粹的阅读体验
+- Tags: E-book Reader, AI Assistant, Cross-platform, Open Source, Note-taking
+- Categories: Knowledge Management, Reading & Information
+- Platform: iOS, macOS, Windows, Android
+
 (2026-08-17) [CertMate](2026-08-17-certmate.md)
 - 自托管 TLS 证书管理系统，支持 29+ DNS 提供商自动签发与续期，具备可审计、防篡改的日志链，提供 Web UI、REST API、CLI 与 MCP 集成，密钥永不离场
 - Tags: SSL Certificate, Self-hosted, Automation, Audit Trail, REST API
