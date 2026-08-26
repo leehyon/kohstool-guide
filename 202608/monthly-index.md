@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-26) [Kavita](2026-08-26-kavita.md)
+- 自托管的数字图书馆与阅读服务器，支持 EPUB、PDF、漫画及图片格式，内置多模式阅读器、OPDS、元数据管理与用户权限控制，注重隐私与速度。开源免费，可快速部署与共享。
+- Tags: Self-hosted, Open Source, E-book Reader, Manga Reader, OPDS
+- Categories: Reading & Information
+- Platform: Windows, Linux, Mac, Web
+
 (2026-08-18) [Anx Reader](2026-08-18-anx-reader.md)
 - 一款为书虫打造的现代电子书阅读器，支持 EPUB/MOBI/AZW3 等多种格式，集成 AI 辅助阅读、笔记管理、阅读统计与跨平台同步，提供专注纯粹的阅读体验
 - Tags: E-book Reader, AI Assistant, Cross-platform, Open Source, Note-taking
