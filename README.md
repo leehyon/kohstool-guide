@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [BookLore](202608/2026-08-26-booklore.md) - 自托管的多用户数字图书馆，提供智能书架、自动元数据补全、Kobo 与 KOReader 同步、BookDrop 导入、OPDS 支持，以及内置的 EPUB、PDF 和漫画阅读器
 - [Kavita](202608/2026-08-26-kavita.md) - 自托管的数字图书馆与阅读服务器，支持 EPUB、PDF、漫画及图片格式，内置多模式阅读器、OPDS、元数据管理与用户权限控制，注重隐私与速度。开源免费，可快速部署与共享。
 - [Anx Reader](202608/2026-08-18-anx-reader.md) - 一款为书虫打造的现代电子书阅读器，支持 EPUB/MOBI/AZW3 等多种格式，集成 AI 辅助阅读、笔记管理、阅读统计与跨平台同步，提供专注纯粹的阅读体验
 - [CertMate](202608/2026-08-17-certmate.md) - 自托管 TLS 证书管理系统，支持 29+ DNS 提供商自动签发与续期，具备可审计、防篡改的日志链，提供 Web UI、REST API、CLI 与 MCP 集成，密钥永不离场
@@ -216,7 +217,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (9 entries)
+- [2026-08](202608/monthly-index.md) (10 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
