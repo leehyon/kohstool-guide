@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Ceedling](202608/2026-08-27-ceedling.md) - 面向 C 语言的构建与测试工具，基于 Unity 和 CMock，自动组织测试与发布构建，简化测试管理工作流
 - [KNAS 音乐整理](202608/2026-08-27-knas-%E9%9F%B3%E4%B9%90%E6%95%B4%E7%90%86.md) - 在 fnOS 与 FygoOS 上本地转换 NCM 并整理音乐库，按歌手与专辑归档，支持常见音频格式，保留歌词封面，操作可控且不修改原始文件
 - [BookLore](202608/2026-08-26-booklore.md) - 自托管的多用户数字图书馆，提供智能书架、自动元数据补全、Kobo 与 KOReader 同步、BookDrop 导入、OPDS 支持，以及内置的 EPUB、PDF 和漫画阅读器
 - [Kavita](202608/2026-08-26-kavita.md) - 自托管的数字图书馆与阅读服务器，支持 EPUB、PDF、漫画及图片格式，内置多模式阅读器、OPDS、元数据管理与用户权限控制，注重隐私与速度。开源免费，可快速部署与共享。
@@ -218,7 +219,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (11 entries)
+- [2026-08](202608/monthly-index.md) (12 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)
