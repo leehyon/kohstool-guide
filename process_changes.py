@@ -1638,7 +1638,9 @@ def get_text_content(url: str) -> str:
                 error_msg = f"Jina fetch failed (HTTP {status}) - attempt {attempt + 1}/{FETCH_MAX_RETRIES}"
                 last_error_message = error_msg
                 logging.warning(error_msg)
-                should_retry = status in (429, 500, 502, 503, 504)
+                # Keep the retry contract consistent for every failed Jina
+                # response, including access-denied responses such as 403.
+                should_retry = True
                 if should_retry and attempt < FETCH_MAX_RETRIES - 1:
                     wait_time = 2**attempt
                     logging.info("Retrying in %d seconds...", wait_time)
