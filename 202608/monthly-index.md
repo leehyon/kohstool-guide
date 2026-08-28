@@ -11,7 +11,7 @@
 - Tags: C Language, Unit Testing, Build System, Test Automation, Embedded
 - Categories: Developer Tools
 
-(2026-08-27) [KNAS 音乐整理](2026-08-27-knas-%E9%9F%B3%E4%B9%90%E6%95%B4%E7%90%86.md)
+(2026-08-27) [KNAS](2026-08-27-knas.md)
 - 在 fnOS 与 FygoOS 上本地转换 NCM 并整理音乐库，按歌手与专辑归档，支持常见音频格式，保留歌词封面，操作可控且不修改原始文件
 - Tags: Music Organizer, NAS, NCM Converter, Batch Conversion, Local-First
 - Categories: File Management, Media & Creativity
