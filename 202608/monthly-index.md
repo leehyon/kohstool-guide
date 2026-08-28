@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-28) [Markra](2026-08-28-markra.md)
+- 一款所见即所得 Markdown 编辑器，内置原生 AI 审阅，支持本地文件与文件夹，保持纯 Markdown 底层，所有 AI 修改需确认后应用
+- Tags: Markdown Editor, AI Review, Local-first, Open Source, WYSIWYG
+- Categories: Knowledge Management, Text Input & Writing
+- Platform: Web
+
 (2026-08-27) [Ceedling](2026-08-27-ceedling.md)
 - 面向 C 语言的构建与测试工具，基于 Unity 和 CMock，自动组织测试与发布构建，简化测试管理工作流
 - Tags: C Language, Unit Testing, Build System, Test Automation, Embedded
