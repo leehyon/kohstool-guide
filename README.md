@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [multi-row-tabs](202608/2026-08-28-multi-row-tabs.md) - 一个以多行平铺方式展示当前窗口所有标签页的 Chrome 扩展，采用零侵入浮动模式，不修改页面样式；支持自定义快捷键、标签排序、拖拽悬浮按钮与键盘导航，帮助用户在大量标签页中快速定位与切换
 - [Markra](202608/2026-08-28-markra.md) - 一款所见即所得 Markdown 编辑器，内置原生 AI 审阅，支持本地文件与文件夹，保持纯 Markdown 底层，所有 AI 修改需确认后应用
 - [Ceedling](202608/2026-08-27-ceedling.md) - 面向 C 语言的构建与测试工具，基于 Unity 和 CMock，自动组织测试与发布构建，简化测试管理工作流
 - [KNAS](202608/2026-08-27-knas.md) - 在 fnOS 与 FygoOS 上本地转换 NCM 并整理音乐库，按歌手与专辑归档，支持常见音频格式，保留歌词封面，操作可控且不修改原始文件
@@ -220,7 +221,7 @@
 
 ## Monthly Archive
 
-- [2026-08](202608/monthly-index.md) (13 entries)
+- [2026-08](202608/monthly-index.md) (14 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
 - [2026-05](202605/monthly-index.md) (30 entries)

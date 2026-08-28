@@ -1,5 +1,11 @@
 # 2026-08 Tool Guide Index
 
+(2026-08-28) [multi-row-tabs](2026-08-28-multi-row-tabs.md)
+- 一个以多行平铺方式展示当前窗口所有标签页的 Chrome 扩展，采用零侵入浮动模式，不修改页面样式；支持自定义快捷键、标签排序、拖拽悬浮按钮与键盘导航，帮助用户在大量标签页中快速定位与切换
+- Tags: Chrome Extension, Tab Management, Multi-row Tabs, Open Source, Keyboard Shortcuts
+- Categories: Reading & Information, System & Automation
+- Platform: Mac, Windows, Linux, Browser Extension
+
 (2026-08-28) [Markra](2026-08-28-markra.md)
 - 一款所见即所得 Markdown 编辑器，内置原生 AI 审阅，支持本地文件与文件夹，保持纯 Markdown 底层，所有 AI 修改需确认后应用
 - Tags: Markdown Editor, AI Review, Local-first, Open Source, WYSIWYG
