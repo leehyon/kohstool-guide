@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Screen Studio](202609/2026-09-02-screen-studio.md) - 一款为 macOS 设计的专业录屏软件，自动缩放、平滑光标动画，快速制作产品演示、教程和社交媒体视频，内置剪辑与导出功能
 - [Kdenlive](202609/2026-09-02-kdenlive.md) - 一款免费开源的跨平台非线性视频编辑器，支持多轨剪辑、特效、转场、调色等功能，适用于从入门到专业的视频制作需求
 - [emailmd](202608/2026-08-28-emailmd.md) - 以 Markdown 编写邮件并生成可定制 HTML 模板的开源工具，内置多种常用场景模板，提供可视化 Builder 与 AI 辅助能力
 - [multi-row-tabs](202608/2026-08-28-multi-row-tabs.md) - 一个以多行平铺方式展示当前窗口所有标签页的 Chrome 扩展，采用零侵入浮动模式，不修改页面样式；支持自定义快捷键、标签排序、拖拽悬浮按钮与键盘导航，帮助用户在大量标签页中快速定位与切换
@@ -223,7 +224,7 @@
 
 ## Monthly Archive
 
-- [2026-09](202609/monthly-index.md) (1 entries)
+- [2026-09](202609/monthly-index.md) (2 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
