@@ -1,5 +1,11 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-02) [FFmpeg](2026-09-02-ffmpeg.md)
+- 跨平台命令行多媒体处理框架，支持录制、转换与流媒体处理，内置大量编解码器与滤镜，可通过命令行灵活处理音视频
+- Tags: Command-line Tool, Open Source, Video Transcoding, Audio Processing, Streaming
+- Categories: Developer Tools, Media & Creativity
+- Platform: Mac, Windows, Linux, iOS, Android
+
 (2026-09-02) [OBS](2026-09-02-obs.md)
 - 开源跨平台视频录制与直播软件，支持多场景切换、实时混音、自定义转场，并可通过插件扩展功能
 - Tags: Open Source, Live Streaming, Screen Recording, Free, Cross-platform

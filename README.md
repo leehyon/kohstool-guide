@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [FFmpeg](202609/2026-09-02-ffmpeg.md) - 跨平台命令行多媒体处理框架，支持录制、转换与流媒体处理，内置大量编解码器与滤镜，可通过命令行灵活处理音视频
 - [OBS](202609/2026-09-02-obs.md) - 开源跨平台视频录制与直播软件，支持多场景切换、实时混音、自定义转场，并可通过插件扩展功能
 - [Screen Studio](202609/2026-09-02-screen-studio.md) - 一款为 macOS 设计的专业录屏软件，自动缩放、平滑光标动画，快速制作产品演示、教程和社交媒体视频，内置剪辑与导出功能
 - [Kdenlive](202609/2026-09-02-kdenlive.md) - 一款免费开源的跨平台非线性视频编辑器，支持多轨剪辑、特效、转场、调色等功能，适用于从入门到专业的视频制作需求
@@ -225,7 +226,7 @@
 
 ## Monthly Archive
 
-- [2026-09](202609/monthly-index.md) (3 entries)
+- [2026-09](202609/monthly-index.md) (4 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
