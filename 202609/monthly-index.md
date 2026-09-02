@@ -1,5 +1,11 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-02) [OBS](2026-09-02-obs.md)
+- 开源跨平台视频录制与直播软件，支持多场景切换、实时混音、自定义转场，并可通过插件扩展功能
+- Tags: Open Source, Live Streaming, Screen Recording, Free, Cross-platform
+- Categories: Media & Creativity
+- Platform: Windows, macOS, Linux
+
 (2026-09-02) [Screen Studio](2026-09-02-screen-studio.md)
 - 一款为 macOS 设计的专业录屏软件，自动缩放、平滑光标动画，快速制作产品演示、教程和社交媒体视频，内置剪辑与导出功能
 - Tags: Screen Recording, macOS, Video Editing, Product Demos, Tutorials
