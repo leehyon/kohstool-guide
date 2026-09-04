@@ -1,5 +1,11 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-04) [zlib](2026-09-04-zlib.md)
+- 面向终端与 AI Agent 的 Z-Library 命令行客户端，支持书目搜索、文件下载、Kindle 邮件投递，能探测可用镜像，并提供 --json 输出供脚本和编码代理复用
+- Tags: Command-Line, Ebook Downloader, Kindle, Terminal, Open Source
+- Categories: Reading & Information, Developer Tools
+- Platform: Mac, Linux, Windows
+
 (2026-09-02) [FFmpeg](2026-09-02-ffmpeg.md)
 - 跨平台命令行多媒体处理框架，支持录制、转换与流媒体处理，内置大量编解码器与滤镜，可通过命令行灵活处理音视频
 - Tags: Command-line Tool, Open Source, Video Transcoding, Audio Processing, Streaming
