@@ -1,5 +1,10 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-11) [Tolaria](2026-09-11-tolaria.md)
+- 面向 AI 时代的开源第二大脑，将笔记存为 Markdown 文件，内置原生关系、Git 版本控制、本地 AI 代理与直接模型连接，免费且无需账号
+- Tags: Markdown, Note-taking, Knowledge Base, Open Source, Git
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+
 (2026-09-04) [zlib](2026-09-04-zlib.md)
 - 面向终端与 AI Agent 的 Z-Library 命令行客户端，支持书目搜索、文件下载、Kindle 邮件投递，能探测可用镜像，并提供 --json 输出供脚本和编码代理复用
 - Tags: Command-Line, Ebook Downloader, Kindle, Terminal, Open Source
