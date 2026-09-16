@@ -1,5 +1,11 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-16) [Material for MkDocs](2026-09-16-material-for-mkdocs.md)
+- 用 Markdown 编写文档，几分钟内生成可搜索、可定制的专业静态网站，支持 60+ 语言与多设备
+- Tags: Markdown, Documentation, Static Site Generator, Open Source, Material Design
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Web
+
 (2026-09-16) [VitePress](2026-09-16-vitepress.md)
 - 基于 Vite 与 Vue 的静态站点生成器，用 Markdown 快速创建美观文档站，开发热更新快，构建后加载迅速
 - Tags: Static Site Generator, Documentation, Markdown, Vue, Vite

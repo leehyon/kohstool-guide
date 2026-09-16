@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Material for MkDocs](202609/2026-09-16-material-for-mkdocs.md) - 用 Markdown 编写文档，几分钟内生成可搜索、可定制的专业静态网站，支持 60+ 语言与多设备
 - [VitePress](202609/2026-09-16-vitepress.md) - 基于 Vite 与 Vue 的静态站点生成器，用 Markdown 快速创建美观文档站，开发热更新快，构建后加载迅速
 - [Tolaria](202609/2026-09-11-tolaria.md) - 面向 AI 时代的开源第二大脑，将笔记存为 Markdown 文件，内置原生关系、Git 版本控制、本地 AI 代理与直接模型连接，免费且无需账号
 - [zlib](202609/2026-09-04-zlib.md) - 面向终端与 AI Agent 的 Z-Library 命令行客户端，支持书目搜索、文件下载、Kindle 邮件投递，能探测可用镜像，并提供 --json 输出供脚本和编码代理复用
@@ -229,7 +230,7 @@
 
 ## Monthly Archive
 
-- [2026-09](202609/monthly-index.md) (7 entries)
+- [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
 - [2026-06](202606/monthly-index.md) (20 entries)
