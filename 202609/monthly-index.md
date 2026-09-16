@@ -1,5 +1,11 @@
 # 2026-09 Tool Guide Index
 
+(2026-09-16) [VitePress](2026-09-16-vitepress.md)
+- 基于 Vite 与 Vue 的静态站点生成器，用 Markdown 快速创建美观文档站，开发热更新快，构建后加载迅速
+- Tags: Static Site Generator, Documentation, Markdown, Vue, Vite
+- Categories: Knowledge Management, Text Input & Writing, Developer Tools
+- Platform: Mac, Windows, Linux, Web
+
 (2026-09-11) [Tolaria](2026-09-11-tolaria.md)
 - 面向 AI 时代的开源第二大脑，将笔记存为 Markdown 文件，内置原生关系、Git 版本控制、本地 AI 代理与直接模型连接，免费且无需账号
 - Tags: Markdown, Note-taking, Knowledge Base, Open Source, Git
