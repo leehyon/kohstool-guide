@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [stillwet](202610/2026-10-09-stillwet.md) - 让 AI 模型用代码在油画模拟中逐笔作画，并实时展示、对比不同模型的创作过程与结果
 - [Crafting Apps](202610/2026-10-09-crafting-apps.md) - 七款用 Rust 从零编写的开源创意应用，覆盖图像、矢量、视频、照片、PDF、动效与排版，原生运行、免费使用，也能在浏览器里跑
 - [Material for MkDocs](202609/2026-09-16-material-for-mkdocs.md) - 用 Markdown 编写文档，几分钟内生成可搜索、可定制的专业静态网站，支持 60+ 语言与多设备
 - [VitePress](202609/2026-09-16-vitepress.md) - 基于 Vite 与 Vue 的静态站点生成器，用 Markdown 快速创建美观文档站，开发热更新快，构建后加载迅速
@@ -231,7 +232,7 @@
 
 ## Monthly Archive
 
-- [2026-10](202610/monthly-index.md) (1 entries)
+- [2026-10](202610/monthly-index.md) (2 entries)
 - [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
