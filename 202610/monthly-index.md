@@ -1,5 +1,11 @@
 # 2026-10 Tool Guide Index
 
+(2026-10-16) [Caplo](2026-10-16-caplo.md)
+- Mac 屏幕录制工具，自动根据点击生成缩放，支持多轨剪辑、光标样式、字幕与本地导出
+- Tags: Screen Recording, Automatic Zoom, Mac, Privacy-focused, Video Editing
+- Categories: System & Automation, Media & Creativity
+- Platform: Mac
+
 (2026-10-09) [stillwet](2026-10-09-stillwet.md)
 - 让 AI 模型用代码在油画模拟中逐笔作画，并实时展示、对比不同模型的创作过程与结果
 - Tags: AI Art, Generative Art, Painting Simulation, Creative Coding, Live Studio
