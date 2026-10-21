@@ -1,5 +1,11 @@
 # 2026-10 Tool Guide Index
 
+(2026-10-21) [CleanYourTV](2026-10-21-cleanyourtv.md)
+- 借助 AI 编程助手通过 Wi-Fi 为 Android TV 与 Google TV 去广告、清预装并替换启动器，无需 root，免费开源且可一键还原
+- Tags: Ad Blocking, Debloat, Open Source, Android TV, AI-assisted
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Android
+
 (2026-10-16) [Caplo](2026-10-16-caplo.md)
 - Mac 屏幕录制工具，自动根据点击生成缩放，支持多轨剪辑、光标样式、字幕与本地导出
 - Tags: Screen Recording, Automatic Zoom, Mac, Privacy-focused, Video Editing
