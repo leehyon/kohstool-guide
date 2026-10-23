@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Archify](202610/2026-10-23-archify.md) - 开源 AI Agent 技能，用自然语言把系统、流程或计划生成可交互图表，或结论先行的单页报告，输出为自包含 HTML 文件
 - [CleanYourTV](202610/2026-10-21-cleanyourtv.md) - 借助 AI 编程助手通过 Wi-Fi 为 Android TV 与 Google TV 去广告、清预装并替换启动器，无需 root，免费开源且可一键还原
 - [Caplo](202610/2026-10-16-caplo.md) - Mac 屏幕录制工具，自动根据点击生成缩放，支持多轨剪辑、光标样式、字幕与本地导出
 - [stillwet](202610/2026-10-09-stillwet.md) - 让 AI 模型用代码在油画模拟中逐笔作画，并实时展示、对比不同模型的创作过程与结果
@@ -234,7 +235,7 @@
 
 ## Monthly Archive
 
-- [2026-10](202610/monthly-index.md) (4 entries)
+- [2026-10](202610/monthly-index.md) (5 entries)
 - [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)

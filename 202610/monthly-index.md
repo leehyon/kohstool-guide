@@ -1,5 +1,11 @@
 # 2026-10 Tool Guide Index
 
+(2026-10-23) [Archify](2026-10-23-archify.md)
+- 开源 AI Agent 技能，用自然语言把系统、流程或计划生成可交互图表，或结论先行的单页报告，输出为自包含 HTML 文件
+- Tags: AI Agent, Diagramming, Open Source, Data Visualization, HTML Export
+- Categories: Knowledge Management, Developer Tools
+- Platform: Web
+
 (2026-10-21) [CleanYourTV](2026-10-21-cleanyourtv.md)
 - 借助 AI 编程助手通过 Wi-Fi 为 Android TV 与 Google TV 去广告、清预装并替换启动器，无需 root，免费开源且可一键还原
 - Tags: Ad Blocking, Debloat, Open Source, Android TV, AI-assisted
