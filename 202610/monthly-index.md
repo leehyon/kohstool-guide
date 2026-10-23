@@ -1,5 +1,11 @@
 # 2026-10 Tool Guide Index
 
+(2026-10-23) [wol](2026-10-23-wol.md)
+- 通过命令行或网页界面发送 Wake-On-LAN 魔术包，远程唤醒局域网设备，并支持多设备配置、定时唤醒与 Docker 部署
+- Tags: Wake-On-LAN, CLI, Web Interface, Self-Hosted, Docker
+- Categories: Developer Tools, System & Automation
+- Platform: Mac, Windows, Linux, Web
+
 (2026-10-23) [Archify](2026-10-23-archify.md)
 - 开源 AI Agent 技能，用自然语言把系统、流程或计划生成可交互图表，或结论先行的单页报告，输出为自包含 HTML 文件
 - Tags: AI Agent, Diagramming, Open Source, Data Visualization, HTML Export
