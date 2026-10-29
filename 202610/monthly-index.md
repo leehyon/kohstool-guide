@@ -1,5 +1,11 @@
 # 2026-10 Tool Guide Index
 
+(2026-10-29) [ascii.rest](2026-10-29-ascii.rest.md)
+- 提供可嵌入网页的动画 ASCII 艺术集合，含场景、UI 组件、数据图表、Logo 与生成工具
+- Tags: ASCII Art, Web Animation, Embeddable, Open Source, Creative Coding
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-10-23) [douban-cli](2026-10-23-douban-cli.md)
 - 在终端与 AI Agent 中查询豆瓣电影、剧集、图书与 Top250，并备份和修改观影读书记录的命令行工具
 - Tags: CLI, Douban, AI Agent, Data Export, Movie Database

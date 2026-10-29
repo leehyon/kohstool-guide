@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [ascii.rest](202610/2026-10-29-ascii.rest.md) - 提供可嵌入网页的动画 ASCII 艺术集合，含场景、UI 组件、数据图表、Logo 与生成工具
 - [douban-cli](202610/2026-10-23-douban-cli.md) - 在终端与 AI Agent 中查询豆瓣电影、剧集、图书与 Top250，并备份和修改观影读书记录的命令行工具
 - [wol](202610/2026-10-23-wol.md) - 通过命令行或网页界面发送 Wake-On-LAN 魔术包，远程唤醒局域网设备，并支持多设备配置、定时唤醒与 Docker 部署
 - [Archify](202610/2026-10-23-archify.md) - 开源 AI Agent 技能，用自然语言把系统、流程或计划生成可交互图表，或结论先行的单页报告，输出为自包含 HTML 文件
@@ -237,7 +238,7 @@
 
 ## Monthly Archive
 
-- [2026-10](202610/monthly-index.md) (7 entries)
+- [2026-10](202610/monthly-index.md) (8 entries)
 - [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
 - [2026-07](202607/monthly-index.md) (39 entries)
