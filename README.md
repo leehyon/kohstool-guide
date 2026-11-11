@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [florilegium](202611/2026-11-11-florilegium.md) - 为 LaTeX 文档生成程序化代尔夫特蓝花卉页边装饰，植物与访客由基因组采样，无需外部素材，支持 LuaLaTeX、TikZ 与 SVG
 - [Pele](202610/2026-10-29-pele.md) - 将 Mermaid 语法快速渲染为可主题化 SVG 的轻量库，零依赖、体积小、渲染快，支持 Mermaid 全部图表类型
 - [ascii.rest](202610/2026-10-29-ascii.rest.md) - 提供可嵌入网页的动画 ASCII 艺术集合，含场景、UI 组件、数据图表、Logo 与生成工具
 - [douban-cli](202610/2026-10-23-douban-cli.md) - 在终端与 AI Agent 中查询豆瓣电影、剧集、图书与 Top250，并备份和修改观影读书记录的命令行工具
@@ -239,6 +240,7 @@
 
 ## Monthly Archive
 
+- [2026-11](202611/monthly-index.md) (1 entries)
 - [2026-10](202610/monthly-index.md) (9 entries)
 - [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)
