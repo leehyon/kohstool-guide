@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-11) [linkit](2026-11-11-linkit.md)
+- 一款本地优先的桌面书签管理与个人知识管理工具，提供 AI 摘要、语义搜索、知识图谱与免费自托管同步，强调隐私和离线使用
+- Tags: Bookmark Manager, Local-first, PKM, AI Summaries, Semantic Search
+- Categories: Knowledge Management, Reading & Information
+- Platform: Mac, Windows, Linux
+
 (2026-11-11) [Crossbow](2026-11-11-crossbow.md)
 - 开源代理客户端，支持 mihomo 与 sing-box 双核心，整合订阅、节点选择、系统代理、TUN、连接与日志，并在托盘显示实时上下行速度
 - Tags: Proxy Client, Open Source, TUN Mode, Subscription Management, Cross-platform
