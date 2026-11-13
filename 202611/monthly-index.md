@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-13) [MirrorProxy](2026-11-13-mirrorproxy.md)
+- 自托管的统一镜像加速网关，按需代理并缓存 GitHub、容器、语言包、开发工具链和操作系统源，支持故障切换、配额、访问控制与监控
+- Tags: Self-Hosted, Package Mirror, Proxy Cache, DevOps, Access Control
+- Categories: Developer Tools, System & Automation, Security & Privacy
+- Platform: Mac, Windows, Linux, Web
+
 (2026-11-13) [app-monitor](2026-11-13-app-monitor.md)
 - 本地优先的 macOS 应用监控面板，集中查看应用使用时长、磁盘占用、更新状态、健康告警与卸载影响
 - Tags: App Usage Tracking, Disk Cleanup, Local-First, macOS Utility, Update Checker
