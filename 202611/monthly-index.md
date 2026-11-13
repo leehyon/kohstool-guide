@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-13) [app-monitor](2026-11-13-app-monitor.md)
+- 本地优先的 macOS 应用监控面板，集中查看应用使用时长、磁盘占用、更新状态、健康告警与卸载影响
+- Tags: App Usage Tracking, Disk Cleanup, Local-First, macOS Utility, Update Checker
+- Categories: File Management, System & Automation, Data & Analytics
+- Platform: Mac
+
 (2026-11-11) [linkit](2026-11-11-linkit.md)
 - 一款本地优先的桌面书签管理与个人知识管理工具，提供 AI 摘要、语义搜索、知识图谱与免费自托管同步，强调隐私和离线使用
 - Tags: Bookmark Manager, Local-first, PKM, AI Summaries, Semantic Search
