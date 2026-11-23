@@ -5657,5 +5657,28 @@
     ],
     "tldr": "自托管的统一镜像加速网关，按需代理并缓存 GitHub、容器、语言包、开发工具链和操作系统源，支持故障切换、配额、访问控制与监控",
     "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202611/2026-11-13-mirrorproxy.md"
+  },
+  {
+    "month": "202611",
+    "name": "13ft",
+    "url": "https://github.com/wasi-master/13ft",
+    "timestamp": 1795399235,
+    "tags": [
+      "Paywall Bypass",
+      "Self-hosted",
+      "Web Scraping",
+      "Privacy",
+      "Python"
+    ],
+    "categories": [
+      "Reading & Information",
+      "System & Automation",
+      "Security & Privacy"
+    ],
+    "Platform": [
+      "Web"
+    ],
+    "tldr": "自托管的网页阅读辅助服务，通过模拟 GoogleBot 抓取正文，绕过广告与付费墙并支持多源回退",
+    "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202611/2026-11-23-13ft.md"
   }
 ]

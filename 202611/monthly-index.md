@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-23) [13ft](2026-11-23-13ft.md)
+- 自托管的网页阅读辅助服务，通过模拟 GoogleBot 抓取正文，绕过广告与付费墙并支持多源回退
+- Tags: Paywall Bypass, Self-hosted, Web Scraping, Privacy, Python
+- Categories: Reading & Information, System & Automation, Security & Privacy
+- Platform: Web
+
 (2026-11-13) [MirrorProxy](2026-11-13-mirrorproxy.md)
 - 自托管的统一镜像加速网关，按需代理并缓存 GitHub、容器、语言包、开发工具链和操作系统源，支持故障切换、配额、访问控制与监控
 - Tags: Self-Hosted, Package Mirror, Proxy Cache, DevOps, Access Control
