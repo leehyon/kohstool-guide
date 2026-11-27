@@ -1,6 +1,7 @@
 # Tool Guide
 自动读取 [kohstool](https://github.com/leehyon/kohstool) 仓库中的工具链接，通过 Jina Reader 获取网页文本内容，再借助 AI 生成总结。
 
+- [Trace](202611/2026-11-27-trace.md) - 在菜单栏后台自动记录应用、窗口、文件和网页的使用时长，数据默认保存在本机，支持导出与可选同步
 - [PenGPT](202611/2026-11-27-pengpt.md) - 一个小型 Transformer 能从文本生成手写和简笔画，并能根据少量样例模仿未见过的笔迹
 - [13ft](202611/2026-11-23-13ft.md) - 自托管的网页阅读辅助服务，通过模拟 GoogleBot 抓取正文，绕过广告与付费墙并支持多源回退
 - [MirrorProxy](202611/2026-11-13-mirrorproxy.md) - 自托管的统一镜像加速网关，按需代理并缓存 GitHub、容器、语言包、开发工具链和操作系统源，支持故障切换、配额、访问控制与监控
@@ -247,7 +248,7 @@
 
 ## Monthly Archive
 
-- [2026-11](202611/monthly-index.md) (8 entries)
+- [2026-11](202611/monthly-index.md) (9 entries)
 - [2026-10](202610/monthly-index.md) (9 entries)
 - [2026-09](202609/monthly-index.md) (8 entries)
 - [2026-08](202608/monthly-index.md) (15 entries)

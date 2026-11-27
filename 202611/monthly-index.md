@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-27) [Trace](2026-11-27-trace.md)
+- 在菜单栏后台自动记录应用、窗口、文件和网页的使用时长，数据默认保存在本机，支持导出与可选同步
+- Tags: Time Tracking, Activity Tracker, Open Source, Privacy First, Productivity
+- Categories: System & Automation, Data & Analytics
+- Platform: Mac
+
 (2026-11-27) [PenGPT](2026-11-27-pengpt.md)
 - 一个小型 Transformer 能从文本生成手写和简笔画，并能根据少量样例模仿未见过的笔迹
 - Tags: Handwriting Generation, Sketch Generation, Transformer, Open Source, Research

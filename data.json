@@ -5702,5 +5702,27 @@
     ],
     "tldr": "一个小型 Transformer 能从文本生成手写和简笔画，并能根据少量样例模仿未见过的笔迹",
     "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202611/2026-11-27-pengpt.md"
+  },
+  {
+    "month": "202611",
+    "name": "Trace",
+    "url": "https://github.com/lxyeternal/Trace",
+    "timestamp": 1795743835,
+    "tags": [
+      "Time Tracking",
+      "Activity Tracker",
+      "Open Source",
+      "Privacy First",
+      "Productivity"
+    ],
+    "categories": [
+      "System & Automation",
+      "Data & Analytics"
+    ],
+    "Platform": [
+      "Mac"
+    ],
+    "tldr": "在菜单栏后台自动记录应用、窗口、文件和网页的使用时长，数据默认保存在本机，支持导出与可选同步",
+    "guide_markdown": "https://github.com/leehyon/kohstool-guide/blob/main/202611/2026-11-27-trace.md"
   }
 ]
