@@ -1,5 +1,11 @@
 # 2026-11 Tool Guide Index
 
+(2026-11-27) [PenGPT](2026-11-27-pengpt.md)
+- 一个小型 Transformer 能从文本生成手写和简笔画，并能根据少量样例模仿未见过的笔迹
+- Tags: Handwriting Generation, Sketch Generation, Transformer, Open Source, Research
+- Categories: Developer Tools, Media & Creativity
+- Platform: Web
+
 (2026-11-23) [13ft](2026-11-23-13ft.md)
 - 自托管的网页阅读辅助服务，通过模拟 GoogleBot 抓取正文，绕过广告与付费墙并支持多源回退
 - Tags: Paywall Bypass, Self-hosted, Web Scraping, Privacy, Python
